@@ -17,11 +17,10 @@ ActiveRecord::Schema.define(version: 2023_03_18_184415) do
 
   create_table "departments", force: :cascade do |t|
     t.string "name"
-    t.bigint "folders_id"
+    t.bigint "folder_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "folder_id"
-    t.index ["folders_id"], name: "index_departments_on_folders_id"
+    t.index ["folder_id"], name: "index_departments_on_folder_id"
   end
 
   create_table "folders", force: :cascade do |t|
@@ -36,31 +35,27 @@ ActiveRecord::Schema.define(version: 2023_03_18_184415) do
     t.string "image"
     t.integer "price_cents"
     t.integer "quantity"
-    t.bigint "folders_id"
-    t.bigint "departments_id"
+    t.bigint "folder_id"
+    t.bigint "department_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "folder_id"
-    t.integer "department_id"
-    t.index ["departments_id"], name: "index_items_on_departments_id"
-    t.index ["folders_id"], name: "index_items_on_folders_id"
+    t.index ["department_id"], name: "index_items_on_department_id"
+    t.index ["folder_id"], name: "index_items_on_folder_id"
   end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
-    t.bigint "folders_id"
-    t.bigint "departments_id"
+    t.bigint "folder_id"
+    t.bigint "department_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "folder_id"
-    t.integer "department_id"
-    t.index ["departments_id"], name: "index_users_on_departments_id"
-    t.index ["folders_id"], name: "index_users_on_folders_id"
+    t.index ["department_id"], name: "index_users_on_department_id"
+    t.index ["folder_id"], name: "index_users_on_folder_id"
   end
 
-  add_foreign_key "departments", "folders", column: "folders_id"
-  add_foreign_key "items", "departments", column: "departments_id"
-  add_foreign_key "items", "folders", column: "folders_id"
-  add_foreign_key "users", "departments", column: "departments_id"
-  add_foreign_key "users", "folders", column: "folders_id"
+  add_foreign_key "departments", "folders"
+  add_foreign_key "items", "departments"
+  add_foreign_key "items", "folders"
+  add_foreign_key "users", "departments"
+  add_foreign_key "users", "folders"
 end
