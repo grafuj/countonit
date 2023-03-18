@@ -7,8 +7,8 @@ class CreateItems < ActiveRecord::Migration[6.1]
       t.integer :price_cents
       t.integer :quantity
 
-      t.references :folders, foreign_key: true, index: true
-      t.references :departments, foreign_key: true, index: true
+      t.references :folder, foreign_key: true, index: true
+      t.references :department, foreign_key: true, index: true
 
 
       t.timestamps
