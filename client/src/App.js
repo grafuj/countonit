@@ -1,38 +1,47 @@
-import React, { Component } from 'react';
-import axios from 'axios';
-import './App.css';
+import React, { Component, useState, useEffect } from "react";
+import axios from "axios";
+import "./App.css";
+import Departments from "./components/Departments";
+import Items from "./components/Items";
+import Folders from "./components/Folders";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
-class App extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      message: 'Click the button to load data!'
-    }
-  }
 
-  fetchData = () => {
-    axios.get('/api/departments') // You can simply make your requests to "/api/whatever you want"
-    .then((response) => {
-      // handle success
-      console.log(response.data) // The entire response from the Rails API
+export default function App() {
+  const [state, setState] = useState({folders: [], departments: [], items: []});
+  useEffect(() => {
+    Promise.all([
+      axios.get("/api/folders"),
+      axios.get("/api/departments"),
+      axios.get("/api/items"),
+    ]).then((all) => {
+      const folders = all[0].data;
+      const departments = all[1].data;
+      const items = all[2].data;
+      console.log("promise return:", departments)
+      setState((prev) => ({ ...prev, folders, departments, items }));
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+  }, []);
 
-      console.log(response.data.message) // Just the message
-      this.setState({
-        message: response.data.message
-      });
-    }) 
-  }
+  console.log("state.department:", state.departments)
 
-  render() {
-    return (
-      <div className="App">
-        <h1>{ this.state.message }</h1>
-        <button onClick={this.fetchData} >
-          Fetch Data
-        </button>        
-      </div>
-    );
-  }
+  return (
+    <BrowserRouter>
+      <nav>
+        <Link to="/items">Items</Link>
+        <Link to="/folders">Folders</Link>
+        <Link to="/departments">Departments</Link>
+      </nav>
+      <main>
+      <Routes>
+        <Route path="/folders" element={<Folders folders={state.folders} />}/>
+        <Route path="/departments" element={<Departments departments={state.departments} />}/>
+        <Route path="/items" element={<Items items={state.items}/>}/>
+      </Routes>
+      </main>
+    </BrowserRouter>
+  )
 }
-
-export default App;

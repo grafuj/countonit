@@ -1,7 +1,6 @@
 class Api::FoldersController < ApplicationController
     def index
-        render :json => {
-            message: "Folders!"
-          }
+        @folders = Folder.all
+        render json: @folders
     end
 end

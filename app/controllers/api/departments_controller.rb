@@ -1,8 +1,6 @@
 class Api::DepartmentsController < ApplicationController
   def index
-    render :json => {
-      message: "Departments!"
-
-    }
+    @departments = Department.all
+    render json: @departments
   end
 end

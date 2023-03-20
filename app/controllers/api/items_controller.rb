@@ -1,7 +1,6 @@
 class Api::ItemsController < ApplicationController
     def index
-        render :json => {
-            message: "Items!"
-        }
+        @item = Item.all
+        render json: @item
     end
 end
