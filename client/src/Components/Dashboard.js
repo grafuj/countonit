@@ -3,12 +3,15 @@ import "./Dashboard.css";
 import axios from "axios";
 
 function Dashboard(props) {
+  const newItem = function () {
+    window.location = "/items";
+  };
   const itemCount = props.items.length;
   const departmentsCount = props.departments.length;
   let qtyCount = 0;
   let totalValueCount = 0;
-  let departmentInfo = {};
-  let stock = [
+  const departmentInfo = {};
+  const stock = [
     { name: "hello", id: 1 },
     { name: "there", id: 2 },
   ];
@@ -32,13 +35,27 @@ function Dashboard(props) {
       <h1>Dashboard</h1>
       <div className="boxone">
         <div className="inventory">
-          <p> Sum of items: {itemCount}</p>
-          <p> Sum of departments: {departmentsCount}</p>
-          <p> Sum of Quantity: {qtyCount}</p>
-          <p> Sum of Total Value: ${totalValueCount / 100}</p>
+          <table>
+            <tbody>
+              <tr>
+                <td>Items:</td>
+                <td>Departments:</td>
+                <td>Quantity:</td>
+                <td>Total Value</td>
+              </tr>
+              <tr>
+                <td>{itemCount}</td>
+                <td>{departmentsCount}</td>
+                <td>{qtyCount}</td>
+                <td>${totalValueCount / 100}</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
         <div className="new">
-          <div>click me</div>
+          <div id="newitem" onClick={newItem}>
+            click me
+          </div>
           <div>new button</div>
         </div>
       </div>
@@ -47,10 +64,20 @@ function Dashboard(props) {
           Departments
           <div className="departments">
             {props.departments.map((department) => {
+              let total = 0;
+              let value = 0;
+              departmentInfo[department.id].map((dep) => {
+                total += dep.quantity;
+                value += dep.price_cents;
+              });
               return (
                 <div className="department">
                   <span>{department.name}</span>
-                  <span>Items: {departmentInfo[department.id].length}</span>
+                  <div>
+                    <span>Items: {departmentInfo[department.id].length}</span>
+                    <span>Total QTY: {total}</span>
+                    <span>Total Value: ${value / 100}</span>
+                  </div>
                 </div>
               );
             })}

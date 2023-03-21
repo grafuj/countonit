@@ -3,11 +3,18 @@
   background-color: blue;
 }
 
+td {
+  padding-left: 80px
+}
+
+
 .boxtwo div, .boxthree div {
   width: 99%;
 }
 
-
+#newitem:hover {
+  cursor: pointer;
+}
 
 .inventory {
   display: flex;
@@ -19,15 +26,17 @@
 }
 
 .new {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   height: 100px;
   width: 20%;
   margin: 20px;
   background-color: lightblue;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .departments{
-  
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 1.5em;
@@ -36,7 +45,7 @@
 
 .department {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   height: 100px;
   margin: 20px;
