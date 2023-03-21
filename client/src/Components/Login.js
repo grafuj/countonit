@@ -1,15 +1,21 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
-function Login() {
- 
+function Login(props) {
+  // const {items} = props;
   return (
     <div>
-      <h1>Login</h1>
-      <a href="http://localhost:3000/departments">Departments </a>
-      <a href="http://localhost:3000/items">Items </a>
-      <a href="http://localhost:3000/folders">Folders </a>
-  </div>
-);
+      <form action="http://localhost:3000/items">
+        <label><strong>Username</strong></label>
+        <input type="email" name="email" id="email" />
+        <br />
+        <label><strong>Password</strong></label>
+        <input type="password" name="password" id="password" />
+        <br />
+        <button type="submit" name="login" id="login-button">Login
+        </button>
+      </form>
+    </div>
+  );
 }
 
 export default Login;

@@ -8,6 +8,7 @@ import Login from "./Components/Login";
 import Logout from "./Components/Logout";
 import Register from "./Components/Register";
 import Dashboard from "./Components/Dashboard";
+import Nav from "./Components/Nav";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
 export default function App() {
@@ -38,14 +39,7 @@ export default function App() {
 
   return (
     <BrowserRouter>
-      <nav>
-        <Link to="/items">Items</Link>
-        <Link to="/folders">Folders</Link>
-        <Link to="/departments">Departments</Link>
-        <Link to="/login">Login</Link>
-        <Link to="/register">Register</Link>
-        <Link to="/dashboard">Dashboard</Link>
-      </nav>
+      <Nav />
       <main>
         <Routes>
           <Route path="*" element={<h1>404: SERIOUSLY? WRONG PAGE!!!</h1>} />
