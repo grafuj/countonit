@@ -4,7 +4,6 @@ function SaveButton() {
   const [saved, setSaved] = useState(false);
   
   const handleSaveClick = () => {
-    // Perform save action here
     setSaved(true);
   };
   

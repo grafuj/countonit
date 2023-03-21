@@ -17,8 +17,7 @@ function Items(props) {
       <a href="http://localhost:3000/departments">Departments </a>
       <a href="http://localhost:3000/items">Items </a>
       <a href="http://localhost:3000/folders">Folders </a>
-      <span>{items.map(item => {
-        return (
+      <span>
           <>
           <NewItemForm />
           <ItemPriceCalculator />
@@ -28,14 +27,8 @@ function Items(props) {
           <DeleteButton />
       
           {/* <button onClick={SaveItem}>Save Item</button> */}
-
-          <p>{item.name}</p>
-          <p>{item.description}</p>
           </>
-          )
-        }
-      )
-    }</span>
+      </span>
   </div>
 );
 }

@@ -22,12 +22,12 @@ export default function ItemPriceCalculator() {
   return (
     <div>
       <label>
-        Price:
-        <input type="number" value={price} onChange={handlePriceChange} />
+      Quantity:
+        <input type="number" value={quantity} onChange={handleQuantityChange} />
       </label>
       <label>
-        Quantity:
-        <input type="number" value={quantity} onChange={handleQuantityChange} />
+      Price:
+        <input type="number" value={price} onChange={handlePriceChange} />
       </label>
       <p>Total cost: {calculateTotalCost()}</p>
     </div>
