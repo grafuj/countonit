@@ -8,10 +8,12 @@
 }
 
 .inventory {
+  display: flex;
   height: 100px;
   width: 75%;
   margin: 20px;
-  background-color: lightblue
+  background-color: lightblue;
+  justify-content: space-between;
 }
 
 .new {
@@ -35,21 +37,24 @@
   flex-direction: row;
   justify-content: space-between;
   height: 100px;
-  margin: 15px;
+  margin: 20px;
   width: 100%;
   background-color: lightblue
 }
 
 .minlevels {
   display: grid;
-  justify-content: space-evenly;
+  justify-content: space-between;
   grid-template-columns: 1fr;
   gap: 1.5em;
   grid-template-rows: min-content;
+  width: 100%;
+  height: auto;
+  background-color: lightblue;
+  margin: 20px;
 }
 
 .test {
-  height: 100px;
-  background-color: lightblue;
-  width: 100%;
+  
+  
 }

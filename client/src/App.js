@@ -44,6 +44,7 @@ export default function App() {
         <Link to="/departments">Departments</Link>
         <Link to="/login">Login</Link>
         <Link to="/register">Register</Link>
+        <Link to="/dashboard">Dashboard</Link>
       </nav>
       <main>
         <Routes>
@@ -65,7 +66,6 @@ export default function App() {
             path="/departments"
             element={<Departments departments={state.departments} />}
           />
-          <Route path="/items" element={<Items items={state.items} />} />
           <Route path="/items" element={<Items items={state.items} />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />

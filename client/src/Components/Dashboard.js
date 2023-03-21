@@ -7,29 +7,24 @@ function Dashboard(props) {
   const departmentsCount = props.departments.length;
   let qtyCount = 0;
   let totalValueCount = 0;
+  let departmentInfo = {};
+  // let stock = []
   props.items.map((item) => {
     qtyCount += item.quantity;
     totalValueCount += item.price_cents;
+    // if qty < min push into stock
   });
-  let departmentInfo = {};
-  axios
-    .get("http://localhost:3000/api/items")
-    .then((response) => {
-      console.log(response.data[2]);
-    })
-    .catch((error) => {
-      console.error(error);
-    });
+  console.log("ITEMS", props.items);
 
   return (
     <section>
       <h1>Dashboard</h1>
       <div className="boxone">
         <div className="inventory">
-          <span> Sum of items: {itemCount}</span>
-          <span> Sum of departments: {departmentsCount}</span>
-          <span> Sum of Quantity: {qtyCount}</span>
-          <span> Sum of Total Value: ${totalValueCount / 100}</span>
+          <p> Sum of items: {itemCount}</p>
+          <p> Sum of departments: {departmentsCount}</p>
+          <p> Sum of Quantity: {qtyCount}</p>
+          <p> Sum of Total Value: ${totalValueCount / 100}</p>
         </div>
         <div className="new">
           <div>click me</div>
@@ -40,10 +35,13 @@ function Dashboard(props) {
         <div>
           Departments
           <div className="departments">
-            {props.departments.map((item) => {
+            {props.departments.map((department) => {
               return (
                 <div className="department">
-                  <span>{item.name} </span>
+                  <span>{department.name}</span>
+                  <span>{department.name}</span>
+                  <span>{department.name}</span>
+                  <span>{department.name}</span>
                 </div>
               );
             })}
@@ -54,9 +52,9 @@ function Dashboard(props) {
         <div>
           Stock Levels At or Below Min Level
           <div className="minlevels">
-            <div className="test">test</div>
-            <div className="test">test</div>
-            <div className="test">test</div>
+            <span className="test">test</span>
+            <span className="test">test</span>
+            <span className="test">test</span>
           </div>
         </div>
       </div>
