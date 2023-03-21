@@ -2,7 +2,7 @@ import React, { Component, useState, useEffect } from "react";
 import axios from "axios";
 import "./App.css";
 import Departments from "./components/Departments";
-import Items from "./components/Items";
+import Items from "./components/Items/Items";
 import Folders from "./components/Folders";
 import Login from "./components/Login";
 import Logout from "./components/Logout";
