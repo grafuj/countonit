@@ -74,5 +74,4 @@ export default function App() {
       </main>
     </BrowserRouter>
   );
-  );
 }
