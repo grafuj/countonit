@@ -8,14 +8,25 @@ function Dashboard(props) {
   let qtyCount = 0;
   let totalValueCount = 0;
   let departmentInfo = {};
-  // let stock = []
+  let stock = [
+    { name: "hello", id: 1 },
+    { name: "there", id: 2 },
+  ];
   props.items.map((item) => {
     qtyCount += item.quantity;
-    totalValueCount += item.price_cents;
-    // if qty < min push into stock
+    totalValueCount += Math.floor(item.price_cents * item.quantity);
+    // if (item.quantiy < item.min) {
+    //   stock.push(item)
+    // }
+    if (!departmentInfo[item.department_id]) {
+      departmentInfo[item.department_id] = [item];
+    } else {
+      departmentInfo[item.department_id].push(item);
+    }
   });
+  console.log(departmentInfo[1]);
   console.log("ITEMS", props.items);
-
+  console.log("DepartmentInfo:", departmentInfo);
   return (
     <section>
       <h1>Dashboard</h1>
@@ -39,9 +50,7 @@ function Dashboard(props) {
               return (
                 <div className="department">
                   <span>{department.name}</span>
-                  <span>{department.name}</span>
-                  <span>{department.name}</span>
-                  <span>{department.name}</span>
+                  <span>Items: {departmentInfo[department.id].length}</span>
                 </div>
               );
             })}
@@ -52,9 +61,19 @@ function Dashboard(props) {
         <div>
           Stock Levels At or Below Min Level
           <div className="minlevels">
-            <span className="test">test</span>
-            <span className="test">test</span>
-            <span className="test">test</span>
+            <div className="test">
+              <div>Stock</div>
+              <div>QTY</div>
+            </div>
+
+            {stock.map((level) => {
+              return (
+                <div className="test">
+                  <div>{level.name}</div>
+                  <div>{level.id}</div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
