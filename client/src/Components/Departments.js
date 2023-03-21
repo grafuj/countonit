@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 function Departments(props) {
-    const {departments} = props
+  const { departments } = props;
   return (
     <div>
       <h1>Departments</h1>
@@ -12,12 +12,12 @@ function Departments(props) {
       <span>{departments.map(department => {
         return (
           <>
-          <p>{department.name}</p>
+            <p>{department.name}</p>
           </>
-          )
-        }
+        );
+      }
       )
-    }</span>
+      }</span>
 
     </div>
   );
