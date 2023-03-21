@@ -1,8 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import QuantityInput from './Quantity';
+
+import MinimumLevelInput from './MinLevel';
+import NotesInput from './Notes';
+import NewItemForm from './AddItem';
+import DeleteButton from './Delete';
+import SaveButton from './Save';
+import ItemPriceCalculator from './hooks/ItemPriceCalculator';
+
 
 function Items(props) {
   const {items} = props;
+
   return (
     <div>
       <h1>Items</h1>
@@ -12,7 +20,15 @@ function Items(props) {
       <span>{items.map(item => {
         return (
           <>
-          <QuantityInput />
+          <NewItemForm />
+          <ItemPriceCalculator />
+          <MinimumLevelInput />
+          <NotesInput />
+          <SaveButton />
+          <DeleteButton />
+      
+          {/* <button onClick={SaveItem}>Save Item</button> */}
+
           <p>{item.name}</p>
           <p>{item.description}</p>
           </>

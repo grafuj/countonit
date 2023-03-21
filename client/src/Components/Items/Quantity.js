@@ -7,6 +7,7 @@ export default function QuantityInput() {
     setQuantity(parseInt(event.target.value));
   };
 
+  
   return (
     <div>
       <label htmlFor='quantity'>Quantity:</label>
