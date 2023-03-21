@@ -48,6 +48,7 @@ export default function App() {
       </nav>
       <main>
         <Routes>
+          <Route path="*" element={<h1>404: SERIOUSLY? WRONG PAGE!!!</h1>} />
           <Route
             path="/dashboard"
             element={

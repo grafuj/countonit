@@ -53,6 +53,15 @@ td {
   background-color: lightblue
 }
 
+.dep-details {
+  padding: 1em
+
+}
+
+.dep-details span {
+  padding: 2em
+}
+
 .minlevels {
   display: grid;
   justify-content: space-between;
@@ -62,10 +71,15 @@ td {
   width: 100%;
   height: auto;
   background-color: lightblue;
-  margin: 20px;
+  margin: 1em;
 }
 
 .test {
   display: flex;
   background-color: lightblue;
+  
+}
+
+.test div {
+  padding-left: 1em
 }
