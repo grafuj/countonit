@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import QuantityInput from './Quantity';
 
 function Items(props) {
   const {items} = props;
@@ -11,6 +12,7 @@ function Items(props) {
       <span>{items.map(item => {
         return (
           <>
+          <QuantityInput />
           <p>{item.name}</p>
           <p>{item.description}</p>
           </>
