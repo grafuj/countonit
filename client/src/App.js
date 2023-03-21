@@ -4,6 +4,9 @@ import "./App.css";
 import Departments from "./components/Departments";
 import Items from "./components/Items";
 import Folders from "./components/Folders";
+import Login from "./components/Login";
+import Logout from "./components/Logout";
+import Register from "./components/Register";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
 
@@ -34,12 +37,17 @@ export default function App() {
         <Link to="/items">Items</Link>
         <Link to="/folders">Folders</Link>
         <Link to="/departments">Departments</Link>
+        <Link to="/login">Login</Link>
+        <Link to="/register">Register</Link>
       </nav>
       <main>
       <Routes>
         <Route path="/folders" element={<Folders folders={state.folders} />}/>
         <Route path="/departments" element={<Departments departments={state.departments} />}/>
         <Route path="/items" element={<Items items={state.items}/>}/>
+        <Route path="/login" element={<Login />}/>
+        <Route path="/register" element={<Register />}/>
+        <Route path="/logout" element={<Logout />}/>
       </Routes>
       </main>
     </BrowserRouter>
