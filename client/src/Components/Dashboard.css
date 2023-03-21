@@ -1,0 +1,60 @@
+.boxone, .boxtwo, .boxthree{
+  display: flex;
+  background-color: blue;
+}
+
+.boxtwo div{
+  width: 100%;
+}
+
+.inventory {
+  display: flex;
+  height: 100px;
+  width: 75%;
+  margin: 20px;
+  background-color: lightblue;
+  justify-content: space-between;
+}
+
+.new {
+  height: 100px;
+  width: 20%;
+  margin: 20px;
+  background-color: lightblue;
+  justify-content: space-between;
+}
+
+.departments{
+  
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.5em;
+  grid-template-rows: min-content;
+}
+
+.department {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 100px;
+  margin: 20px;
+  width: 100%;
+  background-color: lightblue
+}
+
+.minlevels {
+  display: grid;
+  justify-content: space-between;
+  grid-template-columns: 1fr;
+  gap: 1.5em;
+  grid-template-rows: min-content;
+  width: 100%;
+  height: auto;
+  background-color: lightblue;
+  margin: 20px;
+}
+
+.test {
+  
+  
+}
