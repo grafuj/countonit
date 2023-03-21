@@ -7,8 +7,11 @@ function DeleteButton(props) {
   };
   
   return (
+    <div>
     <button onClick={handleDeleteClick}>Delete</button>
-  );
+    
+    </div>
+    );
 }
 
 export default DeleteButton;

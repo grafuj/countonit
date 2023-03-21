@@ -34,7 +34,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <nav>
-        <Link to="/items">Items</Link>
+        <Link to="/items">Item</Link>
         <Link to="/folders">Folders</Link>
         <Link to="/departments">Departments</Link>
         <Link to="/login">Login</Link>
