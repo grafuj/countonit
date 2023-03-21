@@ -8,6 +8,7 @@ import Login from "./Components/Login";
 import Logout from "./Components/Logout";
 import Register from "./Components/Register";
 import Dashboard from "./Components/Dashboard";
+import Nav from "./Components/Nav";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
 export default function App() {
@@ -38,34 +39,17 @@ export default function App() {
 
   return (
     <BrowserRouter>
-      <nav>
-        <Link to="/items">Items</Link>
-        <Link to="/folders">Folders</Link>
-        <Link to="/departments">Departments</Link>
-        <Link to="/login">Login</Link>
-        <Link to="/register">Register</Link>
-        <Link to="/dashboard">Dashboard</Link>
-      </nav>
+      <Nav />
       <main>
         <Routes>
-          <Route
-            path="/dashboard"
-            element={
-              <Dashboard
-                items={state.items}
-                folders={state.folders}
-                departments={state.departments}
-              />
-            }
-          />
-          <Route
-            path="/folders"
-            element={<Folders folders={state.folders} />}
-          />
-          <Route
-            path="/departments"
-            element={<Departments departments={state.departments} />}
-          />
+          <Route path="/dashboard" element={
+            <Dashboard
+              items={state.items}
+              folders={state.folders}
+              departments={state.departments}
+            />} />
+          <Route path="/folders" element={<Folders folders={state.folders} />} />
+          <Route path="/departments" element={<Departments departments={state.departments} />} />
           <Route path="/items" element={<Items items={state.items} />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
