@@ -48,14 +48,25 @@ export default function App() {
       <Nav />
       <main>
         <Routes>
-          <Route path="/dashboard" element={
-            <Dashboard
-              items={state.items}
-              folders={state.folders}
-              departments={state.departments}
-            />} />
-          <Route path="/folders" element={<Folders folders={state.folders} />} />
-          <Route path="/departments" element={<Departments departments={state.departments} />} />
+          <Route path="*" element={<h1>404: SERIOUSLY? WRONG PAGE!!!</h1>} />
+          <Route
+            path="/dashboard"
+            element={
+              <Dashboard
+                items={state.items}
+                folders={state.folders}
+                departments={state.departments}
+              />
+            }
+          />
+          <Route
+            path="/folders"
+            element={<Folders folders={state.folders} />}
+          />
+          <Route
+            path="/departments"
+            element={<Departments departments={state.departments} />}
+          />
           <Route path="/items" element={<Items items={state.items} />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
