@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_03_18_184415) do
+ActiveRecord::Schema.define(version: 2023_03_21_231458) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 2023_03_18_184415) do
     t.bigint "department_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "minimum_level"
     t.index ["department_id"], name: "index_items_on_department_id"
     t.index ["folder_id"], name: "index_items_on_folder_id"
   end

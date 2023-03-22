@@ -1,0 +1,13 @@
+#departments {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  background-color: green;
+  padding-left: 20px;
+  height: 600px
+}
+
+svg {
+  size: 50px;
+  color: red;
+}

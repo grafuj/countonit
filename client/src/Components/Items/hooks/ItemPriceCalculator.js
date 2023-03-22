@@ -1,18 +1,15 @@
-import React, {useState} from 'react';
-// import QuantityInput from '../Quantity';
-// import PriceInput from '../Price';
+import React from 'react';
 
 
-export default function ItemPriceCalculator() {
-  const [price, setPrice] = useState(0);
-  const [quantity, setQuantity] = useState(0);
-  
+export default function ItemPriceCalculator(props) { 
+  const {price, quantity} = props;
+
   const handlePriceChange = (event) => {
-    setPrice(Number(event.target.value));
+    props.setPrice(Number(event.target.value));
   };
   
   const handleQuantityChange = (event) => {
-    setQuantity(Number(event.target.value));
+    props.setQuantity(Number(event.target.value));
   };
   
   const calculateTotalCost = () => {
@@ -29,7 +26,7 @@ export default function ItemPriceCalculator() {
       Price:
         <input type="number" value={price} onChange={handlePriceChange} />
       </label>
-      <p>Total cost: {calculateTotalCost()}</p>
+      <p>Total cost: ${calculateTotalCost()}</p>
     </div>
   );
 }
