@@ -18,6 +18,7 @@ function Nav(props) {
           <Link to="/folders">Folders</Link>
           <Link to="/departments">Departments</Link>
           <Link to="/dashboard">Dashboard</Link>
+          <Link to="/department/:id">Department</Link>  {/* THIS NEEDS TO BE CHANGED TO BE A VARIABLE*/}        
         </span>
       </div>
       <div>

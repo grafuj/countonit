@@ -8,6 +8,7 @@ import Login from "./Components/Login";
 import Logout from "./Components/Logout";
 import Register from "./Components/Register";
 import Dashboard from "./Components/Dashboard";
+import Department from "./Components/Department";
 import Nav from "./Components/Nav";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
@@ -51,6 +52,12 @@ export default function App() {
                 folders={state.folders}
                 departments={state.departments}
               />
+            }
+          />
+          <Route
+            path="/department/:id"
+            element={
+              <Department departments={state.departments} items={state.items} />
             }
           />
           <Route
