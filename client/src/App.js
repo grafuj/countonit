@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "./App.css";
+// import "./App.css";
 import Departments from "./Components/Departments";
 import Items from "./Components/Items/Items";
 import Folders from "./Components/Folders";

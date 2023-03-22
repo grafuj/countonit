@@ -1,6 +1,8 @@
 // this file should ONLY have import lines
 
-@import "../../src/Components/Nav";
+@import "../../Components/Nav.scss";
+@import "../../App.scss";
+@import "../../index.scss";
 
 // run `npm run sass` to compile scss into css
 // https://dev.to/darnocer/how-to-setup-your-project-with-sass-scss-ip4

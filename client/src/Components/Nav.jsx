@@ -3,32 +3,38 @@ import React from 'react';
 import { Link } from "react-router-dom";
 
 // need to check state or context for user for conditional rendering
-const user = { name: "Bob" };
+// const user = { name: "Bob" }; //test with user
+const user = null;  //test without user
 
 function Nav(props) {
   // const {} = props;
   return (
     <nav>
-      <div>
-        <h1>Count on it</h1>
+      <div class="site-logo">
+        <h1 class="site-logo-text">Count on it</h1>
       </div>
       <div>
-        <span>
-          <Link to="/items">Items</Link>
-          <Link to="/folders">Folders</Link>
-          <Link to="/departments">Departments</Link>
-          <Link to="/dashboard">Dashboard</Link>
-        </span>
+        <Link to="/items" class="nav-span">Items</Link>
+        <Link to="/folders" class="nav-span">Folders</Link>
+        <Link to="/departments" class="nav-span">Departments</Link>
+        <Link to="/dashboard" class="nav-span">Dashboard</Link>
       </div>
       <div>
-        <span>
-          <h5>Welcome {user.name}!</h5>
-          <Link to="/login">Login</Link>
-          <Link to="/logout">Logout</Link>
-          <Link to="/register">Register</Link>
-        </span>
+        <>
+        {user && (
+          <div class="nav-user-check">
+            <h4 class="nav-welcome">Hello {user.name}!</h4>
+            <Link to="/logout" class="nav-span">Logout</Link>
+          </div>
+        )}
+        {!user && (
+          <div>
+            <Link to="/login" class="nav-span">Login</Link>
+            <Link to="/register" class="nav-span">Register</Link>
+          </div>
+        )}
+        </>
       </div>
-
     </nav>
   );
 }
