@@ -1,5 +1,73 @@
-$red: red; // declare a variable
+$font-family: "Source Sans Pro", sans-serif;
 
-h1 {
-  color: $red;
+$active-opacity: 1;
+$inactive-opacity: 0.15;
+
+$white: #fff;
+$black: #000;
+
+$dark-background: #222f3e;
+
+$weeks-colors: #54a0ff, #48dbfb, #1dd1a1, #5f27cd;
+$booked-color: #54a0ff;
+$danger-color: #ee5253;
+$error-color: #ff9f43;
+$confirm-color: #10ac84;
+
+$spacing: 2rem;
+
+.site-logo {
+  color: $dark-background;
+  border: 3px solid;
+  border-radius: 8px;
+  border-color: #48dbfb;
+  transition: 0.5s;
+}
+.site-logo:hover {
+  background-color: #48dbfb;
+}
+
+.site-logo-text {
+  margin: 0;
+  padding: 5px;
+  padding-top: 2px;
+}
+
+nav {
+  background-color: $booked-color;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+  padding-left: 20%;
+  padding-right: 20%;
+}
+
+.nav-span {
+  // margin: 1em;
+  padding: 10px;
+  border-radius: 6px;
+  color: $dark-background;
+  transition: 0.5s;
+}
+
+.nav-span:link {
+  text-decoration: none
+}
+
+.nav-span:hover {
+  // background-image: linear-gradient(45, red, navy);
+  background-color: royalblue;
+}
+
+.nav-user-check {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.nav-welcome {
+  font-weight: 400;
+  font-size: 16px;
+  margin: 5px;
 }
