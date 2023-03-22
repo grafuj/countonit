@@ -34,7 +34,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <Nav />
-      <main>
+      <main class="main-window-space">
         <Routes>
           <Route path="/folders" element={<Folders folders={state.folders} />} />
           <Route path="/departments" element={<Departments departments={state.departments} />} />
