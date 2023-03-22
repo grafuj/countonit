@@ -55,7 +55,7 @@ const [picture, handlePictureChange] = usePictureInput();
 
   return (
     <form onSubmit={handleSubmit}>
-      <label className='pic-input'>
+      <label className='pic-input form-input-style'>
         <input type="file" accept="image/*" onChange={handlePictureChange} />
         {picture && <img src={picture} alt="Preview" />}
       </label>
@@ -63,14 +63,14 @@ const [picture, handlePictureChange] = usePictureInput();
         Item name:
         <input type="text" name="name" value={formData.name} onChange={handleInputChange} />
       </label>
-      <label className='price-calc-input'>
+      <label className='price-calc-input form-input-style'>
       <ItemPriceCalculator price={price} quantity={quantity} setPrice={setPrice} setQuantity={setQuantity} />
       </label>
-      <label className='min-level-input'>
+      <label className='min-level-input form-input-style'>
         Minimum Levels:
         <input type="number" name="minimum_level" value={formData.minimum_level} onChange={handleInputChange} />
       </label>
-      <label className='notes-input'>
+      <label className='notes-input form-input-style'>
         Notes:
         <textarea name="description" value={formData.description} onChange={handleInputChange} />
       </label>
