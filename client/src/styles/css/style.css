@@ -95,3 +95,24 @@ code {
   margin-top: 20%;
   margin-left: 5%;
   align-items: center; }
+
+.login-image {
+  width: 25px; }
+
+.register-form {
+  display: flex;
+  margin-left: 10%; }
+
+.register-form-fields {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20%;
+  margin-left: 5%;
+  align-items: center; }
+
+.register-image {
+  width: 20%;
+  object-fit: scale-down;
+  width: 300px;
+  height: 300px;
+  size: 300x300px; }

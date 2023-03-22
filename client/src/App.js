@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-// import "./App.css";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+import { faTrash, faImage } from '@fortawesome/free-solid-svg-icons'
 import Departments from "./Components/Departments";
 import Items from "./Components/Items/Items";
 import Folders from "./Components/Folders";
@@ -10,13 +13,10 @@ import Register from "./Components/Register";
 import Dashboard from "./Components/Dashboard";
 import Department from "./Components/Department";
 import Nav from "./Components/Nav";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { fab } from '@fortawesome/free-brands-svg-icons'
-import { faTrash } from '@fortawesome/free-solid-svg-icons'
 
 
-library.add(fab, faTrash)
+
+library.add(fab, faTrash, faImage)
 
 export default function App() {
   const [state, setState] = useState({
@@ -47,7 +47,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <Nav />
-      <main class="main-window-space">
+      <main className="main-window-space">
         <Routes>
           <Route path="*" element={<h1>404: SERIOUSLY? WRONG PAGE!!!</h1>} />
           <Route
