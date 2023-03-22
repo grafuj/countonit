@@ -71,6 +71,10 @@ nav {
   to {
     transform: rotate(360deg); } }
 
+.main-window-space {
+  padding-left: 20%;
+  padding-right: 20%; }
+
 body {
   margin: 0;
   padding: 0;
@@ -80,3 +84,14 @@ body {
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace; }
+
+.login-form {
+  display: flex;
+  margin-left: 10%; }
+
+.login-form-fields {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20%;
+  margin-left: 5%;
+  align-items: center; }

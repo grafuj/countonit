@@ -47,7 +47,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <Nav />
-      <main>
+      <main class="main-window-space">
         <Routes>
           <Route path="*" element={<h1>404: SERIOUSLY? WRONG PAGE!!!</h1>} />
           <Route
