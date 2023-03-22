@@ -1,4 +1,4 @@
-import React, { Component, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./App.css";
 import Departments from "./components/Departments";
@@ -8,6 +8,12 @@ import Login from "./components/Login";
 import Logout from "./components/Logout";
 import Register from "./components/Register";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+import { faTrash } from '@fortawesome/free-solid-svg-icons'
+
+
+library.add(fab, faTrash)
 
 
 export default function App() {

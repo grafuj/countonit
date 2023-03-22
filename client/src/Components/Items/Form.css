@@ -1,16 +1,21 @@
+form{
+  background-color: rgb(3, 3, 163)
+}
+
 label {
   display: flex;
   flex-direction: column;
   margin: 0.5rem 0;
   width: 100%;
+  color: white;
 }
 label input[type=text],
 label input[type=number],
 label textarea {
   padding: 0.5rem;
   border-radius: 0.25rem;
-  border: 1px solid rgb(0, 13, 255);
-  background-color: rgba(113, 156, 243, 0.318);
+  border: 1px solid rgb(40, 58, 216);
+  background-color: rgb(7, 156, 249);
   font-size: 1rem;
   width: 100%;
   margin-top: 0.25rem;
@@ -29,23 +34,14 @@ button[type=submit] {
   margin-top: 1rem;
   padding: 0.5rem;
   border-radius: 0.25rem;
-  background-color: blue;
+  background-color: rgb(7, 156, 249);
   color: white;
   font-size: 1rem;
+  font-weight: bold;
   cursor: pointer;
 }
 button[type=submit]:hover {
   background-color: darkblue;
-}
-
-.delete-btn {
-  margin-top: 1rem;
-  padding: 0.5rem;
-  border-radius: 0.25rem;
-  background-color: blue;
-  color: white;
-  font-size: 1rem;
-  cursor: pointer;
 }
 
 .image-preview {
@@ -55,4 +51,11 @@ button[type=submit]:hover {
   height: 200px;
   border: 2px dashed #ccc;
 }
+
+.delete-btn {
+display: flex;
+justify-content: flex-end;
+}
+
+
 /*# sourceMappingURL=Form.css.map */

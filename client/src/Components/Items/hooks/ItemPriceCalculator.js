@@ -1,12 +1,7 @@
-import React, {useState} from 'react';
-// import QuantityInput from '../Quantity';
-// import PriceInput from '../Price';
+import React from 'react';
 
 
-export default function ItemPriceCalculator(props) {
-  // const [price, setPrice] = useState(0);
-  // const [quantity, setQuantity] = useState(0);
-  
+export default function ItemPriceCalculator(props) { 
   const {price, quantity} = props;
 
   const handlePriceChange = (event) => {

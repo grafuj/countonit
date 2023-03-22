@@ -3,19 +3,23 @@ import DeleteButton from './Delete';
 import usePictureInput from './hooks/AddPicture';
 import ItemPriceCalculator from './hooks/ItemPriceCalculator';
 import './Form.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
 const ItemForm = () => {
   const [price, setPrice] = useState(0);
   const [quantity, setQuantity] = useState(0);
   const [formData, setFormData] = useState({
-    item: '',
+    name: '',
     quantity: 0,
     price: 0,
     minimumLevels: '',
     totalCost: '',
-    notes: '',
-    folder_id: 1
+    description: '',
+    // need to make dynamic
+    folder_id: 1,
+    // need to make dynamic
+    department_id: 2
   });
 
 const [picture, handlePictureChange] = usePictureInput();
@@ -26,7 +30,6 @@ const [picture, handlePictureChange] = usePictureInput();
       [event.target.name]: event.target.value,
     });
   };
-
 
   const handleSubmit = async event => {
     event.preventDefault();
@@ -52,9 +55,13 @@ const [picture, handlePictureChange] = usePictureInput();
 
   return (
     <form onSubmit={handleSubmit}>
+      <label className='pic-input'>
+        <input type="file" accept="image/*" onChange={handlePictureChange} />
+        {picture && <img src={picture} alt="Preview" />}
+      </label>
       <label className='item-input'>
         Item name:
-        <input type="text" name="item" value={formData.item} onChange={handleInputChange} />
+        <input type="text" name="name" value={formData.name} onChange={handleInputChange} />
       </label>
       <label className='price-calc-input'>
       <ItemPriceCalculator price={price} quantity={quantity} setPrice={setPrice} setQuantity={setQuantity} />
@@ -65,15 +72,12 @@ const [picture, handlePictureChange] = usePictureInput();
       </label>
       <label className='notes-input'>
         Notes:
-        <textarea name="notes" value={formData.notes} onChange={handleInputChange} />
-      </label>
-      <label className='pic-input'>
-        Picture:
-        <input type="file" accept="image/*" onChange={handlePictureChange} />
-        {picture && <img src={picture} alt="Preview" />}
+        <textarea name="description" value={formData.description} onChange={handleInputChange} />
       </label>
       <button type="submit">Save Item</button>
+      <div class='delete-btn'>
       <DeleteButton />
+      </div>
     </form>
   );
 };

@@ -1,4 +1,5 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 function DeleteButton(props) {
   const handleDeleteClick = () => {
@@ -8,8 +9,7 @@ function DeleteButton(props) {
   
   return (
     <div>
-    <button onClick={handleDeleteClick}>Delete</button>
-    
+    <FontAwesomeIcon icon="fa-solid fa-trash" size="2xl" style={{color: "#ffffff",}} onClick={handleDeleteClick}/>
     </div>
     );
 }
