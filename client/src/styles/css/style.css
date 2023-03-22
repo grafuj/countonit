@@ -3,15 +3,16 @@
   border: 3px solid;
   border-radius: 8px;
   border-color: #48dbfb;
-  transition: 0.5s; }
+  transition: 0.5s;
+  padding: 5px; }
 
 .site-logo:hover {
   background-color: #48dbfb; }
 
 .site-logo-text {
-  margin: 0;
-  padding: 5px;
-  padding-top: 2px; }
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: 600; }
 
 nav {
   background-color: #54a0ff;
@@ -116,3 +117,73 @@ code {
   width: 300px;
   height: 300px;
   size: 300x300px; }
+
+.boxone, .boxtwo, .boxthree {
+  display: flex;
+  background-color: blue; }
+
+td {
+  padding-left: 80px; }
+
+.boxtwo div, .boxthree div {
+  width: 99%; }
+
+#newitem:hover {
+  cursor: pointer; }
+
+.inventory {
+  display: flex;
+  height: 100px;
+  width: 75%;
+  margin: 20px;
+  background-color: lightblue;
+  justify-content: space-between; }
+
+.new {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100px;
+  width: 20%;
+  margin: 20px;
+  background-color: lightblue;
+  justify-content: space-around; }
+
+.departments {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.5em;
+  grid-template-rows: min-content; }
+
+.department {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100px;
+  margin: 20px;
+  width: 100%;
+  background-color: lightblue; }
+
+.dep-details {
+  padding: 1em; }
+
+.dep-details span {
+  padding: 2em; }
+
+.minlevels {
+  display: grid;
+  justify-content: space-between;
+  grid-template-columns: 1fr;
+  gap: 1.5em;
+  grid-template-rows: max-content;
+  width: 100%;
+  height: auto;
+  background-color: lightblue;
+  margin: 1em; }
+
+.test {
+  display: flex;
+  background-color: lightblue; }
+
+.test div {
+  padding-left: 1em; }

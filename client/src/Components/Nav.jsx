@@ -10,8 +10,8 @@ function Nav(props) {
   // const {} = props;
   return (
     <nav>
-      <div class="site-logo">
-        <h1 class="site-logo-text">Count on it</h1>
+      <div class="site-logo" >
+        <Link class="site-logo-text">Count on it</Link>
       </div>
       <div>
         <Link to="/items" class="nav-span">Items</Link>

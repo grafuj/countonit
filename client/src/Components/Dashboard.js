@@ -1,5 +1,4 @@
 import React from "react";
-import "./Dashboard.css";
 import axios from "axios";
 
 function Dashboard(props) {
