@@ -11,6 +11,12 @@ import Dashboard from "./Components/Dashboard";
 import Department from "./Components/Department";
 import Nav from "./Components/Nav";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+import { faTrash } from '@fortawesome/free-solid-svg-icons'
+
+
+library.add(fab, faTrash)
 
 export default function App() {
   const [state, setState] = useState({
