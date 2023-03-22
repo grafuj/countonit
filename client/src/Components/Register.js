@@ -7,7 +7,7 @@ function Login(props) {
   return (
     <div class="register-form">
       <div>
-        <img src={planner} class="register-image" alt="writing-in-planner" />
+        <img src={planner} className="register-image" alt="writing-in-planner" />
       </div>
       <div class="register-form-fields">
         <form action="http://localhost:3000/items">
