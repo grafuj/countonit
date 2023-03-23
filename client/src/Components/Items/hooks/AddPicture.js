@@ -10,10 +10,6 @@ export default function UploadPicture({picture, setPicture, setFormData}) {
     const selectedPicture = event.target.files[0];
    setPicture(selectedPicture);
    setPreview(URL.createObjectURL(selectedPicture));
-  //  setFormData(() => ( {
-  //   ...formData,
-  //   [event.target.name]: event.target.files[0],
-  // }));
   }
 
 

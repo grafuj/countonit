@@ -24,7 +24,6 @@ const ItemForm = (props) => {
     // need to make dynamic
     department_id: departmentID
   });
-  // console.log("department prop+++", props.departments)
 
   const [departmentID, setDepartmentID] = useState(null); 
 
@@ -66,9 +65,8 @@ const ItemForm = (props) => {
       ...formData,
       department_id: departmentID,
       picture,
-  
     };
-    console.log("item data", itemData)
+    // console.log("item data", itemData)
 
     // Saves an uploaded picture to cloudinary API
     try {
