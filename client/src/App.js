@@ -13,6 +13,9 @@ import Register from "./Components/Register";
 import Dashboard from "./Components/Dashboard";
 import Department from "./Components/Department";
 import Nav from "./Components/Nav";
+// import 'bootstrap/dist/css/bootstrap.min.css';
+// import './App.scss';
+
 
 
 
@@ -74,7 +77,7 @@ export default function App() {
             path="/departments"
             element={<Departments departments={state.departments} />}
           />
-          <Route path="/items" element={<Items items={state.items} />} />
+          <Route path="/items" element={<Items items={state.items} departments={state.departments} folders={state.folders} />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/logout" element={<Logout />} />

@@ -4,6 +4,12 @@ class Api::ItemsController < ApplicationController
         render json: @items
     end
 
+    def destroy
+    @item = Item.find(params[:id])
+    @item.destroy
+    head :no_content
+    end
+
     def create
         puts request.body.read
 

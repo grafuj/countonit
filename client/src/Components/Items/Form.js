@@ -1,34 +1,49 @@
 import React, { useState, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import DeleteButton from "./Delete";
-// import usePictureInput from "./hooks/AddPicture";
+// import deleteItem from "./Delete"
 import axios from "axios";
 import UploadPicture from "./hooks/AddPicture";
 import ItemPriceCalculator from "./hooks/ItemPriceCalculator";
 import "./Form.css";
+import Dropdown from "./hooks/Dropdown";
 
-
-
-const ItemForm = () => {
+const ItemForm = (props) => {
+  // console.log("props++++", props)
   const [picture, setPicture] = useState(null);
   const [price, setPrice] = useState(0);
   const [quantity, setQuantity] = useState(0);
   const [formData, setFormData] = useState({
-    image: "",
-    name: "",
-    quantity: 0,
-    price: 0,
-    minimum_level: 0,
-    total_cost: "",
-    description: "",
+    image: props.image || "",
+    name: props.name || "",
+    quantity: props.quantity || 0,
+    price: props.price || 0,
+    minimum_level: props.minimun_level || 0,
+    total_cost: props.total_cost || "",
+    description: props.description || "",
     // need to make dynamic
-    folder_id: 1,
+    folder_id: props.folder_id || 1,
     // need to make dynamic
-    department_id: 2,
+    department_id: props.department_id || 2,
   });
 
-  const formRef = useRef();
+  function deleteItem(itemId) {
+    axios
+      .delete(`/api/items/${itemId}`)
+      .then((response) => {
+        console.log("Item deleted sucessfully!");
+        setFormData((prevState) => {
+          const newState = { ...prevState };
+          // remove deleted item from state
+          newState.items = prevState.items.filter((item) => item.id !== itemId);
+          return newState;
+        });
+      })
+      .catch((err) => {
+        console.log("Error! Item did not delete:", err);
+      });
+  }
 
+  const formRef = useRef();
 
   const handleInputChange = (event) => {
     setFormData({
@@ -37,38 +52,44 @@ const ItemForm = () => {
     });
   };
 
+  const handleDelete = () => {
+    deleteItem();
+  };
+
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     const itemData = {
       ...formData,
-      picture
+      picture,
     };
+    // Saves an uploaded picture to cloudinary API
+    try {
+      const data = new FormData();
+      data.append("file", picture);
+      data.append("upload_preset", "xhecj54a");
 
-// Saves an uploaded picture to cloudinary API 
-    try{
-    const data = new FormData();
-    data.append("file", picture);
-    data.append("upload_preset", "xhecj54a")
-
-    const cloudinaryApiCall = await fetch("https://api.cloudinary.com/v1_1/dtvbwudm2/image/upload", {
-      method: "POST",
-      body: data
-    }); 
-    const file = await cloudinaryApiCall.json();
-    console.log("file.secure_url:", file.secure_url)
-    itemData['image'] = file.secure_url
+      const cloudinaryApiCall = await fetch(
+        "https://api.cloudinary.com/v1_1/dtvbwudm2/image/upload",
+        {
+          method: "POST",
+          body: data,
+        }
+      );
+      const file = await cloudinaryApiCall.json();
+      console.log("file.secure_url:", file.secure_url);
+      itemData["image"] = file.secure_url;
     } catch (error) {
-      console.log("Error saving picture", error)
+      console.log("Error saving picture", error);
       return;
     }
-// Submits form data to the backend
+    // Submits form data to the backend
     try {
       const response = await fetch("/api/items", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          item: { ...itemData, price_cents: price, quantity},
+          item: { ...itemData, price_cents: price, quantity },
         }),
       });
       const data = await response.json();
@@ -80,7 +101,14 @@ const ItemForm = () => {
 
   return (
     <form className="items-form" onSubmit={handleSubmit} ref={formRef}>
-      <UploadPicture picture={picture} setPicture={setPicture} setFormData={setFormData}/>
+      <UploadPicture
+        picture={picture}
+        setPicture={setPicture}
+        setFormData={setFormData}
+      />
+      <div>
+        <Dropdown departments={props.departments} />
+      </div>
       <div>
         <label className="item-input">
           Item name:
@@ -130,9 +158,15 @@ const ItemForm = () => {
       <button type="submit">Save Item</button>
 
       <div className="delete-btn">
-        <DeleteButton />
+        <div>
+          <FontAwesomeIcon
+            icon="fa-solid fa-trash"
+            size="2xl"
+            style={{ color: "#ffffff" }}
+            onClick={handleDelete}
+          />
+        </div>
       </div>
-
     </form>
   );
 };

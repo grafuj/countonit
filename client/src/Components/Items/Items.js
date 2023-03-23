@@ -10,7 +10,7 @@ function Items(props) {
     <div>
       <h1>Item</h1>
     
-      <Form/>
+      <Form items={props.items} departments={props.departments}/>
       
   </div>
 );
