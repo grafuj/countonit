@@ -66,16 +66,6 @@ nav {
 .App-link {
   color: #61dafb; }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg); }
-  to {
-    transform: rotate(360deg); } }
-
-.main-window-space {
-  padding-left: 20%;
-  padding-right: 20%; }
-
 body {
   margin: 0;
   padding: 0;
@@ -162,7 +152,8 @@ td {
   height: 100px;
   margin: 20px;
   width: 100%;
-  background-color: lightblue; }
+  background-color: lightblue;
+  text-decoration: none; }
 
 .dep-details {
   padding: 1em; }
@@ -171,7 +162,7 @@ td {
   padding: 2em; }
 
 .minlevels {
-  display: grid;
+  display: table;
   justify-content: space-between;
   grid-template-columns: 1fr;
   gap: 1.5em;
@@ -181,9 +172,9 @@ td {
   background-color: lightblue;
   margin: 1em; }
 
-.test {
+.minitem {
   display: flex;
   background-color: lightblue; }
 
-.test div {
+.minitem tr {
   padding-left: 1em; }

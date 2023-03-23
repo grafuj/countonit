@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Departments.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function Departments(props) {
   const { departments } = props;
@@ -9,7 +10,12 @@ function Departments(props) {
       <span>
         {departments.map((department) => {
           return (
-            <div>
+            <div className="departmentsList">
+              <FontAwesomeIcon
+                icon="fa-solid fa-image"
+                size="2xl"
+                style={{ color: "#ffffff" }}
+              />
               <p>{department.name}</p>
             </div>
           );

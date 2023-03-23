@@ -11,3 +11,7 @@ svg {
   size: 50px;
   color: red;
 }
+.departmentsList {
+  display: flex;
+  justify-content: space-evenly;
+}

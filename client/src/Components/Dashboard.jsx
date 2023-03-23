@@ -1,34 +1,27 @@
 import React from "react";
 import axios from "axios";
+import {Link} from "react-router-dom"
+import Department from "./Department";
 
 function Dashboard(props) {
-  const newItem = function() {
-    window.location = "/items";
-  };
   const itemCount = props.items.length;
   const departmentsCount = props.departments.length;
   let qtyCount = 0;
   let totalValueCount = 0;
   const departmentInfo = {};
-  // const stock = [
-  //   { name: "hello", quantity: 1, min: 3 },
-  //   { name: "there", quantity: 2, min: 4 },
-  // ];
   props.items.map((item) => {
     qtyCount += item.quantity;
     totalValueCount += Math.floor(item.price_cents * item.quantity);
-    // if (item.quantiy < item.min) {
-    //   stock.push(item)
-    // }
+
     if (!departmentInfo[item.department_id]) {
       departmentInfo[item.department_id] = [item];
     } else {
       departmentInfo[item.department_id].push(item);
     }
   });
-  console.log(departmentInfo[1]);
-  console.log("ITEMS", props.items);
-  console.log("DepartmentInfo:", departmentInfo);
+  // console.log(departmentInfo[1]);
+  // console.log("ITEMS", props.items);
+  // console.log("DepartmentInfo:", departmentInfo);
   return (
     <section>
       <h1>Dashboard</h1>
@@ -52,9 +45,9 @@ function Dashboard(props) {
           </table>
         </div>
         <div className="new">
-          <div id="newitem" onClick={newItem}>
-            click me
-          </div>
+          <Link to="/items">
+            <span>click me</span>
+          </Link>
           <div>new button</div>
         </div>
       </div>
@@ -69,15 +62,16 @@ function Dashboard(props) {
                 total += dep.quantity;
                 value += dep.price_cents;
               });
+              const route = `/department/${department.id}`
               return (
-                <div className="department">
+                <Link className="department" to={route} department={department} departments={props.departments} items={props.items}>
                   <span>{department.name}</span>
                   <div className="dep-details">
                     <span>Items: {departmentInfo[department.id].length}</span>
                     <span>Total QTY: {total}</span>
                     <span>Total Value: ${value / 100}</span>
                   </div>
-                </div>
+                </Link>
               );
             })}
           </div>
@@ -87,24 +81,26 @@ function Dashboard(props) {
         <div>
           Stock Levels At or Below Min Level
           <div className="minlevels">
-            <div className="test">
-              <div>Item Name</div>
-              <div></div>
-              <div>Quantity</div>
-              <div>Minimum Level</div>
-            </div>
-            {props.items.map((item) => {
-              return (
-                (item.minimum_level > item.quantity) && (
-                  <div className="test">
-                    <div>{item.name}</div>
-                    <div></div>
-                    <div>{item.quantity}</div>
-                    <div>{item.minimum_level}</div>
-                  </div>
-                )
-              );
-            })}
+           <table>
+            <tbody>
+              <tr className="minitem">
+                <td>Item Name</td>
+                <td>Quantity</td>
+                <td>Minimum Level</td>
+              </tr>
+              {props.items.map((item) => {
+                return (
+                  (item.minimum_level > item.quantity) && (
+                    <tr className="minitem">
+                      <td>{item.name}</td>
+                      <td>{item.quantity}</td>
+                      <td>{item.minimum_level}</td>
+                    </tr>
+                  )
+                );
+              })}
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
