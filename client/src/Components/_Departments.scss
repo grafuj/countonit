@@ -1,0 +1,13 @@
+#departments {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  background-color: blue;
+  padding: 0 30px;
+  height: 600px;
+}
+
+.departmentsList {
+  display: flex;
+  justify-content: space-evenly;
+}

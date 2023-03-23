@@ -1,37 +1,55 @@
 import React from "react";
-import "./Department.css";
+import { useLocation, Link } from "react-router-dom";
+import Departments from "./Departments";
 
 const Department = (props) => {
-  let qtyCount = 0;
-  let totalValueCount = 0;
-  const departmentInfo = {};
+  const location = useLocation();
+  console.log("IM HEREEEEE", location);
   let depart = {};
-  props.departments.map((dep) => {
-    if (dep.id === 3) {
-      depart = dep;
-    }
-  });
-  console.log(depart.name);
+  if (location.state) {
+    props.departments.map((dep) => {
+      if (dep.id === location.state.department.id) {
+        depart = dep;
+      }
+    });
+  }
+  // console.log(depart.name);
 
+  const items = function () {
+    return props.items.map((item) => {
+      if (item.department_id === depart.id) {
+        return (
+          <div className="single-item">
+            <div>{item.image}</div>
+            <div>{item.name}</div>
+            <div>{item.quantity}</div>
+            <div>${item.price_cents / 100}</div>
+          </div>
+        );
+      }
+    });
+  };
+  const departments = function () {
+    return props.departments.map((dep) => {
+      const path = `/departments/${dep.id}`;
+      return (
+        <div className="single-item">
+          <div>{dep.image}</div>
+          <Link to={path} state={{ department: dep }}>
+            {dep.name}
+          </Link>
+        </div>
+      );
+    });
+  };
   return (
-    <div className="departmentview">
-      <div className="departmentName">{depart.name}</div>
-      <div className="items">
-        {props.items.map((item) => {
-          if (item.department_id === depart.id) {
-            console.log("item", item);
-            return (
-              <div className="single-item">
-                <div>{item.image}</div>
-                <div>{item.name}</div>
-                <div>{item.quantity}</div>
-                <div>${item.price_cents / 100}</div>
-              </div>
-            );
-          }
-        })}
+    <section className="depView">
+      <Departments departments={props.departments} />
+      <div className="departmentview">
+        <div className="departmentName">{depart.name || "Departments"}</div>
+        <div className="items">{location.state ? items() : departments()}</div>
       </div>
-    </div>
+    </section>
   );
 };
 

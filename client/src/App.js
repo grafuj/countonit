@@ -10,16 +10,14 @@ import Folders from "./Components/Folders";
 import Login from "./Components/Login";
 import Logout from "./Components/Logout";
 import Register from "./Components/Register";
-import Dashboard from "./Components/Dashboard";
+import Dashboard from "./Components/Dashboard.jsx";
 import Department from "./Components/Department";
 import Nav from "./Components/Nav";
 // import 'bootstrap/dist/css/bootstrap.min.css';
 // import './App.scss';
 
 
-
-
-library.add(fab, faTrash, faImage)
+library.add(fab, faTrash, faImage);
 
 export default function App() {
   const [state, setState] = useState({
@@ -64,7 +62,11 @@ export default function App() {
             }
           />
           <Route
-            path="/department/:id"
+            path="/departments"
+            element={<Department departments={state.departments} />}
+          />
+          <Route
+            path="/departments/:id"
             element={
               <Department departments={state.departments} items={state.items} />
             }

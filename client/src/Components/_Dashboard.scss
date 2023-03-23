@@ -50,7 +50,9 @@ td {
   height: 100px;
   margin: 20px;
   width: 100%;
-  background-color: lightblue
+  background-color: lightblue;
+  text-decoration: none;
+
 }
 
 .dep-details {
@@ -63,7 +65,7 @@ td {
 }
 
 .minlevels {
-  display: grid;
+  display: table;
   justify-content: space-between;
   grid-template-columns: 1fr;
   gap: 1.5em;
@@ -74,12 +76,12 @@ td {
   margin: 1em;
 }
 
-.test {
+.minitem {
   display: flex;
   background-color: lightblue;
   
 }
 
-.test div {
+.minitem tr {
   padding-left: 1em
 }

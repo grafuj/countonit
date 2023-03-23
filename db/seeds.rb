@@ -37,20 +37,6 @@ Department.create(
 )
 departments = Department.all()
 
-
-# 20.times do
-#   Item.create(
-#     name: Faker::Commerce.product_name,
-#     description: Faker::Commerce.color,
-#     image: open_asset('wrench.avif'),
-#     price_cents: prices.sample(),
-#     quantity: rand(1..20),
-
-#     folder_id: 1,
-#     department_id: rand(1..3)
-#   )
-# end
-
 Item.create(
   name: "Crescent Wrench",
   description: "Incredible strength and corrosion resistance from specially formulated and heat-treated chrome alloy steel. Off-corner loading design on box end provides better grip and reduces fastener rounding. Sizes stamped on both sides of each wrench for easy identification.",
@@ -58,7 +44,8 @@ Item.create(
   price_cents: 2499,
   quantity: 5,
   folder_id: 1,
-  department_id: 1
+  department_id: 1,
+  minimum_level: 2
 )
 puts "seeding power tools"
 Item.create(
@@ -68,7 +55,8 @@ Item.create(
   price_cents: 24999,
   quantity: 2,
   folder_id: 1,
-  department_id: 2
+  department_id: 2,
+  minimum_level: 1
 )
 Item.create(
   name: "Lawn mower",
@@ -77,7 +65,8 @@ Item.create(
   price_cents: 64999,
   quantity: 4,
   folder_id: 1,
-  department_id: 1
+  department_id: 1,
+  minimum_level: 2
 )
 Item.create(
   name: "Trimmer",
@@ -86,7 +75,8 @@ Item.create(
   price_cents: 23899,
   quantity: 4,
   folder_id: 1,
-  department_id: 2
+  department_id: 2,
+  minimum_level: 1
 )
 Item.create(
   name: "Blower",
@@ -95,7 +85,8 @@ Item.create(
   price_cents: 57899,
   quantity: 4,
   folder_id: 1,
-  department_id: 2
+  department_id: 2,
+  minimum_level: 2
 )
 Item.create(
   name: "Hedge Trimmer",
@@ -104,7 +95,9 @@ Item.create(
   price_cents: 44899,
   quantity: 3,
   folder_id: 1,
-  department_id: 2
+  department_id: 2,
+  minimum_level: 1
+
 )
 Item.create(
   name: "Pole saw",
@@ -113,7 +106,8 @@ Item.create(
   price_cents: 8399,
   quantity: 4,
   folder_id: 1,
-  department_id: 3
+  department_id: 3,
+  minimum_level: 2
 )
 Item.create(
   name: "Power pruner",
@@ -122,7 +116,8 @@ Item.create(
   price_cents: 64999,
   quantity: 2,
   folder_id: 1,
-  department_id: 3
+  department_id: 3,
+  minimum_level: 1
 )
 Item.create(
   name: "Pressure washer",
@@ -131,7 +126,8 @@ Item.create(
   price_cents: 27999,
   quantity: 1,
   folder_id: 1,
-  department_id: 1
+  department_id: 1,
+  minimum_level: 2
 )
 puts "seeding shop items"
 Item.create(
@@ -139,9 +135,10 @@ Item.create(
   description: "The Milwaukee Tool ANSI Type R Class 2 Breakaway High Visibility Mesh Safety Vest is constructed from moisture wicking and anti-microbial treated fabric that helps you stay cool and dry fast while preventing odor and bacteria build up. Lightweight, breathable mesh means you can be cooler and comfortable in hot working conditions. It features 9 pockets including a clear ID holder and internal pocket providing you with added storage. The vest features an external size adjustment providing you with a better fit as well as a durable pass-through slit for fall protection gear.",
   image: open_asset('safety-vest.jpg'),
   price_cents: 3199,
-  quantity: 12,
+  quantity: 2,
   folder_id: 1,
-  department_id: 1
+  department_id: 1,
+  minimum_level: 3
 )
 Item.create(
   name: "Safety vest",
@@ -150,7 +147,9 @@ Item.create(
   price_cents: 3199,
   quantity: 15,
   folder_id: 1,
-  department_id: 2
+  department_id: 2,
+  minimum_level: 3
+
 )
 Item.create(
   name: "Safety vest",
@@ -159,7 +158,9 @@ Item.create(
   price_cents: 3199,
   quantity: 19,
   folder_id: 1,
-  department_id: 3
+  department_id: 3,
+  minimum_level: 3
+
 )
 Item.create(
   name: "First aid kit",
@@ -169,7 +170,9 @@ Item.create(
   price_cents: 6999,
   quantity: 2,
   folder_id: 1,
-  department_id: 1
+  department_id: 1,
+  minimum_level: 1
+
 )
 Item.create(
   name: "First aid kit",
@@ -179,7 +182,8 @@ Item.create(
   price_cents: 6999,
   quantity: 2,
   folder_id: 1,
-  department_id: 2
+  department_id: 2,
+  minimum_level: 2
 )
 Item.create(
   name: "First aid kit",
@@ -189,7 +193,8 @@ Item.create(
   price_cents: 6999,
   quantity: 3,
   folder_id: 1,
-  department_id: 3
+  department_id: 3,
+  minimum_level: 2
 )
 Item.create(
   name: "Flagstone",
@@ -198,7 +203,8 @@ Item.create(
   price_cents: 1599,
   quantity: 18,
   folder_id: 1,
-  department_id: 3
+  department_id: 3,
+  minimum_level: 0
 )
 Item.create(
   name: "Tarp",
@@ -207,7 +213,8 @@ Item.create(
   price_cents: 1099,
   quantity: 4,
   folder_id: 1,
-  department_id: 2
+  department_id: 2,
+  minimum_level: 2
 )
 Item.create(
   name: "Extension cord",
@@ -216,7 +223,8 @@ Item.create(
   price_cents: 3299,
   quantity: 3,
   folder_id: 1,
-  department_id: 2
+  department_id: 2,
+  minimum_level: 2
 )
 Item.create(
   name: "Gas can",
@@ -225,7 +233,8 @@ Item.create(
   price_cents: 2199,
   quantity: 3,
   folder_id: 1,
-  department_id: 2
+  department_id: 2,
+  minimum_level: 2
 )
 Item.create(
   name: "Handheld radio",
@@ -234,7 +243,8 @@ Item.create(
   price_cents: 9999,
   quantity: 1,
   folder_id: 1,
-  department_id: 3
+  department_id: 3,
+  minimum_level: 1
 )
 Item.create(
   name: "Garbage bag",
@@ -243,7 +253,8 @@ Item.create(
   price_cents: 3399,
   quantity: 4,
   folder_id: 1,
-  department_id: 1
+  department_id: 1,
+  minimum_level: 1
 )
 Item.create(
   name: "Hand trowel",
@@ -252,7 +263,8 @@ Item.create(
   price_cents: 1199,
   quantity: 4,
   folder_id: 1,
-  department_id: 2
+  department_id: 2,
+  minimum_level: 1
 )
 Item.create(
   name: "Pruning shears",
@@ -261,7 +273,8 @@ Item.create(
   price_cents: 4299,
   quantity: 3,
   folder_id: 1,
-  department_id: 2
+  department_id: 2,
+  minimum_level: 1
 )
 Item.create(
   name: "Hand cultivator",
@@ -270,7 +283,8 @@ Item.create(
   price_cents: 1299,
   quantity: 3,
   folder_id: 1,
-  department_id: 2
+  department_id: 2,
+  minimum_level: 2
 )
 Item.create(
   name: "Folding saw",
@@ -279,7 +293,8 @@ Item.create(
   price_cents: 2499,
   quantity: 4,
   folder_id: 1,
-  department_id: 2
+  department_id: 2,
+  minimum_level: 1
 )
 Item.create(
   name: "Round point shovel",
@@ -288,7 +303,8 @@ Item.create(
   price_cents: 1799,
   quantity: 4,
   folder_id: 1,
-  department_id: 2
+  department_id: 2,
+  minimum_level: 2
 )
 Item.create(
   name: "Square point shovel",
@@ -297,7 +313,8 @@ Item.create(
   price_cents: 3499,
   quantity: 6,
   folder_id: 1,
-  department_id: 3
+  department_id: 3,
+  minimum_level: 2
 )
 Item.create(
   name: "Bow rake",
@@ -306,7 +323,8 @@ Item.create(
   price_cents: 1999,
   quantity: 6,
   folder_id: 1,
-  department_id: 2
+  department_id: 2,
+  minimum_level: 2
 )
 Item.create(
   name: "Leaf rake",
@@ -315,7 +333,8 @@ Item.create(
   price_cents: 2399,
   quantity: 4,
   folder_id: 1,
-  department_id: 2
+  department_id: 2,
+  minimum_level: 2
 )
 Item.create(
   name: "Garden fork",
@@ -324,7 +343,8 @@ Item.create(
   price_cents: 4499,
   quantity: 3,
   folder_id: 1,
-  department_id: 2
+  department_id: 2,
+  minimum_level: 2
 )
 Item.create(
   name: "Axe",
@@ -333,7 +353,8 @@ Item.create(
   price_cents: 4399,
   quantity: 3,
   folder_id: 1,
-  department_id: 3
+  department_id: 3,
+  minimum_level: 2
 )
 Item.create(
   name: "Sledgehammer",
@@ -342,7 +363,8 @@ Item.create(
   price_cents: 6099,
   quantity: 3,
   folder_id: 1,
-  department_id: 3
+  department_id: 3,
+  minimum_level: 2
 )
 Item.create(
   name: "Garden hoe",
@@ -351,7 +373,8 @@ Item.create(
   price_cents: 2599,
   quantity: 4,
   folder_id: 1,
-  department_id: 3
+  department_id: 3,
+  minimum_level: 2
 )
 Item.create(
   name: "Loppers",
@@ -360,7 +383,8 @@ Item.create(
   price_cents: 2599,
   quantity: 4,
   folder_id: 1,
-  department_id: 3
+  department_id: 3,
+  minimum_level: 2
 )
 Item.create(
   name: "Wheelbarrow",
@@ -369,11 +393,8 @@ Item.create(
   price_cents: 17799,
   quantity: 4,
   folder_id: 1,
-  department_id: 3
+  department_id: 3,
+  minimum_level: 2
 )
-
-
-
-
 
 puts "seeded database"
