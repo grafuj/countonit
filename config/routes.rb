@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     resources :folders
     resources :departments
     resources :items
+
+    delete '/items/:id', to: 'items#destroy'
    
 
   end

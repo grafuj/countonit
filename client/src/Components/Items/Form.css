@@ -54,6 +54,27 @@ label {
   margin-top: 0.25rem;
 }
 
+.dropdown-input{
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  border: 1px solid rgb(40, 58, 216);
+  background-color: rgb(7, 156, 249);
+  font-size: 1rem;
+  width: 100%;
+  margin-top: 0.25rem;
+
+}
+
+.upload-pic {
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  border: 1px solid rgb(40, 58, 216);
+  background-color: rgb(7, 156, 249);
+  font-size: 1rem;
+  width: 100%;
+  margin-top: 0.25rem;
+}
+
 label input[type=text]:focus,
 label input[type=number]:focus,
 label textarea:focus {

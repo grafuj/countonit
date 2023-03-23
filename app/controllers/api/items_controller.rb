@@ -4,12 +4,6 @@ class Api::ItemsController < ApplicationController
         render json: @items
     end
 
-    def destroy
-    @item = Item.find(params[:id])
-    @item.destroy
-    head :no_content
-    end
-
     def create
         puts request.body.read
 
@@ -21,10 +15,17 @@ class Api::ItemsController < ApplicationController
             render json: {errors: @item.errors.full_messages}, status: :unprocessable_entity
         end
     end
-
+    
+    def destroy
+        @item = Item.find(params[:id])
+        @item.destroy
+        head :no_content
+    end
+    
     private
     
     def item_params 
         params.require(:item).permit(:name, :quantity, :price_cents, :minimum_level, :folder_id, :image, :description, :department_id)
     end
+
 end

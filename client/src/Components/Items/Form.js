@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import deleteItem from "./Delete"
+import DeleteButton from "./Delete"
 import axios from "axios";
 import UploadPicture from "./hooks/AddPicture";
 import ItemPriceCalculator from "./hooks/ItemPriceCalculator";
@@ -21,30 +21,37 @@ const ItemForm = (props) => {
     description: "",
     // need to make dynamic
     folder_id: 1,
-    // need to make dynamic
     department_id: departmentID
   });
 
-  const [departmentID, setDepartmentID] = useState(null); 
-
-  function deleteItem(itemId) {
-    axios
-      .delete(`/api/items/${itemId}`)
-      .then((response) => {
-        console.log("Item deleted sucessfully!");
-        setFormData((prevState) => {
-          const newState = { ...prevState };
-          // remove deleted item from state
-          newState.items = prevState.items.filter((item) => item.id !== itemId);
-          return newState;
-        });
-      })
-      .catch((err) => {
-        console.log("Error! Item did not delete:", err);
-      });
-  }
-
+  const itemId = props.items[25]?.id;
+  console.log("PROPS+++", itemId)
+  
   const formRef = useRef();
+
+  const [departmentID, setDepartmentID] = useState(null); 
+ 
+  // function deleteItem(itemId) {
+  //   axios
+  //     .delete(`/api/items/${itemId}`)
+  //     .then((response) => {
+  //       console.log("Item deleted sucessfully!");
+  //       setFormData((prevState) => {
+  //         const newState = { ...prevState };
+  //         // remove deleted item from state
+  //         newState.items = prevState.items.filter((item) => item.id !== itemId);
+  //         return newState;
+  //       });
+  //     })
+  //     .catch((err) => {
+  //       console.log("Error! Item did not delete:", err);
+  //     });
+  // }
+  
+
+    // const handleDelete = () => {
+    //   deleteItem();
+    // };
 
 // the user can input data on the items form
   const handleInputChange = (event) => {
@@ -54,10 +61,7 @@ const ItemForm = (props) => {
     });
   };
 
-  const handleDelete = () => {
-    deleteItem();
-  };
-
+// submits user data
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -66,7 +70,6 @@ const ItemForm = (props) => {
       department_id: departmentID,
       picture,
     };
-    // console.log("item data", itemData)
 
     // Saves an uploaded picture to cloudinary API
     try {
@@ -106,14 +109,21 @@ const ItemForm = (props) => {
 
   return (
     <form className="items-form" onSubmit={handleSubmit} ref={formRef}>
+      
+      <label className="upload-pic">
       <UploadPicture
         picture={picture}
         setPicture={setPicture}
         setFormData={setFormData}
       />
+      </label>
+
       <div>
+        <label  className="dropdown-input">
         <Dropdown departments={props.departments} setDepartmentID={setDepartmentID} />
+        </label>
       </div>
+
       <div>
         <label className="item-input">
           Item name:
@@ -164,12 +174,8 @@ const ItemForm = (props) => {
 
       <div className="delete-btn">
         <div>
-          <FontAwesomeIcon
-            icon="fa-solid fa-trash"
-            size="2xl"
-            style={{ color: "#ffffff" }}
-            onClick={handleDelete}
-          />
+          <DeleteButton itemId={itemId} />
+      
         </div>
       </div>
     </form>
