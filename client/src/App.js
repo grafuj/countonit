@@ -88,7 +88,16 @@ export default function App() {
               />
             }
           />
-          <Route path="/items/:id" element={<Items />} />
+          <Route
+            path="/items/:id"
+            element={
+              <Items
+                items={state.items}
+                departments={state.departments}
+                folders={state.folders}
+              />
+            }
+          />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/logout" element={<Logout />} />
