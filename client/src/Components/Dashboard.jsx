@@ -20,7 +20,7 @@ function Dashboard(props) {
     }
   });
   // console.log(departmentInfo[1]);
-  // console.log("ITEMS", props.items);
+  console.log("ITEMS", props.items);
   // console.log("DepartmentInfo:", departmentInfo);
   return (
     <section>
