@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { fab } from '@fortawesome/free-brands-svg-icons'
-import { faTrash, faImage } from '@fortawesome/free-solid-svg-icons'
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fab } from '@fortawesome/free-brands-svg-icons';
+import { faTrash, faImage } from '@fortawesome/free-solid-svg-icons';
 import Departments from "./Components/Departments";
 import Items from "./Components/Items/Items";
 import Folders from "./Components/Folders";
@@ -16,7 +16,7 @@ import Nav from "./Components/Nav";
 
 
 
-library.add(fab, faTrash, faImage)
+library.add(fab, faTrash, faImage);
 
 export default function App() {
   const [state, setState] = useState({
@@ -68,7 +68,7 @@ export default function App() {
           />
           <Route
             path="/folders"
-            element={<Folders folders={state.folders} />}
+            element={<Folders folders={state.folders} departments={state.departments} items={state.items} />}
           />
           <Route
             path="/departments"
