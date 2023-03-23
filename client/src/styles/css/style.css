@@ -105,8 +105,7 @@ code {
   width: 20%;
   object-fit: scale-down;
   width: 300px;
-  height: 300px;
-  size: 300x300px; }
+  height: 300px; }
 
 .boxone, .boxtwo, .boxthree {
   display: flex;
@@ -178,3 +177,42 @@ td {
 
 .minitem tr {
   padding-left: 1em; }
+
+.departmentview {
+  background-color: blue; }
+
+.departmentName {
+  font-size: 3em; }
+
+.items {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+  padding: 30px; }
+
+.single-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 300px;
+  height: 300px;
+  padding: 10px;
+  background-color: lightblue;
+  border-radius: 30%;
+  font-size: 1.1em; }
+
+.depView {
+  display: flex; }
+
+#departments {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  background-color: blue;
+  padding: 0 30px;
+  height: 600px; }
+
+.departmentsList {
+  display: flex;
+  justify-content: space-evenly; }
