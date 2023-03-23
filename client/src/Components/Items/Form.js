@@ -1,19 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import DeleteButton from "./Delete";
-import usePictureInput from "./hooks/AddPicture";
+// import usePictureInput from "./hooks/AddPicture";
+import axios from "axios";
+import UploadPicture from "./hooks/AddPicture";
 import ItemPriceCalculator from "./hooks/ItemPriceCalculator";
 import "./Form.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+
 
 const ItemForm = () => {
+  const [picture, setPicture] = useState(null);
   const [price, setPrice] = useState(0);
   const [quantity, setQuantity] = useState(0);
   const [formData, setFormData] = useState({
+    image: "",
     name: "",
     quantity: 0,
     price: 0,
-    minimumLevels: "",
-    totalCost: "",
+    minimum_level: 0,
+    total_cost: "",
     description: "",
     // need to make dynamic
     folder_id: 1,
@@ -21,7 +27,8 @@ const ItemForm = () => {
     department_id: 2,
   });
 
-  const [picture, handlePictureChange] = usePictureInput();
+  const formRef = useRef();
+
 
   const handleInputChange = (event) => {
     setFormData({
@@ -35,15 +42,33 @@ const ItemForm = () => {
 
     const itemData = {
       ...formData,
-      picture,
+      picture
     };
 
+// Saves an uploaded picture to cloudinary API 
+    try{
+    const data = new FormData();
+    data.append("file", picture);
+    data.append("upload_preset", "xhecj54a")
+
+    const cloudinaryApiCall = await fetch("https://api.cloudinary.com/v1_1/dtvbwudm2/image/upload", {
+      method: "POST",
+      body: data
+    }); 
+    const file = await cloudinaryApiCall.json();
+    console.log("file.secure_url:", file.secure_url)
+    itemData['image'] = file.secure_url
+    } catch (error) {
+      console.log("Error saving picture", error)
+      return;
+    }
+// Submits form data to the backend
     try {
       const response = await fetch("/api/items", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          item: { ...itemData, price_cents: price, quantity },
+          item: { ...itemData, price_cents: price, quantity},
         }),
       });
       const data = await response.json();
@@ -54,21 +79,8 @@ const ItemForm = () => {
   };
 
   return (
-    <form className="items-form">
-      <button
-        className="pic-input"
-        onClick={() => console.log("Button Clicked!")}
-        onChange={handlePictureChange}
-      >
-        <FontAwesomeIcon
-          icon="fa-solid fa-image"
-          size="2xl"
-          style={{ color: "#ffffff" }}
-        />
-        <input type="file" accept="image/*" onChange={handlePictureChange} />
-        {picture && <img src={picture} alt="Preview" />}
-      </button>
-
+    <form className="items-form" onSubmit={handleSubmit} ref={formRef}>
+      <UploadPicture picture={picture} setPicture={setPicture} setFormData={setFormData}/>
       <div>
         <label className="item-input">
           Item name:
@@ -116,9 +128,11 @@ const ItemForm = () => {
       </div>
 
       <button type="submit">Save Item</button>
+
       <div className="delete-btn">
         <DeleteButton />
       </div>
+
     </form>
   );
 };

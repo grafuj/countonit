@@ -1,12 +1,14 @@
 class Api::ItemsController < ApplicationController
     def index
-        @item = Item.all
-        render json: @item
+        @items = Item.all
+        render json: @items
     end
 
     def create
-        @item = Item.new(item_params)
+        puts request.body.read
 
+        @item = Item.new(item_params)
+       
         if @item.save
             render json: {status: :created, item: @item}
         else
@@ -16,7 +18,7 @@ class Api::ItemsController < ApplicationController
 
     private
     
-    def item_params
+    def item_params 
         params.require(:item).permit(:name, :quantity, :price_cents, :minimum_level, :folder_id, :image, :description, :department_id)
     end
 end

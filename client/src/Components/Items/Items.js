@@ -9,9 +9,9 @@ function Items(props) {
   return (
     <div>
       <h1>Item</h1>
-      <span>
+    
       <Form/>
-      </span>
+      
   </div>
 );
 }

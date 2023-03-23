@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resources :folders
     resources :departments
     resources :items
+   
 
   end
 

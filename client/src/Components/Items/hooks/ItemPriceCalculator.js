@@ -20,11 +20,11 @@ export default function ItemPriceCalculator(props) {
     <div>
       <label>
       Quantity:
-        <input type="number" value={quantity} onChange={handleQuantityChange} />
+        <input name="quantity" type="number" value={quantity} onChange={handleQuantityChange} />
       </label>
       <label>
       Price:
-        <input type="number" value={price} onChange={handlePriceChange} />
+        <input name="price" type="number" value={price} onChange={handlePriceChange} />
       </label>
       <p>Total cost: ${calculateTotalCost()}</p>
     </div>

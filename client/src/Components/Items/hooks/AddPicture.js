@@ -1,29 +1,33 @@
 import React, { useState } from 'react';
+import Axios from 'axios';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
-  const usePictureInput = () => {
-    const [picture, setPicture] = useState(null);
-  
-    const handlePictureChange = event => {
-      const file = event.target.files[0];
-      setPicture(file);
-    };
-  
-    return [picture, handlePictureChange];
-  };
+export default function UploadPicture({picture, setPicture, setFormData}) {
+  const [preview, setPreview] = useState(null);
 
-  const ImagePreview = ({ file }) => {
-    if (!file) {
-      return null;
-    }
-
-    const url = URL.createObjectURL(file);
-
-    return (
-      <div>
-        <img src={url} alt="Preview" />
-      </div>
-    )
+  const handlePictureChange = (event) => {
+    const selectedPicture = event.target.files[0];
+   setPicture(selectedPicture);
+   setPreview(URL.createObjectURL(selectedPicture));
+  //  setFormData(() => ( {
+  //   ...formData,
+  //   [event.target.name]: event.target.files[0],
+  // }));
   }
 
-export default usePictureInput;
+
+  return (
+    <div>
+      <input name="image" filename={picture} accept="image/*" type="file" onChange={handlePictureChange}/>
+      {preview && (
+        <img src={preview} alt="Selected file preview" style={{width: '200px', height: '200px'}}/>
+      )}
+      <FontAwesomeIcon
+          icon="fa-solid fa-image"
+          size="2xl"
+          style={{ color: "#ffffff" }}
+        />
+    </div>
+  )
+}
