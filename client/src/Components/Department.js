@@ -1,11 +1,13 @@
 import React from "react";
 import "./Department.css";
+import { useLocation } from "react-router-dom";
 
 const Department = (props) => {
-  console.log(props.departments);
+  const location = useLocation();
+  console.log("IM HEREEEEE", location.state.department.id);
   let depart = {};
   props.departments.map((dep) => {
-    if (dep.id === 3) {
+    if (dep.id === location.state.department.id) {
       depart = dep;
     }
   });

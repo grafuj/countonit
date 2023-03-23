@@ -64,7 +64,7 @@ function Dashboard(props) {
               });
               const route = `/department/${department.id}`
               return (
-                <Link className="department" to={route} department={department} departments={props.departments} items={props.items}>
+                <Link className="department" to={route} state={{department: department}}>
                   <span>{department.name}</span>
                   <div className="dep-details">
                     <span>Items: {departmentInfo[department.id].length}</span>
