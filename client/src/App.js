@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { fab } from '@fortawesome/free-brands-svg-icons'
-import { faTrash, faImage } from '@fortawesome/free-solid-svg-icons'
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { fab } from "@fortawesome/free-brands-svg-icons";
+import { faTrash, faImage } from "@fortawesome/free-solid-svg-icons";
 import Departments from "./Components/Departments";
 import Items from "./Components/Items/Items";
 import Folders from "./Components/Folders";
@@ -15,7 +15,6 @@ import Department from "./Components/Department";
 import Nav from "./Components/Nav";
 // import 'bootstrap/dist/css/bootstrap.min.css';
 // import './App.scss';
-
 
 library.add(fab, faTrash, faImage);
 
@@ -79,7 +78,17 @@ export default function App() {
             path="/departments"
             element={<Departments departments={state.departments} />}
           />
-          <Route path="/items" element={<Items items={state.items} departments={state.departments} folders={state.folders} />} />
+          <Route
+            path="/items"
+            element={
+              <Items
+                items={state.items}
+                departments={state.departments}
+                folders={state.folders}
+              />
+            }
+          />
+          <Route path="/items/:id" element={<Items />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/logout" element={<Logout />} />

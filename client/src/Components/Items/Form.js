@@ -6,26 +6,35 @@ import UploadPicture from "./hooks/AddPicture";
 import ItemPriceCalculator from "./hooks/ItemPriceCalculator";
 import "./Form.css";
 import Dropdown from "./hooks/Dropdown";
+import { useLocation } from "react-router-dom";
 
 const ItemForm = (props) => {
+  const location = useLocation();
+  console.log("LOCATION:", location);
+  let item = "";
+  if (!location.state) {
+    console.log(item);
+  } else {
+    item = location.state.item;
+  }
   const [picture, setPicture] = useState(null);
   const [price, setPrice] = useState(0);
   const [quantity, setQuantity] = useState(0);
   const [formData, setFormData] = useState({
-    image:  "",
-    name: "",
-    quantity: 0,
-    price: 0,
-    minimum_level: 0,
+    image: item.image || "",
+    name: item.name || "",
+    quantity: item.quantity || 0,
+    price: item.price_cents || 0,
+    minimum_level: item.minimum_level || 0,
     total_cost: "",
-    description: "",
+    description: item.description || "",
     // need to make dynamic
     folder_id: 1,
     // need to make dynamic
-    department_id: departmentID
+    department_id: departmentID,
   });
 
-  const [departmentID, setDepartmentID] = useState(null); 
+  const [departmentID, setDepartmentID] = useState(null);
 
   function deleteItem(itemId) {
     axios
@@ -46,7 +55,7 @@ const ItemForm = (props) => {
 
   const formRef = useRef();
 
-// the user can input data on the items form
+  // the user can input data on the items form
   const handleInputChange = (event) => {
     setFormData({
       ...formData,
@@ -112,7 +121,10 @@ const ItemForm = (props) => {
         setFormData={setFormData}
       />
       <div>
-        <Dropdown departments={props.departments} setDepartmentID={setDepartmentID} />
+        <Dropdown
+          departments={props.departments}
+          setDepartmentID={setDepartmentID}
+        />
       </div>
       <div>
         <label className="item-input">

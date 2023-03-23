@@ -18,13 +18,14 @@ const Department = (props) => {
   const items = function () {
     return props.items.map((item) => {
       if (item.department_id === depart.id) {
+        const path = `/items/${item.id}`;
         return (
-          <div className="single-item">
+          <Link className="single-item" to={path} state={{ item: item }}>
             <div>{item.image}</div>
             <div>{item.name}</div>
             <div>{item.quantity}</div>
             <div>${item.price_cents / 100}</div>
-          </div>
+          </Link>
         );
       }
     });

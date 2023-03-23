@@ -71,7 +71,8 @@ body {
   padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
+  -moz-osx-font-smoothing: grayscale;
+  background-image: radial-gradient(circle farthest-corner at 92.3% 71.5%, #538ad6 0%, #86e7d6 90%); }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace; }
@@ -88,7 +89,7 @@ code {
   align-items: center; }
 
 .login-image {
-  width: 25px; }
+  width: 600px; }
 
 .register-form {
   display: flex;
@@ -102,17 +103,12 @@ code {
   align-items: center; }
 
 .register-image {
-  width: 20%;
   object-fit: scale-down;
-  width: 300px;
-  height: 300px; }
+  width: 600px; }
 
 .boxone, .boxtwo, .boxthree {
   display: flex;
   background-color: blue; }
-
-td {
-  padding-left: 80px; }
 
 .boxtwo div, .boxthree div {
   width: 99%; }
