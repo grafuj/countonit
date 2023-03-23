@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 
 export default function Dropdown(props) {
-  // console.log("props++++++", props)
-  const {departments} = props;
+  const {departments, setDepartmentID} = props;
 
   const [department, setDepartment] = useState('');
 
   const handleDropdown = (event) => {
+    setDepartmentID(event.target.value);
     setDepartment(event.target.value);
   }
 

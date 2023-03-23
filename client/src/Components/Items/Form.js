@@ -8,23 +8,25 @@ import "./Form.css";
 import Dropdown from "./hooks/Dropdown";
 
 const ItemForm = (props) => {
-  // console.log("props++++", props)
   const [picture, setPicture] = useState(null);
   const [price, setPrice] = useState(0);
   const [quantity, setQuantity] = useState(0);
   const [formData, setFormData] = useState({
-    image: props.image || "",
-    name: props.name || "",
-    quantity: props.quantity || 0,
-    price: props.price || 0,
-    minimum_level: props.minimun_level || 0,
-    total_cost: props.total_cost || "",
-    description: props.description || "",
+    image:  "",
+    name: "",
+    quantity: 0,
+    price: 0,
+    minimum_level: 0,
+    total_cost: "",
+    description: "",
     // need to make dynamic
-    folder_id: props.folder_id || 1,
+    folder_id: 1,
     // need to make dynamic
-    department_id: props.department_id || 2,
+    department_id: departmentID
   });
+  // console.log("department prop+++", props.departments)
+
+  const [departmentID, setDepartmentID] = useState(null); 
 
   function deleteItem(itemId) {
     axios
@@ -45,6 +47,7 @@ const ItemForm = (props) => {
 
   const formRef = useRef();
 
+// the user can input data on the items form
   const handleInputChange = (event) => {
     setFormData({
       ...formData,
@@ -61,8 +64,12 @@ const ItemForm = (props) => {
 
     const itemData = {
       ...formData,
+      department_id: departmentID,
       picture,
+  
     };
+    console.log("item data", itemData)
+
     // Saves an uploaded picture to cloudinary API
     try {
       const data = new FormData();
@@ -107,7 +114,7 @@ const ItemForm = (props) => {
         setFormData={setFormData}
       />
       <div>
-        <Dropdown departments={props.departments} />
+        <Dropdown departments={props.departments} setDepartmentID={setDepartmentID} />
       </div>
       <div>
         <label className="item-input">
