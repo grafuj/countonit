@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 
 function Dashboard(props) {
-  const newItem = function () {
+  const newItem = function() {
     window.location = "/items";
   };
   const itemCount = props.items.length;
@@ -10,10 +10,10 @@ function Dashboard(props) {
   let qtyCount = 0;
   let totalValueCount = 0;
   const departmentInfo = {};
-  const stock = [
-    { name: "hello", quantity: 1, min: 3 },
-    { name: "there", quantity: 2, min: 4 },
-  ];
+  // const stock = [
+  //   { name: "hello", quantity: 1, min: 3 },
+  //   { name: "there", quantity: 2, min: 4 },
+  // ];
   props.items.map((item) => {
     qtyCount += item.quantity;
     totalValueCount += Math.floor(item.price_cents * item.quantity);
@@ -88,20 +88,21 @@ function Dashboard(props) {
           Stock Levels At or Below Min Level
           <div className="minlevels">
             <div className="test">
-              <div>Stock</div>
+              <div>Item Name</div>
               <div></div>
               <div>Quantity</div>
-              <div>Minimum</div>
+              <div>Minimum Level</div>
             </div>
-
-            {stock.map((level) => {
+            {props.items.map((item) => {
               return (
-                <div className="test">
-                  <div>{level.name}</div>
-                  <div></div>
-                  <div>{level.quantity}</div>
-                  <div>{level.min}</div>
-                </div>
+                (item.minimum_level > item.quantity) && (
+                  <div className="test">
+                    <div>{item.name}</div>
+                    <div></div>
+                    <div>{item.quantity}</div>
+                    <div>{item.minimum_level}</div>
+                  </div>
+                )
               );
             })}
           </div>

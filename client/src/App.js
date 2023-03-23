@@ -10,7 +10,7 @@ import Folders from "./Components/Folders";
 import Login from "./Components/Login";
 import Logout from "./Components/Logout";
 import Register from "./Components/Register";
-import Dashboard from "./Components/Dashboard";
+import Dashboard from "./Components/Dashboard.jsx";
 import Department from "./Components/Department";
 import Nav from "./Components/Nav";
 
