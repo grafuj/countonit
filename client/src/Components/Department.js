@@ -14,9 +14,7 @@ const Department = (props) => {
     });
   }
   // console.log(depart.name);
-  if (depart === {}) {
-    depart = props.departments[0];
-  }
+
   const items = function () {
     return props.items.map((item) => {
       if (item.department_id === depart.id) {
@@ -33,7 +31,7 @@ const Department = (props) => {
   };
   const departments = function () {
     return props.departments.map((dep) => {
-      const path = `/department/${dep.id}`;
+      const path = `/departments/${dep.id}`;
       return (
         <div className="single-item">
           <div>{dep.image}</div>
@@ -48,7 +46,7 @@ const Department = (props) => {
     <section className="depView">
       <Departments departments={props.departments} />
       <div className="departmentview">
-        <div className="departmentName">{depart.name}</div>
+        <div className="departmentName">{depart.name || "Departments"}</div>
         <div className="items">{location.state ? items() : departments()}</div>
       </div>
     </section>

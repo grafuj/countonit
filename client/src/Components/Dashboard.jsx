@@ -62,7 +62,7 @@ function Dashboard(props) {
                 total += dep.quantity;
                 value += dep.price_cents;
               });
-              const route = `/department/${department.id}`
+              const route = `/departments/${department.id}`
               return (
                 <Link className="department" to={route} state={{department: department}}>
                   <span>{department.name}</span>

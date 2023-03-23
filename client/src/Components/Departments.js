@@ -9,7 +9,7 @@ function Departments(props) {
       <h1>Departments</h1>
       <span>
         {departments.map((department) => {
-          const route = `/department/${department.id}`;
+          const route = `/departments/${department.id}`;
           return (
             <Link
               className="departmentsList"

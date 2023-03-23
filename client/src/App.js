@@ -4,7 +4,6 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
 import { faTrash, faImage } from "@fortawesome/free-solid-svg-icons";
-import Departments from "./Components/Departments";
 import Items from "./Components/Items/Items";
 import Folders from "./Components/Folders";
 import Login from "./Components/Login";
@@ -59,7 +58,11 @@ export default function App() {
             }
           />
           <Route
-            path="/department/:id"
+            path="/departments"
+            element={<Department departments={state.departments} />}
+          />
+          <Route
+            path="/departments/:id"
             element={
               <Department departments={state.departments} items={state.items} />
             }
@@ -68,10 +71,7 @@ export default function App() {
             path="/folders"
             element={<Folders folders={state.folders} />}
           />
-          <Route
-            path="/departments"
-            element={<Departments departments={state.departments} />}
-          />
+
           <Route path="/items" element={<Items items={state.items} />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
