@@ -3,7 +3,8 @@ import React, { useState } from "react";
 export default function Dropdown(props) {
   const {departments, setDepartmentID} = props;
 
-  const [department, setDepartment] = useState('');
+  const [department, setDepartment] = useState(props.departmentID || '');
+  console.log("Props departmentID!!", props.departmentID)
 
   const handleDropdown = (event) => {
     setDepartmentID(event.target.value);
