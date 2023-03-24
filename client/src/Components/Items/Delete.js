@@ -7,7 +7,6 @@ import Form from "./Form"
 
 
   const DeleteButton = ({ itemId }) => {
-    console.log("ITEM ID", itemId)
     const handleDelete = () => {
       axios.delete(`/api/items/${itemId}`)
       .then(response => {

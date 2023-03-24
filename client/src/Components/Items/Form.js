@@ -24,7 +24,7 @@ const ItemForm = (props) => {
     department_id: departmentID
   });
 
-  const itemId = props.items[25]?.id;
+  const itemId = props.items[80]?.id;
   console.log("PROPS+++", itemId)
   
   const formRef = useRef();
@@ -175,7 +175,6 @@ const ItemForm = (props) => {
       <div className="delete-btn">
         <div>
           <DeleteButton itemId={itemId} />
-      
         </div>
       </div>
     </form>
