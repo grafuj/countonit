@@ -118,10 +118,19 @@ code {
 .inventory {
   display: flex;
   height: 100px;
-  width: 75%;
+  width: 100%;
   margin: 20px;
   background-color: lightblue;
-  justify-content: space-between; }
+  justify-content: space-between;
+  border-radius: 10px; }
+
+.inventoryTable {
+  width: 100%;
+  margin: auto;
+  text-align: center; }
+
+.inventoryTable td {
+  padding: 10px; }
 
 .new {
   display: flex;
@@ -131,7 +140,8 @@ code {
   width: 20%;
   margin: 20px;
   background-color: lightblue;
-  justify-content: space-around; }
+  justify-content: space-around;
+  border-radius: 10px; }
 
 .departments {
   display: grid;
@@ -140,35 +150,40 @@ code {
   grid-template-rows: min-content; }
 
 .department {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  text-align: center;
   height: 100px;
   margin: 20px;
   width: 100%;
   background-color: lightblue;
-  text-decoration: none; }
+  text-decoration: none;
+  border-radius: 10px; }
 
 .dep-details {
-  padding: 1em; }
+  width: 100%;
+  margin: auto;
+  text-align: center; }
 
-.dep-details span {
-  padding: 2em; }
-
-.minitem {
-  display: flex;
-  background-color: lightblue; }
-
-.minitem tr {
-  padding-left: 1em; }
+.dep-details td {
+  padding: 10px; }
 
 .mintable {
-  table-layout: fixed;
-  width: 100%; }
+  width: 100%;
+  margin: auto; }
 
 .mintable tr {
-  width: auto;
+  padding: 10px; }
+
+.minlevels {
+  border-radius: 10px;
+  margin: 20px;
+  border-radius: 10px;
+  background-color: lightblue; }
+
+.itemvalue {
   text-align: center; }
+
+.minitem {
+  padding-left: 100px; }
 
 .departmentName {
   font-size: 3em; }
@@ -180,6 +195,8 @@ code {
   padding: 30px; }
 
 .single-item {
+  text-decoration: none;
+  color: black;
   display: flex;
   flex-direction: column;
   align-items: center;

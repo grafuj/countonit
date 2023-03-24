@@ -24,10 +24,10 @@ function Dashboard(props) {
   // console.log("DepartmentInfo:", departmentInfo);
   return (
     <section>
-      <h1>Dashboard</h1>
+      <h3>Organization</h3>
       <div className="boxone">
         <div className="inventory">
-          <table>
+          <table className="inventoryTable">
             <tbody>
               <tr>
                 <td>Items:</td>
@@ -53,7 +53,7 @@ function Dashboard(props) {
       </div>
       <div className="boxtwo">
         <div>
-          Departments
+          <h3>Departments</h3>
           <div className="departments">
             {props.departments.map((department) => {
               let total = 0;
@@ -64,13 +64,22 @@ function Dashboard(props) {
               });
               const route = `/departments/${department.id}`
               return (
-                <Link className="department" to={route} state={{department: department}}>
+                <Link key={department.id} className="department" to={route} state={{department: department}}>
                   <span>{department.name}</span>
-                  <div className="dep-details">
-                    <span>Items: {departmentInfo[department.id].length}</span>
-                    <span>Total QTY: {total}</span>
-                    <span>Total Value: ${value / 100}</span>
-                  </div>
+                  <table className="dep-details">
+                    <tbody>
+                      <tr>
+                        <td>Items:</td>
+                        <td>Total Quantity:</td>
+                        <td>Total Value</td>
+                      </tr>
+                      <tr>
+                        <td>{departmentInfo[department.id].length}</td>
+                        <td>{total}</td>
+                        <td>${value / 100}</td>
+                      </tr>
+                    </tbody> 
+                  </table>
                 </Link>
               );
             })}
@@ -79,22 +88,22 @@ function Dashboard(props) {
       </div>
       <div className="boxthree">
         <div>
-          Stock Levels At or Below Min Level
+          <h3>Stock Levels At or Below Min Level</h3>
           <div className="minlevels">
            <table className="mintable">
             <tbody>
               <tr className="minitem">
-                <td>Item Name</td>
-                <td>Quantity</td>
-                <td>Minimum Level</td>
+                <td colspan="2">Item Name</td>
+                <td className="itemvalue">Quantity</td>
+                <td className="itemvalue">Minimum Level</td>
               </tr>
               {props.items.map((item) => {
                 return (
                   (item.minimum_level > item.quantity) && (
-                    <tr className="minitem">
-                      <td>{item.name}</td>
-                      <td>{item.quantity}</td>
-                      <td>{item.minimum_level}</td>
+                    <tr key={item.id} className="minitem">
+                      <td colspan="2">{item.name}</td>
+                      <td className="itemvalue">{item.quantity}</td>
+                      <td className="itemvalue">{item.minimum_level}</td>
                     </tr>
                   )
                 );

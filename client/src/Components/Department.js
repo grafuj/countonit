@@ -28,8 +28,8 @@ const Department = (props) => {
           >
             <div>{item.image}</div>
             <div>{item.name}</div>
-            <div>{item.quantity}</div>
-            <div>${item.price_cents / 100}</div>
+            <div>QTY: {item.quantity}</div>
+            <div>Price per unit ${item.price_cents / 100}</div>
           </Link>
         );
       }
