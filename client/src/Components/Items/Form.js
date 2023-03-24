@@ -34,9 +34,10 @@ const ItemForm = (props) => {
     department_id: item.department_id || departmentID,
   });
   const formRef = useRef();
-  const itemId = props.items[80]?.id;
   const [departmentID, setDepartmentID] = useState(null);
-
+  
+  const itemId = props.items[80]?.id;
+  
   // the user can input data on the items form
   const handleInputChange = (event) => {
     setFormData({
