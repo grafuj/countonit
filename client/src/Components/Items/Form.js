@@ -33,7 +33,8 @@ const ItemForm = (props) => {
     // need to make dynamic
     department_id: item.department_id || departmentID,
   });
-
+  const formRef = useRef();
+  const itemId = props.items[80]?.id;
   const [departmentID, setDepartmentID] = useState(null);
 
   // the user can input data on the items form
