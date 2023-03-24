@@ -10,7 +10,7 @@ const ItemForm = (props) => {
   const location = useLocation();
   let navigate = useNavigate();
   console.log("LOCATION:", location);
-  
+
   let item = "";
   if (!location.state) {
     console.log(item);
@@ -19,7 +19,9 @@ const ItemForm = (props) => {
   }
 
   const [picture, setPicture] = useState(null);
-  const [departmentID, setDepartmentID] = useState(location?.state?.item?.department_id || null);
+  const [departmentID, setDepartmentID] = useState(
+    location?.state?.item?.department_id || null
+  );
   const [price, setPrice] = useState(item.price_cents);
   const [quantity, setQuantity] = useState(item.quantity);
   const [formData, setFormData] = useState({
@@ -85,37 +87,37 @@ const ItemForm = (props) => {
     }
     // Submits form data to the backend
     if (!itemId) {
-    try {
-      const response = await fetch("/api/items", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          item: { ...itemData, price_cents: price * 100, quantity },
-        }),
-      });
-      const data = await response.json();
-      console.log("Item saved successfully", data);
-      navigate(`/departments/${departmentID}`);
-      navigate(0);
-    } catch (error) {
-      console.error("Error saving item", error);
+      try {
+        const response = await fetch("/api/items", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            item: { ...itemData, price_cents: price * 100, quantity },
+          }),
+        });
+        const data = await response.json();
+        console.log("Item saved successfully", data);
+        navigate(`/departments/${departmentID}`);
+        navigate(0);
+      } catch (error) {
+        console.error("Error saving item", error);
+      }
+    } else {
+      try {
+        const response = await fetch(`/api/items/${itemId}`, {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            item: { ...itemData, price_cents: price * 100, quantity },
+          }),
+        });
+        const data = await response.json();
+        console.log("Item saved successfully", data);
+        navigate(`/departments/${departmentID}`);
+      } catch (error) {
+        console.error("Error saving item", error);
+      }
     }
-  } else {
-    try {
-      const response = await fetch(`/api/items/${itemId}`, {
-        method: "PUT",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          item: { ...itemData, price_cents: price * 100, quantity },
-        }),
-      });
-      const data = await response.json();
-      console.log("Item saved successfully", data);
-      navigate(`/departments/${departmentID}`);
-    } catch (error) {
-      console.error("Error saving item", error);
-    }
-  }
   };
 
   return (
