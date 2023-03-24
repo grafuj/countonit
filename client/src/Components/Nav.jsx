@@ -10,28 +10,28 @@ function Nav(props) {
   // const {} = props;
   return (
     <nav>
-      <div class="site-logo" >
-        <Link class="site-logo-text">Count on it</Link>
+      <div className="site-logo" >
+        <Link className="site-logo-text">Count on it</Link>
       </div>
       <div>
-        <Link to="/items" class="nav-span">Items</Link>
-        <Link to="/folders" class="nav-span">Folders</Link>
-        <Link to="/departments" class="nav-span">Departments</Link>
-        <Link to="/dashboard" class="nav-span">Dashboard</Link>
-          <Link to="/department/:id" class="nav-span">Department</Link>  {/* THIS NEEDS TO BE CHANGED TO BE A VARIABLE*/}        
+        <Link to="/items" className="nav-span">Items</Link>
+        <Link to="/folders" className="nav-span">Folders</Link>
+        <Link to="/departments" className="nav-span">Departments</Link>
+        <Link to="/dashboard" className="nav-span">Dashboard</Link>
+          <Link to="/department/:id" className="nav-span">Department</Link>  {/* THIS NEEDS TO BE CHANGED TO BE A VARIABLE*/}        
       </div>
       <div>
         <>
         {user && (
-          <div class="nav-user-check">
-            <h4 class="nav-welcome">Hello {user.name}!</h4>
-            <Link to="/logout" class="nav-span">Logout</Link>
+          <div className="nav-user-check">
+            <h4 className="nav-welcome">Hello {user.name}!</h4>
+            <Link to="/logout" className="nav-span">Logout</Link>
           </div>
         )}
         {!user && (
           <div>
-            <Link to="/login" class="nav-span">Login</Link>
-            <Link to="/register" class="nav-span">Register</Link>
+            <Link to="/login" className="nav-span">Login</Link>
+            <Link to="/register" className="nav-span">Register</Link>
           </div>
         )}
         </>

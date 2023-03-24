@@ -6,7 +6,7 @@ import { fab } from '@fortawesome/free-brands-svg-icons';
 import { faTrash, faImage } from '@fortawesome/free-solid-svg-icons';
 import Departments from "./Components/Departments";
 import Items from "./Components/Items/Items";
-import Folders from "./Components/Folders";
+import Folders from "./Components/Folders/Folders";
 import Login from "./Components/Login";
 import Logout from "./Components/Logout";
 import Register from "./Components/Register";

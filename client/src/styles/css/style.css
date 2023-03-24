@@ -122,9 +122,6 @@ code {
   display: flex;
   background-color: blue; }
 
-td {
-  padding-left: 80px; }
-
 .boxtwo div, .boxthree div {
   width: 99%; }
 
@@ -187,3 +184,17 @@ td {
 
 .test div {
   padding-left: 1em; }
+
+.search-table {
+  width: 100%; }
+
+.search-results {
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  border: 1px solid #283ad8;
+  background-color: #079cf9;
+  margin-top: 0.25rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%; }
