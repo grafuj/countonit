@@ -1,7 +1,7 @@
 import React from "react";
-import axios from "axios";
+// import axios from "axios";
 import {Link} from "react-router-dom"
-import Department from "./Department";
+// import Department from "./Department";
 
 function Dashboard(props) {
   const itemCount = props.items.length;

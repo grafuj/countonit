@@ -1,8 +1,8 @@
 import React, { useState, useRef } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import DeleteButton from "./hooks/Delete";
-import axios from "axios";
+// import axios from "axios";
 import UploadPicture from "./hooks/AddPicture";
 import ItemPriceCalculator from "./hooks/ItemPriceCalculator";
 import Dropdown from "./hooks/Dropdown";
@@ -20,6 +20,7 @@ const ItemForm = (props) => {
     item = location.state.item;
   }
   const [picture, setPicture] = useState(null);
+  const [departmentID, setDepartmentID] = useState(null);
   const [price, setPrice] = useState(item.price_cents / 100);
   const [quantity, setQuantity] = useState(item.quantity);
   const [formData, setFormData] = useState({
@@ -30,14 +31,12 @@ const ItemForm = (props) => {
     minimum_level: item.minimum_level || 0,
     total_cost: "",
     description: item.description || "",
-    // need to make dynamic
     folder_id: 1,
-    // need to make dynamic
     department_id: item.department_id || departmentID,
   });
+
   const formRef = useRef();
   
-  const [departmentID, setDepartmentID] = useState(null);
   
   const itemId = props.items[80]?.id;
 
@@ -168,6 +167,7 @@ const ItemForm = (props) => {
       </div>
 
       <button type="submit">Save Item</button>
+      <button type="submit">Cancel</button>
 
       <div className="delete-btn">
         <div>
