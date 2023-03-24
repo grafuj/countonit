@@ -125,19 +125,19 @@ export default function SearchResults(props) {
         <tbody >
           <tr className="search-results">
             <td>Item Name</td>
-            <td>Quantity</td>
-            <td>Price</td>
-            <td>Minimum Level</td>
-            <td>Department</td>
+            <td className="itemvalue">Quantity</td>
+            <td className="itemvalue">Price</td>
+            <td className="itemvalue">Minimum Level</td>
+            <td className="itemvalue">Department</td>
           </tr>
           {filteredItems.map((item) => {
             return (
               <tr key={item.id} className="search-results">
                 <td>{item.name}</td>
-                <td>{item.quantity}</td>
-                <td>${item.price_cents/100}</td>
-                <td>{item.minimum_level}</td>
-                <td>{item.department_id}</td>
+                <td className="itemvalue">{item.quantity}</td>
+                <td className="itemvalue">${item.price_cents/100}</td>
+                <td className="itemvalue">{item.minimum_level}</td>
+                <td className="itemvalue">{item.department_id}</td>
               </tr>
             );
           })}

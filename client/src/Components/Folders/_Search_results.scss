@@ -1,17 +1,17 @@
 .search-table {
+  table-layout: fixed;
   width: 100%;
+  
 }
 
 .search-results {
-  padding: 0.5rem;
-  border-radius: 0.25rem;
-  border: 1px solid rgb(40, 58, 216);
+  // padding: 0.5rem;
+  // border-radius: 0.25rem;
+  // border: 1px solid rgb(40, 58, 216); 
   background-color: rgb(7, 156, 249);
   // font-size: 1rem;
-  margin-top: 0.25rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  // margin-top: 0.25rem;
+  
   width: 100%
 }
 

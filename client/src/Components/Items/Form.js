@@ -114,6 +114,7 @@ const ItemForm = (props) => {
         const data = await response.json();
         console.log("Item saved successfully", data);
         navigate(`/departments/${departmentID}`);
+        navigate(0);
       } catch (error) {
         console.error("Error saving item", error);
       }
