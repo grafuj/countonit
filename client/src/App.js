@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
 import { faTrash, faImage } from "@fortawesome/free-solid-svg-icons";
@@ -34,7 +34,7 @@ export default function App() {
         const folders = all[0].data;
         const departments = all[1].data;
         const items = all[2].data;
-        console.log("promise return:", departments);
+        // console.log("promise return:", departments);
         setState((prev) => ({ ...prev, folders, departments, items }));
       })
       .catch((error) => {
@@ -42,7 +42,7 @@ export default function App() {
       });
   }, []);
 
-  console.log("state.department:", state.departments);
+  // console.log("state.department:", state.departments);
 
   return (
     <BrowserRouter>

@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 
 function Departments(props) {
-  console.log("PROPS BABYYY", props)
+  // console.log("PROPS BABYYY", props)
   const { departments } = props;
   return (
     <section id="departments">

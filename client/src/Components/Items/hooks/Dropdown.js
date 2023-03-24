@@ -17,7 +17,7 @@ export default function Dropdown(props) {
       <option value="">--Please choose a department--</option>
       {
         departments && departments.map(department => (
-          <option value={department.id}>{department.name}</option>
+          <option key={department.id} value={department.id}>{department.name}</option>
         ))
       }
       </select>
