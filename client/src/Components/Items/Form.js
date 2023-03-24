@@ -1,16 +1,18 @@
 import React, { useState, useRef } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import DeleteButton from "./Delete";
+import DeleteButton from "./hooks/Delete";
 import axios from "axios";
 import UploadPicture from "./hooks/AddPicture";
 import ItemPriceCalculator from "./hooks/ItemPriceCalculator";
-import "./Form.css";
 import Dropdown from "./hooks/Dropdown";
-import { useLocation } from "react-router-dom";
+import "./Form.css";
+
 
 const ItemForm = (props) => {
   const location = useLocation();
-  console.log("LOCATION:", location);
+  let navigate = useNavigate();
+  // console.log("LOCATION:", location);
   let item = "";
   if (!location.state) {
     console.log(item);
@@ -34,9 +36,12 @@ const ItemForm = (props) => {
     department_id: item.department_id || departmentID,
   });
   const formRef = useRef();
-  const itemId = props.items[80]?.id;
+  
   const [departmentID, setDepartmentID] = useState(null);
+  
+  const itemId = props.items[80]?.id;
 
+ 
   // the user can input data on the items form
   const handleInputChange = (event) => {
     setFormData({
@@ -91,6 +96,7 @@ const ItemForm = (props) => {
       });
       const data = await response.json();
       console.log("Item saved successfully", data);
+      navigate(`/departments/${departmentID}`)
     } catch (error) {
       console.error("Error saving item", error);
     }

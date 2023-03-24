@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
-import Form from "./Form"
+import Form from "../Form"
 // import Button from "react-bootstrap/Button";
 // import Modal from "react-bootstrap/Modal";
 
