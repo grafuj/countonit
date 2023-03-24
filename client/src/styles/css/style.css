@@ -107,8 +107,7 @@ code {
   width: 600px; }
 
 .boxone, .boxtwo, .boxthree {
-  display: flex;
-  background-color: blue; }
+  display: flex; }
 
 .boxtwo div, .boxthree div {
   width: 99%; }
@@ -158,28 +157,10 @@ code {
 
 .minitem {
   display: flex;
-  flex-direction: column;
-  width: 200px;
-  background-color: blue;
-  padding: 0 30px;
-  height: 600px; }
+  background-color: lightblue; }
 
 .minitem tr {
   padding-left: 1em; }
-
-.search-table {
-  width: 100%; }
-
-.search-results {
-  padding: 0.5rem;
-  border-radius: 0.25rem;
-  border: 1px solid #283ad8;
-  background-color: #079cf9;
-  margin-top: 0.25rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 100%; }
 
 .mintable {
   table-layout: fixed;
@@ -188,9 +169,6 @@ code {
 .mintable tr {
   width: auto;
   text-align: center; }
-
-.departmentview {
-  background-color: blue; }
 
 .departmentName {
   font-size: 3em; }
@@ -220,10 +198,24 @@ code {
   display: flex;
   flex-direction: column;
   width: 200px;
-  background-color: blue;
+  background-color: #54a0ff;
   padding: 0 30px;
   height: 600px; }
 
 .departmentsList {
   display: flex;
   justify-content: space-evenly; }
+
+.search-table {
+  width: 100%; }
+
+.search-results {
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  border: 1px solid #283ad8;
+  background-color: #079cf9;
+  margin-top: 0.25rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%; }

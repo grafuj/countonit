@@ -12,6 +12,7 @@ function Departments(props) {
           const route = `/departments/${department.id}`;
           return (
             <Link
+              key={department.id}
               className="departmentsList"
               to={route}
               state={{ department: department }}

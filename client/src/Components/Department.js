@@ -20,7 +20,12 @@ const Department = (props) => {
       if (item.department_id === depart.id) {
         const path = `/items/${item.id}`;
         return (
-          <Link className="single-item" to={path} state={{ item: item }}>
+          <Link
+            key={item.id}
+            className="single-item"
+            to={path}
+            state={{ item: item }}
+          >
             <div>{item.image}</div>
             <div>{item.name}</div>
             <div>{item.quantity}</div>
@@ -34,7 +39,7 @@ const Department = (props) => {
     return props.departments.map((dep) => {
       const path = `/departments/${dep.id}`;
       return (
-        <div className="single-item">
+        <div key={dep.id} className="single-item">
           <div>{dep.image}</div>
           <Link to={path} state={{ department: dep }}>
             {dep.name}

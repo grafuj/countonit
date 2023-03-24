@@ -16,8 +16,6 @@ import Nav from "./Components/Nav";
 // import 'bootstrap/dist/css/bootstrap.min.css';
 // import './App.scss';
 
-
-
 library.add(fab, faTrash, faImage);
 
 export default function App() {
@@ -53,6 +51,16 @@ export default function App() {
         <Routes>
           <Route path="*" element={<h1>404: SERIOUSLY? WRONG PAGE!!!</h1>} />
           <Route
+            path="/"
+            element={
+              <Dashboard
+                items={state.items}
+                folders={state.folders}
+                departments={state.departments}
+              />
+            }
+          />
+          <Route
             path="/dashboard"
             element={
               <Dashboard
@@ -74,7 +82,13 @@ export default function App() {
           />
           <Route
             path="/folders"
-            element={<Folders folders={state.folders} departments={state.departments} items={state.items} />}
+            element={
+              <Folders
+                folders={state.folders}
+                departments={state.departments}
+                items={state.items}
+              />
+            }
           />
           <Route
             path="/departments"
