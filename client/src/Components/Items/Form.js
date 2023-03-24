@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import DeleteButton from "./Delete"
+import DeleteButton from "./Delete";
 import axios from "axios";
 import UploadPicture from "./hooks/AddPicture";
 import ItemPriceCalculator from "./hooks/ItemPriceCalculator";
@@ -12,7 +12,7 @@ const ItemForm = (props) => {
   const [price, setPrice] = useState(0);
   const [quantity, setQuantity] = useState(0);
   const [formData, setFormData] = useState({
-    image:  "",
+    image: "",
     name: "",
     quantity: 0,
     price: 0,
@@ -21,16 +21,16 @@ const ItemForm = (props) => {
     description: "",
     // need to make dynamic
     folder_id: 1,
-    department_id: departmentID
+    department_id: departmentID,
   });
 
   const itemId = props.items[80]?.id;
-  console.log("PROPS+++", itemId)
-  
+  console.log("PROPS+++", itemId);
+
   const formRef = useRef();
 
-  const [departmentID, setDepartmentID] = useState(null); 
- 
+  const [departmentID, setDepartmentID] = useState(null);
+
   // function deleteItem(itemId) {
   //   axios
   //     .delete(`/api/items/${itemId}`)
@@ -47,13 +47,12 @@ const ItemForm = (props) => {
   //       console.log("Error! Item did not delete:", err);
   //     });
   // }
-  
 
-    // const handleDelete = () => {
-    //   deleteItem();
-    // };
+  // const handleDelete = () => {
+  //   deleteItem();
+  // };
 
-// the user can input data on the items form
+  // the user can input data on the items form
   const handleInputChange = (event) => {
     setFormData({
       ...formData,
@@ -61,10 +60,15 @@ const ItemForm = (props) => {
     });
   };
 
-// submits user data
+  // submits user data
   const handleSubmit = async (event) => {
     event.preventDefault();
 
+    if(!departmentID) {
+      alert("Please select a department before saving!")
+      return;
+    }
+    
     const itemData = {
       ...formData,
       department_id: departmentID,
@@ -109,18 +113,20 @@ const ItemForm = (props) => {
 
   return (
     <form className="items-form" onSubmit={handleSubmit} ref={formRef}>
-      
       <label className="upload-pic">
-      <UploadPicture
-        picture={picture}
-        setPicture={setPicture}
-        setFormData={setFormData}
-      />
+        <UploadPicture
+          picture={picture}
+          setPicture={setPicture}
+          setFormData={setFormData}
+        />
       </label>
 
       <div>
-        <label  className="dropdown-input">
-        <Dropdown departments={props.departments} setDepartmentID={setDepartmentID} />
+        <label className="dropdown-input">
+          <Dropdown
+            departments={props.departments}
+            setDepartmentID={setDepartmentID}
+          />
         </label>
       </div>
 
