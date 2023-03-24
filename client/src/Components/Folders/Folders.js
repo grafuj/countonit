@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import SearchResults from './_Search_results';
-// import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 function Folders(props) {
   const { folders, departments, items } = props;
@@ -24,8 +24,12 @@ function Folders(props) {
         </span>
       </div>
       <div>
+      <Link to= "/departments">Go to Departments</Link>
+      </div>
+      <div>
         <SearchResults formData={formData} items={items} departments={departments} />
       </div>
+  
     </>
   );
 }
