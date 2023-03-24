@@ -19,16 +19,14 @@ const ItemForm = (props) => {
   }
 
   const [picture, setPicture] = useState(null);
-  const [departmentID, setDepartmentID] = useState(
-    location?.state?.item?.department_id || null
-  );
-  const [price, setPrice] = useState(item.price_cents);
+  const [departmentID, setDepartmentID] = useState(location?.state?.item?.department_id || null);
+  const [price, setPrice] = useState(item.price_cents / 100);
   const [quantity, setQuantity] = useState(item.quantity);
   const [formData, setFormData] = useState({
     image: item.image || "",
     name: item.name || "",
     quantity: item.quantity || 0,
-    price: item.price_cents || 0,
+    price: item.price_cents / 100 || 0,
     minimum_level: item.minimum_level || 0,
     total_cost: "",
     description: item.description || "",
