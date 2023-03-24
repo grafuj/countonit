@@ -16,6 +16,7 @@ const Department = (props) => {
   const items = function () {
     return props.items.map((item) => {
       if (item.department_id === depart.id) {
+        const imgPath = `/images/${item.image}`;
         const path = `/items/${item.id}`;
         return (
           <Link
@@ -24,7 +25,7 @@ const Department = (props) => {
             to={path}
             state={{ item: item }}
           >
-            <div>{item.image}</div>
+            <img className="itempic" src={imgPath}></img>
             <div>{item.name}</div>
             <div>QTY: {item.quantity}</div>
             <div>Price per unit ${item.price_cents / 100}</div>

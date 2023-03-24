@@ -115,7 +115,7 @@ export default function SearchResults(props) {
             <option value="">--Select a department--</option>
             {departments.map((department) => {
               return (
-                <option value={department.id}>{department.name}</option>
+                <option key={department.id} value={department.id}>{department.name}</option>
               );
             })}
           </select>
@@ -132,7 +132,7 @@ export default function SearchResults(props) {
           </tr>
           {filteredItems.map((item) => {
             return (
-              <tr className="search-results">
+              <tr key={item.id} className="search-results">
                 <td>{item.name}</td>
                 <td>{item.quantity}</td>
                 <td>${item.price_cents/100}</td>

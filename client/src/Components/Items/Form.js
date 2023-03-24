@@ -9,7 +9,7 @@ import "./Form.css";
 const ItemForm = (props) => {
   const location = useLocation();
   let navigate = useNavigate();
-  // console.log("LOCATION:", location);
+  console.log("LOCATION:", location);
   let item = "";
   if (!location.state) {
     console.log(item);
