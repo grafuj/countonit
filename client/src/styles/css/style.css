@@ -156,23 +156,20 @@ code {
 .dep-details span {
   padding: 2em; }
 
-.minlevels {
-  display: table;
-  justify-content: space-between;
-  grid-template-columns: 1fr;
-  gap: 1.5em;
-  grid-template-rows: max-content;
-  width: 100%;
-  height: auto;
-  background-color: lightblue;
-  margin: 1em; }
-
 .minitem {
   display: flex;
   background-color: lightblue; }
 
 .minitem tr {
   padding-left: 1em; }
+
+.mintable {
+  table-layout: fixed;
+  width: 100%; }
+
+.mintable tr {
+  width: auto;
+  text-align: center; }
 
 .departmentview {
   background-color: blue; }

@@ -18,8 +18,8 @@ const ItemForm = (props) => {
     item = location.state.item;
   }
   const [picture, setPicture] = useState(null);
-  const [price, setPrice] = useState(0);
-  const [quantity, setQuantity] = useState(0);
+  const [price, setPrice] = useState(item.price_cents / 100);
+  const [quantity, setQuantity] = useState(item.quantity);
   const [formData, setFormData] = useState({
     image: item.image || "",
     name: item.name || "",
@@ -31,7 +31,7 @@ const ItemForm = (props) => {
     // need to make dynamic
     folder_id: 1,
     // need to make dynamic
-    department_id: departmentID,
+    department_id: item.department_id || departmentID,
   });
 
   const [departmentID, setDepartmentID] = useState(null);
@@ -103,7 +103,7 @@ const ItemForm = (props) => {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          item: { ...itemData, price_cents: price, quantity },
+          item: { ...itemData, price_cents: price * 100, quantity },
         }),
       });
       const data = await response.json();

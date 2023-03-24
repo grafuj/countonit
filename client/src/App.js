@@ -79,7 +79,7 @@ export default function App() {
             element={<Departments departments={state.departments} />}
           />
           <Route
-            path="/items"
+            path="/items/new"
             element={
               <Items
                 items={state.items}

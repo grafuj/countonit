@@ -45,7 +45,7 @@ function Dashboard(props) {
           </table>
         </div>
         <div className="new">
-          <Link to="/items">
+          <Link to="/items/new">
             <span>click me</span>
           </Link>
           <div>new button</div>
@@ -81,7 +81,7 @@ function Dashboard(props) {
         <div>
           Stock Levels At or Below Min Level
           <div className="minlevels">
-           <table>
+           <table className="mintable">
             <tbody>
               <tr className="minitem">
                 <td>Item Name</td>
