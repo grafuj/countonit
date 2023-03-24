@@ -5,12 +5,14 @@ import UploadPicture from "./hooks/AddPicture";
 import ItemPriceCalculator from "./hooks/ItemPriceCalculator";
 import Dropdown from "./hooks/Dropdown";
 import "./Form.css";
+import CancelButton from "./hooks/Cancel";
 
 const ItemForm = (props) => {
   const location = useLocation();
   let navigate = useNavigate();
   console.log("LOCATION:", location);
 
+  // how data is populated from the item edit/view form
   let item = "";
   if (!location.state) {
     console.log(item);
@@ -54,11 +56,13 @@ const ItemForm = (props) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
+    // alerts the user to select a department before saving the form
     if (!departmentID) {
       alert("Please select a department before saving!");
       return;
     }
 
+    // data that is being passed in to the fetch call
     const itemData = {
       ...formData,
       department_id: departmentID,
@@ -85,7 +89,7 @@ const ItemForm = (props) => {
       console.log("Error saving picture", error);
       return;
     }
-    // Submits form data to the backend
+    // Submits form data to the backend if there is no item id associated
     if (!itemId) {
       try {
         const response = await fetch("/api/items", {
@@ -103,6 +107,7 @@ const ItemForm = (props) => {
         console.error("Error saving item", error);
       }
     } else {
+      // updates the item when there is an item id associated
       try {
         const response = await fetch(`/api/items/${itemId}`, {
           method: "PUT",
@@ -114,6 +119,7 @@ const ItemForm = (props) => {
         const data = await response.json();
         console.log("Item saved successfully", data);
         navigate(`/departments/${departmentID}`);
+        navigate(0);
       } catch (error) {
         console.error("Error saving item", error);
       }
@@ -187,7 +193,7 @@ const ItemForm = (props) => {
       </div>
 
       <button type="submit">Save Item</button>
-      <button type="submit">Cancel</button>
+      <CancelButton />
 
       <div className="delete-btn">
         <div>
