@@ -6,7 +6,7 @@ import { fab } from "@fortawesome/free-brands-svg-icons";
 import { faTrash, faImage } from "@fortawesome/free-solid-svg-icons";
 import Departments from "./Components/Departments";
 import Items from "./Components/Items/Items";
-import Folders from "./Components/Folders";
+import Folders from "./Components/Folders/Folders";
 import Login from "./Components/Login";
 import Logout from "./Components/Logout";
 import Register from "./Components/Register";
@@ -15,6 +15,8 @@ import Department from "./Components/Department";
 import Nav from "./Components/Nav";
 // import 'bootstrap/dist/css/bootstrap.min.css';
 // import './App.scss';
+
+
 
 library.add(fab, faTrash, faImage);
 
@@ -72,7 +74,7 @@ export default function App() {
           />
           <Route
             path="/folders"
-            element={<Folders folders={state.folders} />}
+            element={<Folders folders={state.folders} departments={state.departments} items={state.items} />}
           />
           <Route
             path="/departments"
