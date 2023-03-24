@@ -186,7 +186,8 @@ code {
   background-color: lightblue; }
 
 .itemvalue {
-  text-align: center; }
+  text-align: center;
+  display: table-cell; }
 
 .minitem {
   padding: 5px 0px 5px 40px; }
