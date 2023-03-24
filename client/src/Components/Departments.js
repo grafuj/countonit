@@ -19,9 +19,9 @@ function Departments(props) {
               state={{ department: department }}
             >
               <FontAwesomeIcon
-                icon="fa-solid fa-image"
+                icon="fa-solid fa-folder"
                 size="2xl"
-                style={{ color: "#ffffff" }}
+                style={{ color: "black" }}
               />
               <p>{department.name}</p>
             </Link>

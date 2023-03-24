@@ -7,6 +7,7 @@ import {
   faTrash,
   faImage,
   faCirclePlus,
+  faFolder,
 } from "@fortawesome/free-solid-svg-icons";
 import Departments from "./Components/Departments";
 import Items from "./Components/Items/Items";
@@ -20,7 +21,7 @@ import Nav from "./Components/Nav";
 // import 'bootstrap/dist/css/bootstrap.min.css';
 // import './App.scss';
 
-library.add(fab, faTrash, faImage, faCirclePlus);
+library.add(fab, faTrash, faImage, faCirclePlus, faFolder);
 
 export default function App() {
   const [state, setState] = useState({

@@ -39,12 +39,15 @@ const Department = (props) => {
       const path = `/departments/${dep.id}`;
       const imgPath = `/images/truck.jpg`;
       return (
-        <div key={dep.id} className="single-item">
-          <img className="itempic" src={imgPath}></img>
-          <Link to={path} state={{ department: dep }}>
-            {dep.name}
-          </Link>
-        </div>
+        <Link
+          to={path}
+          state={{ department: dep }}
+          key={dep.id}
+          className="single-item"
+        >
+          <img className="deppic" src={imgPath}></img>
+          <div>{dep.name}</div>
+        </Link>
       );
     });
   };
