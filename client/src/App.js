@@ -3,7 +3,11 @@ import axios from "axios";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
-import { faTrash, faImage } from "@fortawesome/free-solid-svg-icons";
+import {
+  faTrash,
+  faImage,
+  faCirclePlus,
+} from "@fortawesome/free-solid-svg-icons";
 import Departments from "./Components/Departments";
 import Items from "./Components/Items/Items";
 import Folders from "./Components/Folders/Folders";
@@ -16,7 +20,7 @@ import Nav from "./Components/Nav";
 // import 'bootstrap/dist/css/bootstrap.min.css';
 // import './App.scss';
 
-library.add(fab, faTrash, faImage);
+library.add(fab, faTrash, faImage, faCirclePlus);
 
 export default function App() {
   const [state, setState] = useState({
@@ -36,6 +40,7 @@ export default function App() {
         const items = all[2].data;
         console.log("promise return:", departments);
         setState((prev) => ({ ...prev, folders, departments, items }));
+        console.log(state);
       })
       .catch((error) => {
         console.error(error);

@@ -8,7 +8,6 @@ import ItemPriceCalculator from "./hooks/ItemPriceCalculator";
 import Dropdown from "./hooks/Dropdown";
 import "./Form.css";
 
-
 const ItemForm = (props) => {
   const location = useLocation();
   let navigate = useNavigate();
@@ -36,12 +35,8 @@ const ItemForm = (props) => {
     department_id: item.department_id || departmentID,
   });
   const formRef = useRef();
-  
   const [departmentID, setDepartmentID] = useState(null);
-  
   const itemId = props.items[80]?.id;
-
- 
   // the user can input data on the items form
   const handleInputChange = (event) => {
     setFormData({
@@ -96,7 +91,8 @@ const ItemForm = (props) => {
       });
       const data = await response.json();
       console.log("Item saved successfully", data);
-      navigate(`/departments/${departmentID}`)
+      navigate(`/departments/${departmentID}`);
+      navigate(0);
     } catch (error) {
       console.error("Error saving item", error);
     }

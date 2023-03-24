@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
-import Form from './Form'
-import './Form.css'
+import Form from "./Form";
+import "./Form.css";
 
 function Items(props) {
   // const {items} = props;
@@ -9,11 +9,10 @@ function Items(props) {
   return (
     <div>
       <h1>Item</h1>
-    
-      <Form items={props.items} departments={props.departments}/>
-      
-  </div>
-);
+
+      <Form items={props.items} departments={props.departments} />
+    </div>
+  );
 }
 
 export default Items;

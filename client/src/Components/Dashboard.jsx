@@ -2,6 +2,8 @@ import React from "react";
 import axios from "axios";
 import {Link} from "react-router-dom"
 import Department from "./Department";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 
 function Dashboard(props) {
   const itemCount = props.items.length;
@@ -46,9 +48,9 @@ function Dashboard(props) {
         </div>
         <div className="new">
           <Link to="/items/new">
-            <span>click me</span>
+            <FontAwesomeIcon className="newlink" icon="fa-circle-plus" />
           </Link>
-          <div>new button</div>
+          <div>Add New Item</div>
         </div>
       </div>
       <div className="boxtwo">
@@ -92,16 +94,16 @@ function Dashboard(props) {
           <div className="minlevels">
            <table className="mintable">
             <tbody>
-              <tr className="minitem">
-                <td colspan="2">Item Name</td>
+              <tr>
+                <td className="minitem" colspan="2">Item Name</td>
                 <td className="itemvalue">Quantity</td>
                 <td className="itemvalue">Minimum Level</td>
               </tr>
               {props.items.map((item) => {
                 return (
                   (item.minimum_level > item.quantity) && (
-                    <tr key={item.id} className="minitem">
-                      <td colspan="2">{item.name}</td>
+                    <tr key={item.id} >
+                      <td className="minitem" colspan="2">{item.name}</td>
                       <td className="itemvalue">{item.quantity}</td>
                       <td className="itemvalue">{item.minimum_level}</td>
                     </tr>
