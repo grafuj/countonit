@@ -6,15 +6,13 @@ const Department = (props) => {
   const location = useLocation();
   console.log("IM HEREEEEE", location);
   let depart = {};
-  if (location.state) {
-    props.departments.map((dep) => {
-      if (dep.id === location.state.department.id) {
-        depart = dep;
-      }
-    });
-  }
-  // console.log(depart.name);
-
+  const depID = Number(location.pathname.replace("/departments/", ""));
+  console.log(depID);
+  props.departments.map((dep) => {
+    if (dep.id === depID) {
+      depart = dep;
+    }
+  });
   const items = function () {
     return props.items.map((item) => {
       if (item.department_id === depart.id) {
@@ -53,7 +51,7 @@ const Department = (props) => {
       <Departments departments={props.departments} />
       <div className="departmentview">
         <div className="departmentName">{depart.name || "Departments"}</div>
-        <div className="items">{location.state ? items() : departments()}</div>
+        <div className="items">{depID ? items() : departments()}</div>
       </div>
     </section>
   );

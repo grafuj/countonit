@@ -143,6 +143,9 @@ code {
   justify-content: space-around;
   border-radius: 10px; }
 
+.newlink {
+  height: 50px; }
+
 .departments {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -156,7 +159,10 @@ code {
   width: 100%;
   background-color: lightblue;
   text-decoration: none;
-  border-radius: 10px; }
+  border-radius: 10px;
+  text-decoration: none;
+  color: black;
+  padding: 10px 0px; }
 
 .dep-details {
   width: 100%;
@@ -183,7 +189,7 @@ code {
   text-align: center; }
 
 .minitem {
-  padding-left: 100px; }
+  padding: 5px 0px 5px 40px; }
 
 .departmentName {
   font-size: 3em; }

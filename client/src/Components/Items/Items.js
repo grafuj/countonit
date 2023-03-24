@@ -4,7 +4,6 @@ import Form from "./Form";
 import "./Form.css";
 
 function Items(props) {
-
   return (
     <div>
       <h1>Item</h1>
