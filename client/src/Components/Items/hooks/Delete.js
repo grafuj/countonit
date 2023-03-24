@@ -17,7 +17,7 @@ import axios from "axios";
       })
     }
     return (
-      <button onClick={handleDelete}>
+      <button type="submit" onClick={handleDelete}>
           <FontAwesomeIcon
             icon="fa-solid fa-trash"
             size="2xl"

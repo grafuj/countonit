@@ -36,7 +36,7 @@ export default function App() {
         const folders = all[0].data;
         const departments = all[1].data;
         const items = all[2].data;
-        console.log("promise return:", departments);
+        // console.log("promise return:", departments);
         setState((prev) => ({ ...prev, folders, departments, items }));
       })
       .catch((error) => {
@@ -44,7 +44,7 @@ export default function App() {
       });
   }, []);
 
-  console.log("state.department:", state.departments);
+  // console.log("state.department:", state.departments);
 
   return (
     <BrowserRouter>

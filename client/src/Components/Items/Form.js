@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import DeleteButton from "./hooks/Delete";
 // import axios from "axios";
@@ -37,9 +37,9 @@ const ItemForm = (props) => {
 
   const formRef = useRef();
   
-  
-  const itemId = props.items[80]?.id;
-
+  // used in the delete function
+  const params = useParams();
+  const itemId = params.id;
  
   // the user can input data on the items form
   const handleInputChange = (event) => {

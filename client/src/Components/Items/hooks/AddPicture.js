@@ -19,11 +19,13 @@ export default function UploadPicture({picture, setPicture, setFormData}) {
       {preview && (
         <img src={preview} alt="Selected file preview" style={{width: '200px', height: '200px'}}/>
       )}
+      <span className='pic-icon'>
       <FontAwesomeIcon
           icon="fa-solid fa-image"
           size="2xl"
           style={{ color: "#ffffff" }}
         />
+        </span>
     </div>
   )
 }

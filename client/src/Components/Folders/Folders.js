@@ -24,7 +24,7 @@ function Folders(props) {
         </span>
       </div>
       <div>
-      <Link to= "/departments">Go to Departments</Link>
+      <Link to= "/departments">Departments</Link>
       </div>
       <div>
         <SearchResults formData={formData} items={items} departments={departments} />
