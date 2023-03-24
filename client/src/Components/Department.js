@@ -37,9 +37,10 @@ const Department = (props) => {
   const departments = function () {
     return props.departments.map((dep) => {
       const path = `/departments/${dep.id}`;
+      const imgPath = `/images/truck.jpg`;
       return (
         <div key={dep.id} className="single-item">
-          <div>{dep.image}</div>
+          <img className="itempic" src={imgPath}></img>
           <Link to={path} state={{ department: dep }}>
             {dep.name}
           </Link>
