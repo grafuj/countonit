@@ -21,6 +21,12 @@ class Api::ItemsController < ApplicationController
         @item.destroy
         head :no_content
     end
+
+    def update
+        @item = Item.find(params[:id])
+        @item.update!(item_params)
+        render json: {status: :updated, item: @item}
+    end
     
     private
     

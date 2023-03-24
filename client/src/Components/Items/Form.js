@@ -9,16 +9,18 @@ import "./Form.css";
 const ItemForm = (props) => {
   const location = useLocation();
   let navigate = useNavigate();
-  // console.log("LOCATION:", location);
+  console.log("LOCATION:", location);
+  
   let item = "";
   if (!location.state) {
     console.log(item);
   } else {
     item = location.state.item;
   }
+
   const [picture, setPicture] = useState(null);
-  const [departmentID, setDepartmentID] = useState(null);
-  const [price, setPrice] = useState(item.price_cents / 100);
+  const [departmentID, setDepartmentID] = useState(location?.state?.item?.department_id || null);
+  const [price, setPrice] = useState(item.price_cents);
   const [quantity, setQuantity] = useState(item.quantity);
   const [formData, setFormData] = useState({
     image: item.image || "",
@@ -82,6 +84,7 @@ const ItemForm = (props) => {
       return;
     }
     // Submits form data to the backend
+    if (!itemId) {
     try {
       const response = await fetch("/api/items", {
         method: "POST",
@@ -97,6 +100,22 @@ const ItemForm = (props) => {
     } catch (error) {
       console.error("Error saving item", error);
     }
+  } else {
+    try {
+      const response = await fetch(`/api/items/${itemId}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          item: { ...itemData, price_cents: price * 100, quantity },
+        }),
+      });
+      const data = await response.json();
+      console.log("Item saved successfully", data);
+      navigate(`/departments/${departmentID}`);
+    } catch (error) {
+      console.error("Error saving item", error);
+    }
+  }
   };
 
   return (
@@ -114,6 +133,7 @@ const ItemForm = (props) => {
           <Dropdown
             departments={props.departments}
             setDepartmentID={setDepartmentID}
+            departmentID={departmentID}
           />
         </label>
       </div>
