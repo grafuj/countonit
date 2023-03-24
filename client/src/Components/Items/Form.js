@@ -6,51 +6,35 @@ import UploadPicture from "./hooks/AddPicture";
 import ItemPriceCalculator from "./hooks/ItemPriceCalculator";
 import "./Form.css";
 import Dropdown from "./hooks/Dropdown";
+import { useLocation } from "react-router-dom";
 
 const ItemForm = (props) => {
+  const location = useLocation();
+  console.log("LOCATION:", location);
+  let item = "";
+  if (!location.state) {
+    console.log(item);
+  } else {
+    item = location.state.item;
+  }
   const [picture, setPicture] = useState(null);
-  const [price, setPrice] = useState(0);
-  const [quantity, setQuantity] = useState(0);
+  const [price, setPrice] = useState(item.price_cents / 100);
+  const [quantity, setQuantity] = useState(item.quantity);
   const [formData, setFormData] = useState({
-    image: "",
-    name: "",
-    quantity: 0,
-    price: 0,
-    minimum_level: 0,
+    image: item.image || "",
+    name: item.name || "",
+    quantity: item.quantity || 0,
+    price: item.price_cents || 0,
+    minimum_level: item.minimum_level || 0,
     total_cost: "",
-    description: "",
+    description: item.description || "",
     // need to make dynamic
     folder_id: 1,
-    department_id: departmentID,
+    // need to make dynamic
+    department_id: item.department_id || departmentID,
   });
 
-  const itemId = props.items[80]?.id;
-  console.log("PROPS+++", itemId);
-
-  const formRef = useRef();
-
   const [departmentID, setDepartmentID] = useState(null);
-
-  // function deleteItem(itemId) {
-  //   axios
-  //     .delete(`/api/items/${itemId}`)
-  //     .then((response) => {
-  //       console.log("Item deleted sucessfully!");
-  //       setFormData((prevState) => {
-  //         const newState = { ...prevState };
-  //         // remove deleted item from state
-  //         newState.items = prevState.items.filter((item) => item.id !== itemId);
-  //         return newState;
-  //       });
-  //     })
-  //     .catch((err) => {
-  //       console.log("Error! Item did not delete:", err);
-  //     });
-  // }
-
-  // const handleDelete = () => {
-  //   deleteItem();
-  // };
 
   // the user can input data on the items form
   const handleInputChange = (event) => {
@@ -64,11 +48,11 @@ const ItemForm = (props) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    if(!departmentID) {
-      alert("Please select a department before saving!")
+    if (!departmentID) {
+      alert("Please select a department before saving!");
       return;
     }
-    
+
     const itemData = {
       ...formData,
       department_id: departmentID,
@@ -101,7 +85,7 @@ const ItemForm = (props) => {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          item: { ...itemData, price_cents: price, quantity },
+          item: { ...itemData, price_cents: price * 100, quantity },
         }),
       });
       const data = await response.json();
