@@ -218,7 +218,10 @@ code {
   display: flex; }
 
 .itempic {
-  width: 100px; }
+  width: 150px; }
+
+.deppic {
+  width: 300px; }
 
 #departments {
   display: flex;
@@ -230,7 +233,9 @@ code {
 
 .departmentsList {
   display: flex;
-  justify-content: space-evenly; }
+  justify-content: space-evenly;
+  color: black;
+  text-decoration: none; }
 
 .search-table {
   width: 100%; }
