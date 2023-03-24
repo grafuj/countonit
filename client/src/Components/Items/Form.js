@@ -1,13 +1,10 @@
 import React, { useState, useRef } from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import DeleteButton from "./hooks/Delete";
-// import axios from "axios";
 import UploadPicture from "./hooks/AddPicture";
 import ItemPriceCalculator from "./hooks/ItemPriceCalculator";
 import Dropdown from "./hooks/Dropdown";
 import "./Form.css";
-
 
 const ItemForm = (props) => {
   const location = useLocation();
@@ -36,11 +33,11 @@ const ItemForm = (props) => {
   });
 
   const formRef = useRef();
-  
+
   // used in the delete function
   const params = useParams();
   const itemId = params.id;
- 
+
   // the user can input data on the items form
   const handleInputChange = (event) => {
     setFormData({
@@ -95,7 +92,7 @@ const ItemForm = (props) => {
       });
       const data = await response.json();
       console.log("Item saved successfully", data);
-      navigate(`/departments/${departmentID}`)
+      navigate(`/departments/${departmentID}`);
     } catch (error) {
       console.error("Error saving item", error);
     }
