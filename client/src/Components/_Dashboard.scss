@@ -117,7 +117,17 @@
   width: 100px
 }
 
+
 .stock-level-container {
-  background-color: red;
   display: flex;
+  flex-direction: row;
+  width: 100%
+}
+
+.stock-level-container h3 {
+  width: 400px
+}
+
+.icon-container {
+  padding-top: 12px;
 }

@@ -104,7 +104,6 @@ function Dashboard(props) {
                     style={{ color: "#ff0000" }}
                   />
                 </div>
-                <p className="notification">Low Stock</p>
               </div>
             )}
           </div>
