@@ -163,7 +163,7 @@ Item.create(
   name: "First aid kit",
   description: "First Aid Central's Construction First Aid Kit is designed for the construction industry, contractor's and related trades in Canada. Be prepared for automotive emergencies in Canada each and every day. Well stocked to handle common workplace injuries such as cuts and scrapes, wounds and burns
   Exceeds minimum first aid requirements for Federal Type 'A' Kit. CPR Mask with one way valve included Health Canada Approved components",
-  image: 'first-aid-kit.jpg',
+  image: 'https://res.cloudinary.com/dmamz82ok/image/upload/v1679708112/first-aid-kit_okx2xh.webp',
   price_cents: 6999,
   quantity: 2,
   folder_id: 1,
