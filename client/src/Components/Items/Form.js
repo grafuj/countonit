@@ -38,7 +38,7 @@ const ItemForm = (props) => {
     folder_id: 1,
     department_id: item.department_id || departmentID,
   });
-  console.log("ITEM", item);
+  console.log("ITEM", item.minimum_level);
 
   const formRef = useRef();
 
