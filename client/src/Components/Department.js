@@ -34,7 +34,7 @@ const Department = (props) => {
             ></Image>
             <div>{item.name}</div>
             <div>QTY: {item.quantity}</div>
-            <div>Price per unit ${item.price_cents / 100}</div>
+            <div>Price per unit ${(item.price_cents / 100).toFixed(2)}</div>
           </Link>
         );
       }
@@ -63,12 +63,14 @@ const Department = (props) => {
       <section className="depView">
         <Departments departments={props.departments} />
         <div className="departmentview">
-          <div className="departmentName">{depart.name || "Departments"}</div>
+          <div className="departmentName">
+            {depart.name || "Departments"}
+            <NewItemButton />
+          </div>
+
           <div className="items">{depID ? items() : departments()}</div>
         </div>
       </section>
-
-      <NewItemButton />
     </>
   );
 };

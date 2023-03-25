@@ -19,15 +19,15 @@ const ItemForm = (props) => {
   } else {
     item = location.state.item;
   }
-
-  const [picture, setPicture] = useState(null);
+  console.log("item.image", item.image);
+  const [picture, setPicture] = useState(null || `${item.image}`);
   const [departmentID, setDepartmentID] = useState(
     location?.state?.item?.department_id || null
   );
   const [price, setPrice] = useState(item.price_cents / 100);
   const [quantity, setQuantity] = useState(item.quantity);
   const [formData, setFormData] = useState({
-    image: item.image || "",
+    image: `${item.image}` || "",
     name: item.name || "",
     quantity: item.quantity || 0,
     price: item.price_cents / 100 || 0,
@@ -196,7 +196,7 @@ const ItemForm = (props) => {
       <CancelButton />
 
       <div className="delete-btn">
-          <DeleteButton itemId={itemId} />
+        <DeleteButton itemId={itemId} />
       </div>
     </form>
   );
