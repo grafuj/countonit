@@ -95,17 +95,21 @@ function Dashboard(props) {
            <table className="mintable">
             <tbody>
               <tr>
-                <td className="minitem" colSpan="2">Item Name</td>
+                <td className="minitem">Item Name</td>
                 <td className="itemvalue">Quantity</td>
+                <td className="itemvalue">Price</td>
                 <td className="itemvalue">Minimum Level</td>
+                <td className="itemvalue">Department</td>
               </tr>
               {props.items.map((item) => {
                 return (
                   (item.minimum_level > item.quantity) && (
                     <tr key={item.id} >
-                      <td className="minitem" colSpan="2">{item.name}</td>
+                      <td className="minitem">{item.name}</td>
                       <td className="itemvalue">{item.quantity}</td>
+                      <td className="itemvalue">{item.price_cents}</td>
                       <td className="itemvalue">{item.minimum_level}</td>
+                      <td className="itemvalue">{item.department_id}</td>
                     </tr>
                   )
                 );

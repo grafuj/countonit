@@ -110,6 +110,18 @@
     margin: 10px;
   }
 
+  .delete-icon {
+    margin-top: 1rem;
+    margin-left: 10px;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    background-color: rgb(7, 156, 249);
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
   .pic-input {
     margin-left: 10px;
     margin-right: 10px;

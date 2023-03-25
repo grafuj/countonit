@@ -11,13 +11,15 @@ const DeleteButton = ({ itemId }) => {
       .delete(`/api/items/${itemId}`)
       .then((response) => {
         console.log("Delete was successful!", response);
+        alert(`Item ${itemId} has been deleted!`)
       })
       .catch((error) => {
         console.log("Item did not delete", error);
+        alert("Error! Could not delete. Please try again!")
       });
   };
   return (
-    <button type="submit" onClick={handleDelete}>
+    <button className="delete-icon" onClick={handleDelete}>
       <FontAwesomeIcon
         icon="fa-solid fa-trash"
         size="2xl"
