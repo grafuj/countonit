@@ -109,6 +109,9 @@ code {
 .boxone, .boxtwo, .boxthree {
   display: flex; }
 
+h3 {
+  margin-left: 20px; }
+
 .boxtwo div, .boxthree div {
   width: 99%; }
 
