@@ -1,15 +1,16 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
-function CancelButton() {
-  const navigate = useNavigate();
+function CancelButton(props) {
+  const { onClose } = props;
+  // const navigate = useNavigate();
 
-  const handleCancel = () => {
-    navigate("/dashboard");
-  };
+  // const handleCancel = () => {
+  //   navigate("/dashboard");
+  // };
 
   return (
-    <button type="submit" onClick={handleCancel}>
+    <button type="button" onClick={onClose}>
       Cancel
     </button>
   );

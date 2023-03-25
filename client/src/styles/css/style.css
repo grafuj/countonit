@@ -12,7 +12,11 @@
 .site-logo-text {
   text-decoration: none;
   font-size: 24px;
-  font-weight: 600; }
+  font-weight: 600;
+  color: white;
+  letter-spacing: 2px;
+  font-family: monospace;
+  text-align: center; }
 
 nav {
   background-color: #54a0ff;
@@ -27,7 +31,9 @@ nav {
   padding: 10px;
   border-radius: 6px;
   color: #222f3e;
-  transition: 0.5s; }
+  transition: 0.5s;
+  font-weight: bold;
+  color: white; }
 
 .nav-span:link {
   text-decoration: none; }
@@ -455,3 +461,39 @@ h3 {
     align-items: center; } }
 
 /*# sourceMappingURL=Form.css.map */
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  pointer-events: none; }
+
+.modal.show {
+  opacity: 1;
+  pointer-events: visible; }
+
+.modal-content {
+  width: 60%;
+  background-color: paleturquoise;
+  transition: all 0.3s ease-in-out; }
+
+.modal.show .modal-content {
+  transform: translateY(0); }
+
+.modal-header, .modal-footer {
+  padding: 1em; }
+
+.modal-title {
+  margin: 0; }
+
+.modal-body {
+  padding: 1em;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee; }

@@ -10,6 +10,8 @@ import {
   faFolder,
   faFlag,
   faChevronRight,
+  faMountainSun,
+  faEarthAmericas
 } from "@fortawesome/free-solid-svg-icons";
 import Departments from "./Components/Departments";
 import Items from "./Components/Items/Items";
@@ -20,8 +22,6 @@ import Register from "./Components/Register";
 import Dashboard from "./Components/Dashboard.jsx";
 import Department from "./Components/Department";
 import Nav from "./Components/Nav";
-// import 'bootstrap/dist/css/bootstrap.min.css';
-// import './App.scss';
 
 library.add(
   fab,
@@ -30,7 +30,9 @@ library.add(
   faCirclePlus,
   faFolder,
   faChevronRight,
-  faFlag
+  faFlag,
+  faMountainSun,
+  faEarthAmericas
 );
 
 export default function App() {
@@ -49,7 +51,7 @@ export default function App() {
         const folders = all[0].data;
         const departments = all[1].data;
         const items = all[2].data;
-        // console.log("promise return:", departments);
+  
         setState((prev) => ({ ...prev, folders, departments, items }));
         console.log(state);
       })
@@ -57,8 +59,6 @@ export default function App() {
         console.error(error);
       });
   }, []);
-
-  // console.log("state.department:", state.departments);
 
   return (
     <BrowserRouter>
