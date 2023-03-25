@@ -201,7 +201,7 @@ const ItemForm = (props) => {
       <div className="delete-btn">
         <DeleteButton itemId={itemId} />
       </div>
-      <Image cloudName="dtvbwudm2" publicId="https://res.cloudinary.com/dtvbwudm2/image/upload/v1679596128/x55kkmv1zphtkqpltlwj.png" />
+      {/* <Image cloudName="dtvbwudm2" publicId="https://res.cloudinary.com/dtvbwudm2/image/upload/v1679596128/x55kkmv1zphtkqpltlwj.png" /> */}
     </form>
   );
 };

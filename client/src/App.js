@@ -58,13 +58,8 @@ export default function App() {
           <Route path="*" element={<h1>404: SERIOUSLY? WRONG PAGE!!!</h1>} />
           <Route
             path="/"
-            element={
-              <Dashboard
-                items={state.items}
-                folders={state.folders}
-                departments={state.departments}
-              />
-            }
+            element={<Login />}
+           
           />
           <Route
             path="/dashboard"
