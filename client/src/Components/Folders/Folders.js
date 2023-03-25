@@ -40,17 +40,14 @@ function Folders(props) {
     <>
       <div className="folderView">
         <h1>Organization</h1>
-        <span>
+        <span className="chevron">
           <FontAwesomeIcon
-            className="chevron"
             icon="fa-solid fa-chevron-right"
             size="2xl"
             style={{ color: "black" }}
           />
-        </span>
-        <span>
+
           <FontAwesomeIcon
-            className="chevron"
             icon="fa-solid fa-chevron-right"
             size="2xl"
             style={{ color: "black" }}
