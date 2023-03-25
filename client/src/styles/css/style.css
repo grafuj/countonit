@@ -290,7 +290,7 @@ code {
   padding-left: 10%; }
 
 .chevron {
-  padding-top: 25px; }
+  padding: 25px 15px 0 15px; }
 
 .filters {
   display: flex; }
