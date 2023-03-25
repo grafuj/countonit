@@ -21,15 +21,15 @@ Folder.create(
 
 puts "creating departments"
 Department.create(
-  name: "Truck #1",
+  name: "Maintenance",
   folder_id: 1
 )
 Department.create(
-  name: "Truck #2",
+  name: "Construction",
   folder_id: 1
 )
 Department.create(
-  name: "Truck #3",
+  name: "Softscape",
   folder_id: 1
 )
 departments = Department.all()
