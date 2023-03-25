@@ -59,7 +59,7 @@ export default function App() {
           <Route
             path="/"
             element={
-              <Dashboard
+              <Login
                 items={state.items}
                 folders={state.folders}
                 departments={state.departments}
