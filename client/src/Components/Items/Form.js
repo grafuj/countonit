@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
-import { Image } from 'cloudinary-react';
+import { Image } from "cloudinary-react";
 import DeleteButton from "./hooks/Delete";
 import UploadPicture from "./hooks/AddPicture";
 import ItemPriceCalculator from "./hooks/ItemPriceCalculator";
@@ -201,7 +201,6 @@ const ItemForm = (props) => {
       <div className="delete-btn">
         <DeleteButton itemId={itemId} />
       </div>
-      <Image cloudName="dtvbwudm2" publicId="https://res.cloudinary.com/dtvbwudm2/image/upload/v1679596128/x55kkmv1zphtkqpltlwj.png" />
     </form>
   );
 };
