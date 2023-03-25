@@ -14,7 +14,7 @@ export default function SearchResults(props) {
     folder_id: 1,
     department_id: "",
   });
-
+  const departmentNames = {}
   const [filteredItems, setFilteredItems] = useState(items);
 
   const handleInputChange = (event) => {
@@ -115,6 +115,7 @@ export default function SearchResults(props) {
           <select value={formData.department_id} onChange={handleInputChange} name={"department_id"}>
             <option value="">--Select a department--</option>
             {departments.map((department) => {
+              departmentNames[department.id] = department.name
               return (
                 <option key={department.id} value={department.id}>{department.name}</option>
               );
@@ -139,7 +140,7 @@ export default function SearchResults(props) {
                 <td className="itemvalue">{item.quantity}</td>
                 <td className="itemvalue">${item.price_cents/100}</td>
                 <td className="itemvalue">{item.minimum_level}</td>
-                <td className="itemvalue">{item.department_id}</td>
+                <td className="itemvalue">{departmentNames[item.department_id]}</td>
               </tr>
             );
           })}
