@@ -44,9 +44,15 @@ function Dashboard(props) {
         </div>
         <div className="new">
           <Link to="/items/new">
-            <FontAwesomeIcon className="newlink" icon="fa-circle-plus" />
+            <FontAwesomeIcon className="newlink" icon="fa-circle-plus" style={{color: "#ffffff",}}/>
           </Link>
           <div>Add New Item</div>
+        </div>
+        <div className="new">
+          <Link to="/items/new">
+            <FontAwesomeIcon className="newlink" icon="fa-circle-plus" style={{color: "#ffffff",}}/>
+          </Link>
+          <div>Add Department</div>
         </div>
       </div>
       <div className="boxtwo">
