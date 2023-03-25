@@ -55,7 +55,11 @@ export default function App() {
       <Nav />
       <main className="main-window-space">
         <Routes>
-          <Route path="*" element={<h1>404: SERIOUSLY? WRONG PAGE!!!</h1>} />
+          <Route path="*" element={<Dashboard
+                items={state.items}
+                folders={state.folders}
+                departments={state.departments}
+              />} />
           <Route
             path="/"
             element={
