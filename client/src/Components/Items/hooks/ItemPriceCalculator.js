@@ -2,7 +2,7 @@ import React from "react";
 
 export default function ItemPriceCalculator(props) {
   const { price, quantity } = props;
-  console.log("PRICE", price)
+  console.log("PRICE", price);
 
   const handlePriceChange = (event) => {
     props.setPrice(Number(event.target.value));
@@ -13,7 +13,9 @@ export default function ItemPriceCalculator(props) {
   };
 
   const calculateTotalCost = () => {
-    return price * quantity;
+    if (price && quantity) {
+      return (price * quantity).toFixed(2);
+    }
   };
 
   return (
