@@ -19,9 +19,9 @@ function Nav(props) {
       </div>
       <div>
         <Link to="/dashboard" className="nav-span">Dashboard</Link>
-        <Link to="/folders" className="nav-span">Folders</Link>
-        <Link to="/departments" className="nav-span">Departments</Link>
-        <Link to="/items/new" className="nav-span">Items</Link>
+        <Link to="/folders" className="nav-span">All Items</Link>
+        <Link to="/departments" className="nav-span">Organization</Link>
+        {/* <Link to="/items/new" className="nav-span">Items</Link> */}
       </div>
       <div>
         <>
