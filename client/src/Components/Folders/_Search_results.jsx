@@ -138,7 +138,7 @@ export default function SearchResults(props) {
               <tr key={item.id} className="search-results">
                 <Link to={link} state={{item: item}} className="itemvalue">{item.name}</Link>
                 <td className="itemvalue">{item.quantity}</td>
-                <td className="itemvalue">${item.price_cents/100}</td>
+                <td className="itemvalue">${(item.price_cents/100).toFixed(2)}</td>
                 <td className="itemvalue">{item.minimum_level}</td>
                 <td className="itemvalue">{departmentNames[item.department_id]}</td>
               </tr>
