@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-// import Axios from 'axios';
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function UploadPicture({
