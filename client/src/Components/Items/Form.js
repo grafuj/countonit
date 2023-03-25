@@ -103,8 +103,10 @@ const ItemForm = (props) => {
         });
         const data = await response.json();
         console.log("Item saved successfully", data);
-        navigate(`/departments/${departmentID}`);
-        navigate(0);
+        props.setItem(data.item)
+        props.onClose();
+        // navigate(`/items/${itemId}`, {state: {item: data.item}});
+        // navigate(0);
       } catch (error) {
         console.error("Error saving item", error);
       }
@@ -120,8 +122,10 @@ const ItemForm = (props) => {
         });
         const data = await response.json();
         console.log("Item saved successfully", data);
-        navigate(`/departments/${departmentID}`);
-        navigate(0);
+        props.setItem(data.item)
+        props.onClose();
+        // navigate(`/items/${itemId}`, {state: {item: data.item}});
+        // navigate(0);
       } catch (error) {
         console.error("Error saving item", error);
       }
@@ -194,12 +198,12 @@ const ItemForm = (props) => {
           />
         </label>
       </div>
-
-      <button type="submit">Save Item</button>
-      <CancelButton />
-
-      <div className="delete-btn">
-        <DeleteButton itemId={itemId} />
+      <div>
+        <button type="submit">Save Item</button>
+        <CancelButton onClose={props.onClose} />
+        <div className="delete-btn">
+          <DeleteButton itemId={itemId} departmentID={departmentID} />
+        </div>
       </div>
     </form>
   );
