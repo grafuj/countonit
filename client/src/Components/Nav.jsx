@@ -1,23 +1,27 @@
 import React from 'react';
 // import { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEarthAmericas } from '@fortawesome/free-solid-svg-icons';
 
 // need to check state or context for user for conditional rendering
 // const user = { name: "Bob" }; //test with user
 const user = null;  //test without user
 
 function Nav(props) {
-  // const {} = props;
   return (
     <nav>
+     <span className='earth-icon'> 
+     <FontAwesomeIcon icon={faEarthAmericas} size="2xl" style={{color: "#ffffff",}} />  
+     </span>
       <div className="site-logo" >
-        <Link to="/" className="site-logo-text">Count on it</Link>
+        <Link to="/" className="site-logo-text">Count On It</Link>
       </div>
       <div>
-        <Link to="/items/new" className="nav-span">Items</Link>
+        <Link to="/dashboard" className="nav-span">Dashboard</Link>
         <Link to="/folders" className="nav-span">Folders</Link>
         <Link to="/departments" className="nav-span">Departments</Link>
-        <Link to="/dashboard" className="nav-span">Dashboard</Link>
+        <Link to="/items/new" className="nav-span">Items</Link>
       </div>
       <div>
         <>
