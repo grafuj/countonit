@@ -6,7 +6,6 @@ import UploadPicture from "./hooks/AddPicture";
 import ItemPriceCalculator from "./hooks/ItemPriceCalculator";
 import Dropdown from "./hooks/Dropdown";
 import CancelButton from "./hooks/Cancel";
-import "./Form.css";
 
 const ItemForm = (props) => {
   const location = useLocation();
@@ -130,26 +129,7 @@ const ItemForm = (props) => {
 
   return (
     <form className="items-form" onSubmit={handleSubmit} ref={formRef}>
-      <label className="upload-pic">
-        <UploadPicture
-          picture={picture}
-          setPicture={setPicture}
-          setFormData={setFormData}
-          originalPicture={`${item.image}` || null}
-        />
-      </label>
-
-      <div>
-        <label className="dropdown-input">
-          <Dropdown
-            departments={props.departments}
-            setDepartmentID={setDepartmentID}
-            departmentID={departmentID}
-          />
-        </label>
-      </div>
-
-      <div>
+      <div className="form-dep-item-name">
         <label className="item-input">
           Item name:
           <input
@@ -159,31 +139,52 @@ const ItemForm = (props) => {
             onChange={handleInputChange}
           />
         </label>
-      </div>
-
-      <div className="price-calc-input">
-        <label>
-          <ItemPriceCalculator
-            price={price}
-            quantity={quantity}
-            setPrice={setPrice}
-            setQuantity={setQuantity}
+        <label className="dropdown-input">
+          <Dropdown
+            departments={props.departments}
+            setDepartmentID={setDepartmentID}
+            departmentID={departmentID}
           />
         </label>
       </div>
+      <div className="item-list-view">
+        <div>
+          <div></div>
 
-      <div className="min-level-input">
-        <label>
-          Minimum Levels:
-          <input
-            type="number"
-            name="minimum_level"
-            value={formData.minimum_level}
-            onChange={handleInputChange}
-          />
-        </label>
+          <div className="price-calc-input">
+            <label>
+              <ItemPriceCalculator
+                price={price}
+                quantity={quantity}
+                setPrice={setPrice}
+                setQuantity={setQuantity}
+              />
+            </label>
+          </div>
+
+          <div className="min-level-input">
+            <label>
+              Minimum Levels:
+              <input
+                type="number"
+                name="minimum_level"
+                value={formData.minimum_level}
+                onChange={handleInputChange}
+              />
+            </label>
+          </div>
+        </div>
+        <div>
+          <label className="upload-pic">
+            <UploadPicture
+              picture={picture}
+              setPicture={setPicture}
+              setFormData={setFormData}
+              originalPicture={`${item.image}` || null}
+            />
+          </label>
+        </div>
       </div>
-
       <div className="notes-input">
         <label>
           Notes:
@@ -194,7 +195,6 @@ const ItemForm = (props) => {
           />
         </label>
       </div>
-
       <button type="submit">Save Item</button>
       <CancelButton />
 

@@ -1,10 +1,9 @@
 import React from "react";
 import Form from "./Form";
-import "./Form.css";
 
 function Items(props) {
   return (
-    <div>
+    <div className="items-div">
       <h1>Item</h1>
 
       <Form items={props.items} departments={props.departments} />

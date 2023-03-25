@@ -21,14 +21,7 @@ export default function UploadPicture({
     console.log({ picture, preview, originalPicture });
   }, [picture, preview]);
   return (
-    <div>
-      <input
-        name="image"
-        filename={picture}
-        accept="image/*"
-        type="file"
-        onChange={handlePictureChange}
-      />
+    <div className="preview-container">
       {preview && (
         <img
           src={preview}
@@ -45,6 +38,13 @@ export default function UploadPicture({
           />
         </span>
       )}
+      <input
+        name="image"
+        filename={picture}
+        accept="image/*"
+        type="file"
+        onChange={handlePictureChange}
+      />
     </div>
   );
 }
