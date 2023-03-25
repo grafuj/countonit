@@ -15,8 +15,8 @@ const Editmodal = (props) => {
           {props.children}
         </div>
         <div className="modal-footer">
-          <button className="button">Save</button>
-          <button onClick={onClose} className="button">Close</button>
+          {/* <button className="button">Save</button> */}
+          {/* <button onClick={onClose} className="button">Close</button> */}
         </div>
       </div>
     </div>
