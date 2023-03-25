@@ -11,6 +11,7 @@ function Dashboard(props) {
   let qtyCount = 0;
   let totalValueCount = 0;
   const departmentInfo = {};
+  const departmentNames = {}
   props.items.map((item) => {
     qtyCount += item.quantity;
     totalValueCount += Math.floor(item.price_cents * item.quantity);
@@ -58,6 +59,7 @@ function Dashboard(props) {
           <h3>Departments</h3>
           <div className="departments">
             {props.departments.map((department) => {
+              departmentNames[department.id] = department.name
               let total = 0;
               let value = 0;
               departmentInfo[department.id].map((dep) => {
@@ -109,7 +111,7 @@ function Dashboard(props) {
                       <td className="itemvalue">{item.quantity}</td>
                       <td className="itemvalue">${item.price_cents / 100}</td>
                       <td className="itemvalue">{item.minimum_level}</td>
-                      <td className="itemvalue">{item.department_id}</td>
+                      <td className="itemvalue">{departmentNames[item.department_id]}</td>
                     </tr>
                   )
                 );
