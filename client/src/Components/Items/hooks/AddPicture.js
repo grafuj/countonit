@@ -1,16 +1,26 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 // import Axios from 'axios';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-export default function UploadPicture({ picture, setPicture, setFormData }) {
+export default function UploadPicture({
+  picture,
+  setPicture,
+  setFormData,
+  originalPicture,
+}) {
   const [preview, setPreview] = useState(null || picture);
-
   const handlePictureChange = (event) => {
     const selectedPicture = event.target.files[0];
     setPicture(selectedPicture);
-    setPreview(URL.createObjectURL(selectedPicture));
+    if (selectedPicture) {
+      setPreview(URL.createObjectURL(selectedPicture));
+    } else {
+      setPreview(originalPicture);
+    }
   };
-
+  useEffect(() => {
+    console.log({ picture, preview, originalPicture });
+  }, [picture, preview]);
   return (
     <div>
       <input

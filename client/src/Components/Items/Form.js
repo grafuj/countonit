@@ -24,8 +24,8 @@ const ItemForm = (props) => {
   const [departmentID, setDepartmentID] = useState(
     location?.state?.item?.department_id || null
   );
-  const [price, setPrice] = useState(item.price_cents / 100);
-  const [quantity, setQuantity] = useState(item.quantity);
+  const [price, setPrice] = useState(item.price_cents / 100 || 0);
+  const [quantity, setQuantity] = useState(item.quantity || 0);
   const [formData, setFormData] = useState({
     image: `${item.image}` || "",
     name: item.name || "",
@@ -37,6 +37,7 @@ const ItemForm = (props) => {
     folder_id: 1,
     department_id: item.department_id || departmentID,
   });
+  console.log("ITEM", item);
 
   const formRef = useRef();
 
@@ -133,6 +134,7 @@ const ItemForm = (props) => {
           picture={picture}
           setPicture={setPicture}
           setFormData={setFormData}
+          originalPicture={`${item.image}` || null}
         />
       </label>
 
