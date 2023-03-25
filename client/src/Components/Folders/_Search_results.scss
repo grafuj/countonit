@@ -19,6 +19,7 @@
   display: flex;
   flex-direction: row;
   width: 95%;
+  padding-left: 10%;
 }
 
 .depview{
@@ -39,6 +40,7 @@
   border-radius: 30%;
   font-size: 1.1em;
   box-shadow: 10px 10px 5px 1px rgba(0, 0, 0, 0.5);
+  
 }
 
 .departmentlist {
@@ -47,8 +49,18 @@
   flex-direction: row;
   justify-content: space-evenly;
   width: 80%;
+  padding-left: 10%;
+
 }
 
 .chevron {
   padding-top: 25px;
+}
+
+.filters {
+  display: flex
+}
+
+.searchresults {
+  padding: 0 10%;
 }

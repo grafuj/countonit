@@ -260,7 +260,8 @@ code {
 .folderView {
   display: flex;
   flex-direction: row;
-  width: 95%; }
+  width: 95%;
+  padding-left: 10%; }
 
 .depview {
   width: 120px; }
@@ -285,7 +286,14 @@ code {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  width: 80%; }
+  width: 80%;
+  padding-left: 10%; }
 
 .chevron {
   padding-top: 25px; }
+
+.filters {
+  display: flex; }
+
+.searchresults {
+  padding: 0 10%; }

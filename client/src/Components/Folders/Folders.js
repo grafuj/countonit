@@ -63,7 +63,7 @@ function Folders(props) {
         </span>
       </div>
       <div className="departmentlist">{departmentsView()}</div>
-      <div>
+      <div className="searchresults">
         <SearchResults
           formData={formData}
           items={items}

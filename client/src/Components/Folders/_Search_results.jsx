@@ -72,8 +72,8 @@ export default function SearchResults(props) {
 
   return (
     <>
-      <h1>Filters</h1>
-      <div>
+      <h1>Search for products</h1>
+      <div className="filters">
         <label className="item-input">
           Item name:
           <input
