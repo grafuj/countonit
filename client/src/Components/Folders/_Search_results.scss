@@ -15,3 +15,40 @@
   width: 100%
 }
 
+.folderView {
+  display: flex;
+  flex-direction: row;
+  width: 95%;
+}
+
+.depview{
+  width: 120px;
+}
+
+.single-dep {
+  text-decoration: none;
+  color:black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 150px;
+  height: 150px;
+  padding: 10px;
+  background-color: lightblue;
+  border-radius: 30%;
+  font-size: 1.1em;
+  box-shadow: 10px 10px 5px 1px rgba(0, 0, 0, 0.5);
+}
+
+.departmentlist {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 80%;
+}
+
+.chevron {
+  padding-top: 25px;
+}
