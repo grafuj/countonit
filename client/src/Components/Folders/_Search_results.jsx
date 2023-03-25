@@ -126,7 +126,7 @@ export default function SearchResults(props) {
       <table className="search-table">
         <tbody >
           <tr className="search-results">
-            <td>Item Name</td>
+            <td className="itemvalue">Item Name</td>
             <td className="itemvalue">Quantity</td>
             <td className="itemvalue">Price</td>
             <td className="itemvalue">Minimum Level</td>
