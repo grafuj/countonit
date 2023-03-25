@@ -1,7 +1,6 @@
 import React from "react";
-// import axios from "axios";
 import {Link} from "react-router-dom"
-import Department from "./Department";
+// import Department from "./Department";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
@@ -22,9 +21,9 @@ function Dashboard(props) {
       departmentInfo[item.department_id].push(item);
     }
   });
-  // console.log(departmentInfo[1]);
+ 
   console.log("ITEMS", props.items);
-  // console.log("DepartmentInfo:", departmentInfo);
+
   return (
     <section>
       <h3>Organization</h3>
@@ -118,6 +117,7 @@ function Dashboard(props) {
               })}
               </tbody>
             </table>
+            <FontAwesomeIcon icon="fa-solid fa-flag" bounce size="2xl" style={{color: "#ff0000",}} />
           </div>
         </div>
       </div>
