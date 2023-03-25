@@ -12,7 +12,11 @@
 .site-logo-text {
   text-decoration: none;
   font-size: 24px;
-  font-weight: 600; }
+  font-weight: 600;
+  color: white;
+  letter-spacing: 2px;
+  font-family: monospace;
+  text-align: center; }
 
 nav {
   background-color: #54a0ff;
@@ -27,7 +31,9 @@ nav {
   padding: 10px;
   border-radius: 6px;
   color: #222f3e;
-  transition: 0.5s; }
+  transition: 0.5s;
+  font-weight: bold;
+  color: white; }
 
 .nav-span:link {
   text-decoration: none; }
