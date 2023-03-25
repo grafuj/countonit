@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 export default function SearchResults(props) {
   const { items, departments } = props;
@@ -131,9 +132,10 @@ export default function SearchResults(props) {
             <td className="itemvalue">Department</td>
           </tr>
           {filteredItems.map((item) => {
+            const link = `/items/${item.id}`
             return (
               <tr key={item.id} className="search-results">
-                <td className="itemvalue">{item.name}</td>
+                <Link to={link} state={{item: item}} className="itemvalue">{item.name}</Link>
                 <td className="itemvalue">{item.quantity}</td>
                 <td className="itemvalue">${item.price_cents/100}</td>
                 <td className="itemvalue">{item.minimum_level}</td>
