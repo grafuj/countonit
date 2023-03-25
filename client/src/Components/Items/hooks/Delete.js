@@ -19,7 +19,7 @@ const DeleteButton = ({ itemId }) => {
       });
   };
   return (
-    <button className="delete-icon" onClick={handleDelete}>
+    <button type="button" className="delete-icon" onClick={handleDelete}>
       <FontAwesomeIcon
         icon="fa-solid fa-trash"
         size="2xl"

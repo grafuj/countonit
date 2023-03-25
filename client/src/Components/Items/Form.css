@@ -96,6 +96,21 @@
     background-color: darkblue;
   }
 
+  button[type="button"] {
+    margin-top: 1rem;
+    margin-left: 10px;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    background-color: rgb(7, 156, 249);
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  button[type="button"]:hover {
+    background-color: darkblue;
+  }
+
   .image-preview {
     display: flex;
     justify-content: center;
@@ -135,6 +150,7 @@
     align-content: stretch;
     margin-bottom: 20px;
   }
+
 }
 
 /*# sourceMappingURL=Form.css.map */

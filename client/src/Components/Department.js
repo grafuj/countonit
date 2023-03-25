@@ -1,6 +1,7 @@
 import React from "react";
-import { useLocation, Link } from "react-router-dom";
+import { useLocation, Link, useNavigate } from "react-router-dom";
 import Departments from "./Departments";
+import NewItemButton from "./Items/hooks/NewItemButton";
 
 const Department = (props) => {
   const location = useLocation();
@@ -51,7 +52,10 @@ const Department = (props) => {
       );
     });
   };
+
+
   return (
+    <>
     <section className="depView">
       <Departments departments={props.departments} />
       <div className="departmentview">
@@ -59,6 +63,10 @@ const Department = (props) => {
         <div className="items">{depID ? items() : departments()}</div>
       </div>
     </section>
+    
+    <NewItemButton />
+    
+    </>
   );
 };
 
