@@ -8,6 +8,7 @@ import {
   faImage,
   faCirclePlus,
   faFolder,
+  faFlag,
   faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
 import Departments from "./Components/Departments";
@@ -22,7 +23,15 @@ import Nav from "./Components/Nav";
 // import 'bootstrap/dist/css/bootstrap.min.css';
 // import './App.scss';
 
-library.add(fab, faTrash, faImage, faCirclePlus, faFolder, faChevronRight);
+library.add(
+  fab,
+  faTrash,
+  faImage,
+  faCirclePlus,
+  faFolder,
+  faChevronRight,
+  faFlag
+);
 
 export default function App() {
   const [state, setState] = useState({
@@ -56,11 +65,16 @@ export default function App() {
       <Nav />
       <main className="main-window-space">
         <Routes>
-          <Route path="*" element={<Dashboard
+          <Route
+            path="*"
+            element={
+              <Dashboard
                 items={state.items}
                 folders={state.folders}
                 departments={state.departments}
-              />} />
+              />
+            }
+          />
           <Route
             path="/"
             element={
