@@ -149,8 +149,6 @@ const ItemForm = (props) => {
       </div>
       <div className="item-list-view">
         <div>
-          <div></div>
-
           <div className="price-calc-input">
             <label>
               <ItemPriceCalculator
