@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     resources :items
 
     delete '/items/:id', to: 'items#destroy'
-    update '/items/:id', to: 'items#update'
+    patch '/items/:id', to: 'items#update'
    
 
   end

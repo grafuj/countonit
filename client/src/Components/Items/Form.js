@@ -196,9 +196,7 @@ const ItemForm = (props) => {
       <CancelButton />
 
       <div className="delete-btn">
-        <div>
           <DeleteButton itemId={itemId} />
-        </div>
       </div>
     </form>
   );

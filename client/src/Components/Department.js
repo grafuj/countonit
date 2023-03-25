@@ -63,9 +63,9 @@ const Department = (props) => {
         <div className="items">{depID ? items() : departments()}</div>
       </div>
     </section>
-    <div>
+    
     <NewItemButton />
-    </div>
+    
     </>
   );
 };
