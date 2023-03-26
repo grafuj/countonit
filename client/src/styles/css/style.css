@@ -20,7 +20,7 @@
   text-align: center; }
 
 nav {
-  background-color: #54a0ff;
+  background-color: #079cf9;
   display: flex;
   align-items: center;
   height: 100px;
@@ -283,6 +283,8 @@ strong {
   padding: 30px; }
 
 .single-item {
+  letter-spacing: 3px;
+  font-weight: bold;
   text-decoration: none;
   color: black;
   display: flex;
@@ -356,6 +358,8 @@ strong {
   width: 120px; }
 
 .single-dep {
+  font-weight: bold;
+  letter-spacing: 2px;
   text-decoration: none;
   color: black;
   display: flex;
@@ -380,7 +384,8 @@ strong {
   flex-direction: row;
   justify-content: space-evenly;
   width: 80%;
-  padding-left: 10%; }
+  padding-left: 10%;
+  padding-bottom: 2%; }
 
 .chevron {
   padding: 25px 15px 0 15px; }
@@ -390,6 +395,9 @@ strong {
 
 .searchresults {
   padding: 0 10%; }
+
+.item-input {
+  font-weight: bold; }
 
 .modal {
   position: fixed;

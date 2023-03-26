@@ -39,24 +39,24 @@ function Folders(props) {
   return (
     <>
       <div className="folderView">
-        <h1>Organization</h1>
+        <h1>All Items</h1>
         <span className="chevron">
-          <FontAwesomeIcon
+          {/* <FontAwesomeIcon
             icon="fa-solid fa-chevron-right"
             size="2xl"
             style={{ color: "black" }}
-          />
+          /> */}
 
-          <FontAwesomeIcon
+          {/* <FontAwesomeIcon
             icon="fa-solid fa-chevron-right"
             size="2xl"
             style={{ color: "black" }}
-          />
+          /> */}
         </span>
         <span>
-          {folders.map((folder) => (
+          {/* {folders.map((folder) => (
             <h1 key={folder.id}>{folder.name}</h1>
-          ))}
+          ))} */}
         </span>
       </div>
       <div className="departmentlist">{departmentsView()}</div>

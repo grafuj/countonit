@@ -6,16 +6,17 @@ import { Image } from "cloudinary-react";
 
 const Department = (props) => {
   const location = useLocation();
-  console.log("IM HEREEEEE", location);
+
   let depart = {};
   const depID = Number(location.pathname.replace("/departments/", ""));
-  console.log(depID);
+  
   props.departments.map((dep) => {
     if (dep.id === depID) {
       depart = dep;
     }
     return undefined;
   });
+
   const items = function () {
     return props.items.map((item) => {
       if (item.department_id === depart.id) {
@@ -71,7 +72,6 @@ const Department = (props) => {
         <div className="departmentview">
           <div className="departmentName">
             {depart.name || "Departments"}
-            {/* <NewItemButton /> */}
           </div>
 
           <div className="items">{depID ? items() : departments()}</div>

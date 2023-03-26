@@ -72,7 +72,7 @@ export default function SearchResults(props) {
 
   return (
     <>
-      <h1>Search for products</h1>
+      <h2>Search for products</h2>
       <div className="filters">
         <label className="item-input">
           Item name:
@@ -111,9 +111,9 @@ export default function SearchResults(props) {
           />
         </label>
         <label className="item-input">
-          Department:
+          Folder:
           <select value={formData.department_id} onChange={handleInputChange} name={"department_id"}>
-            <option value="">--Select a department--</option>
+            <option value="">--Select a folder--</option>
             {departments.map((department) => {
               departmentNames[department.id] = department.name
               return (
@@ -126,11 +126,11 @@ export default function SearchResults(props) {
       <table className="search-table">
         <tbody>
           <tr className="search-results">
-            <td className="itemvaluetitle">Item Name</td>
-            <td className="itemvaluetitle">Quantity</td>
-            <td className="itemvaluetitle">Price</td>
-            <td className="itemvaluetitle">Minimum Level</td>
-            <td className="itemvaluetitle">Department</td>
+            <td className="itemvaluetitle">Item Name:</td>
+            <td className="itemvaluetitle">Quantity:</td>
+            <td className="itemvaluetitle">Price:</td>
+            <td className="itemvaluetitle">Minimum Level:</td>
+            <td className="itemvaluetitle">Folder:</td>
           </tr>
           {filteredItems.map((item) => {
             const link = `/items/${item.id}`

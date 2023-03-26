@@ -20,7 +20,7 @@ function Nav(props) {
       <div className='nav-links'>
         <Link to="/dashboard" className="nav-span">Dashboard</Link>
         <Link to="/folders" className="nav-span">All Items</Link>
-        <Link to="/departments" className="nav-span">Organization</Link>
+        <Link to="/departments" className="nav-span">Folders</Link>
         <span>
           <Link className='nav-span nav-new-item' to="/items/new">
             <FontAwesomeIcon icon="fa-circle-plus" style={{color: "#ffffff",}}/>

@@ -29,9 +29,12 @@
 
 .depview{
   width: 120px;
+  
 }
 
 .single-dep {
+  font-weight: bold;
+  letter-spacing: 2px;
   text-decoration: none;
   color:black;
   display: flex;
@@ -58,6 +61,7 @@
   justify-content: space-evenly;
   width: 80%;
   padding-left: 10%;
+  padding-bottom: 2%;
 
 }
 
@@ -72,3 +76,6 @@
 .searchresults {
   padding: 0 10%;
 }
+ .item-input {
+  font-weight: bold;
+ }

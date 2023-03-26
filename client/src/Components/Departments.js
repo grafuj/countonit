@@ -7,7 +7,7 @@ function Departments(props) {
   const { departments } = props;
   return (
     <section id="departments">
-      <h1>Departments</h1>
+      <h3>Folders</h3>
       <span>
         {departments.map((department) => {
           const route = `/departments/${department.id}`;
@@ -21,7 +21,7 @@ function Departments(props) {
               <FontAwesomeIcon
                 icon="fa-solid fa-folder"
                 size="2xl"
-                style={{ color: "#54a0ff" }}
+                style={{ color: " rgb(7, 156, 249)" }}
               />
               <p className="department-name">{department.name}</p>
             </Link>
