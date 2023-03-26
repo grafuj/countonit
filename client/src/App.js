@@ -11,7 +11,9 @@ import {
   faFlag,
   faChevronRight,
   faMountainSun,
-  faEarthAmericas
+  faEarthAmericas,
+  faPenToSquare,
+  faPen,
 } from "@fortawesome/free-solid-svg-icons";
 import Departments from "./Components/Departments";
 import Items from "./Components/Items/Items";
@@ -32,7 +34,8 @@ library.add(
   faChevronRight,
   faFlag,
   faMountainSun,
-  faEarthAmericas
+  faEarthAmericas,
+  faPenToSquare
 );
 
 export default function App() {
@@ -51,7 +54,7 @@ export default function App() {
         const folders = all[0].data;
         const departments = all[1].data;
         const items = all[2].data;
-  
+
         setState((prev) => ({ ...prev, folders, departments, items }));
         console.log(state);
       })

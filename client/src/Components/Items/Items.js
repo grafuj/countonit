@@ -4,6 +4,7 @@ import Form from "./Form";
 import Editmodal from "./edit-modal/Editmodal";
 import DeleteButton from "./hooks/Delete";
 import "./Form.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function Items(props) {
   const [show, setShow] = useState(false);
@@ -46,20 +47,32 @@ function Items(props) {
         <p className="item-view-values">{item.minimum_level}</p>
         <h3 className="item-view-details">Item Notes</h3>
         <p className="item-view-details-notes">{item.description}</p>
-        <div>
-          <button className="item-edit-delete" onClick={() => setShow(true)}>
-            Edit Item (fa_pencil icon?)
+        <div className="edit-delete-buttons">
+          <button
+            type="button"
+            className="delete-icon"
+            onClick={() => setShow(true)}
+          >
+            <FontAwesomeIcon
+              icon="fa-solid fa-pen-to-square"
+              size="2xl"
+              style={{ color: "#ffffff" }}
+            />
           </button>
 
           <DeleteButton
-            className="item-edit-delete"
+            className="delete-btn"
             itemId={item.id}
             departmentID={item.department_id}
           />
         </div>
       </div>
       <div>
-        <img src={item.image} alt={item.description} />
+        <img
+          className="item-view-pic"
+          src={item.image}
+          alt={item.description}
+        />
       </div>
       <Editmodal onClose={() => setShow(false)} show={show}>
         <Form
@@ -69,7 +82,6 @@ function Items(props) {
           setItem={setItem}
         />
       </Editmodal>
-      <div className="delete-btn"></div>
     </div>
   );
 }

@@ -96,7 +96,7 @@
     background-color: darkblue;
   }
 
-  button[type="button"] {
+  button[type="button"], .edit-button {
     margin-top: 1rem;
     margin-left: 10px;
     padding: 0.5rem;
@@ -107,7 +107,7 @@
     font-weight: bold;
     cursor: pointer;
   }
-  button[type="button"]:hover {
+  button[type="button"]:hover, .edit-button:hover  {
     background-color: darkblue;
   }
 
@@ -125,7 +125,7 @@
     margin: 10px;
   }
 
-  .delete-icon {
+  .delete-icon, .edit-button {
     margin-top: 1rem;
     margin-left: 10px;
     padding: 0.5rem;
@@ -177,4 +177,20 @@
   margin-left: 250px
 }
 
+.edit-button {
+  padding-top: 10px;
+  width: 30px;
+  height: 30px;
+}
+
+.edit-delete-buttons {
+  margin-left: 45px;
+}
+
+.item-view-pic {
+  padding: 75px;
+  object-fit: cover;
+  width: 70%;
+  height: 70%;
+}
 /*# sourceMappingURL=Form.css.map */
