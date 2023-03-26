@@ -20,8 +20,8 @@ function Items(props) {
   //   item = location.state.item;
   // }
 
+
   useEffect(() => {
-    // console.log("location:", location);
     if (location.state?.item) {
       setItem(location.state.item);
     }
@@ -31,21 +31,21 @@ function Items(props) {
     <div className="item-view-container">
       <div>
         <h1 className="folderView">Item view</h1>
-        <h3 className="item-view-details">Department</h3>
+        <h3 className="item-view-details">Folder</h3>
         <p className="item-view-values">{item.department_id}</p>
-        <h3 className="item-view-details">Item Name</h3>
+        <h3 className="item-view-details">Item Name:</h3>
         <p className="item-view-values">{item.name}</p>
-        <h3 className="item-view-details">Item Quantity</h3>
+        <h3 className="item-view-details">Item Quantity:</h3>
         <p className="item-view-values">{item.quantity}</p>
-        <h3 className="item-view-details">Item Price</h3>
+        <h3 className="item-view-details">Item Price:</h3>
         <p className="item-view-values">${item.price_cents / 100}</p>
-        <h3 className="item-view-details">Total Value</h3>
+        <h3 className="item-view-details">Total Value:</h3>
         <p className="item-view-values">
           ${(item.price_cents / 100) * item.quantity}
         </p>
-        <h3 className="item-view-details">Item Minimum</h3>
+        <h3 className="item-view-details">Item Minimum:</h3>
         <p className="item-view-values">{item.minimum_level}</p>
-        <h3 className="item-view-details">Item Notes</h3>
+        <h3 className="item-view-details">Item Notes:</h3>
         <p className="item-view-details-notes">{item.description}</p>
         <div className="edit-delete-buttons">
           <button
