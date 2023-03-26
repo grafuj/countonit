@@ -17,10 +17,16 @@ function Nav(props) {
       <div className="site-logo" >
         <Link to="/" className="site-logo-text">Count On It</Link>
       </div>
-      <div>
+      <div className='nav-links'>
         <Link to="/dashboard" className="nav-span">Dashboard</Link>
         <Link to="/folders" className="nav-span">All Items</Link>
         <Link to="/departments" className="nav-span">Organization</Link>
+        <span className='nav-span nav-new-item'>
+          <Link to="/items/new">
+            <FontAwesomeIcon icon="fa-circle-plus" style={{color: "#ffffff",}}/>
+          </Link>
+          <span>Add New Item</span>
+        </span>
         {/* <Link to="/items/new" className="nav-span">Items</Link> */}
       </div>
       <div>
