@@ -46,7 +46,7 @@ function Items(props) {
         <h3>Item Notes</h3>
         <p>{item.description}</p>
       </div>
-      <button onClick={() => setShow(true)}>Edit Item</button>
+      <button onClick={() => setShow(true)}>Edit Item (fa_pencil icon?)</button>
       <Editmodal onClose={() => setShow(false)} show={show}>
         <Form items={items} departments={departments} onClose={() => setShow(false)} setItem={setItem} />
       </Editmodal>
