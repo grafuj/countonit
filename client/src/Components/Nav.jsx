@@ -21,11 +21,11 @@ function Nav(props) {
         <Link to="/dashboard" className="nav-span">Dashboard</Link>
         <Link to="/folders" className="nav-span">All Items</Link>
         <Link to="/departments" className="nav-span">Organization</Link>
-        <span className='nav-span nav-new-item'>
-          <Link to="/items/new">
+        <span>
+          <Link className='nav-span nav-new-item' to="/items/new">
             <FontAwesomeIcon icon="fa-circle-plus" style={{color: "#ffffff",}}/>
+            <span>Add New Item</span>
           </Link>
-          <span>Add New Item</span>
         </span>
         {/* <Link to="/items/new" className="nav-span">Items</Link> */}
       </div>
