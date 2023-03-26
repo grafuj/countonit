@@ -20,25 +20,25 @@ const ItemForm = (props) => {
   } else {
     item = location.state.item;
   }
-  console.log("item.image", item.image);
-  const [picture, setPicture] = useState(null || `${item.image}`);
+
+  const [picture, setPicture] = useState(null || `${item?.image}`);
   const [departmentID, setDepartmentID] = useState(
     location?.state?.item?.department_id || null
   );
-  const [price, setPrice] = useState(item.price_cents / 100 || 0);
-  const [quantity, setQuantity] = useState(item.quantity || 0);
+  const [price, setPrice] = useState(item?.price_cents / 100 || 0);
+  const [quantity, setQuantity] = useState(item?.quantity || 0);
   const [formData, setFormData] = useState({
-    image: `${item.image}` || "",
-    name: item.name || "",
-    quantity: item.quantity || 0,
-    price: item.price_cents / 100 || 0,
-    minimum_level: item.minimum_level || 0,
+    image: `${item?.image}` || "",
+    name: item?.name || "",
+    quantity: item?.quantity || 0,
+    price: item?.price_cents / 100 || 0,
+    minimum_level: item?.minimum_level || 0,
     total_cost: "",
-    description: item.description || "",
+    description: item?.description || "",
     folder_id: 1,
-    department_id: item.department_id || departmentID,
+    department_id: item?.department_id || departmentID,
   });
-  console.log("ITEM", item.minimum_level);
+  console.log("ITEM", item?.minimum_level);
 
   const formRef = useRef();
 
@@ -103,7 +103,7 @@ const ItemForm = (props) => {
         });
         const data = await response.json();
         console.log("Item saved successfully", data);
-        props.setItem(data.item)
+        props.setItem(data.item);
         props.onClose();
         // navigate(`/items/${itemId}`, {state: {item: data.item}});
         // navigate(0);
@@ -122,7 +122,7 @@ const ItemForm = (props) => {
         });
         const data = await response.json();
         console.log("Item saved successfully", data);
-        props.setItem(data.item)
+        props.setItem(data.item);
         props.onClose();
         // navigate(`/items/${itemId}`, {state: {item: data.item}});
         // navigate(0);
@@ -139,7 +139,7 @@ const ItemForm = (props) => {
           picture={picture}
           setPicture={setPicture}
           setFormData={setFormData}
-          originalPicture={`${item.image}` || null}
+          originalPicture={`${item?.image}` || null}
         />
       </label>
 

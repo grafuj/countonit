@@ -1,14 +1,22 @@
-import React from 'react';
+import React, {useState} from 'react';
 // import { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEarthAmericas } from '@fortawesome/free-solid-svg-icons';
+import Editmodal from './Items/edit-modal/Editmodal';
+import Form from "./Items/Form";
+
 
 // need to check state or context for user for conditional rendering
 // const user = { name: "Bob" }; //test with user
 const user = null;  //test without user
 
 function Nav(props) {
+  const [show, setShow] = useState(false);
+  const [item, setItem] = useState({});
+
+  const { departments, items } = props;
+    // setShow, setItem} = props;
   return (
     <nav>
      <span className='earth-icon'> 
@@ -22,10 +30,35 @@ function Nav(props) {
         <Link to="/folders" className="nav-span">All Items</Link>
         <Link to="/departments" className="nav-span">Folders</Link>
         <span>
-          <Link className='nav-span nav-new-item' to="/items/new">
+          <span onClick={() => setShow(true)} className='nav-span nav-new-item' >
             <FontAwesomeIcon icon="fa-circle-plus" style={{color: "#ffffff",}}/>
             <span>Add New Item</span>
-          </Link>
+            <Editmodal className="nav-modal" onClose={() => setShow(false)} show={show}>
+              <Form
+              items={items}
+              departments={departments}
+              onClose={() => setShow(false)}
+              setItem={setItem}
+              />
+            </Editmodal>
+          </span>
+          {/* <button
+            type="button"
+            className="delete-icon"
+            onClick={() => setShow(true)}
+          >
+          <FontAwesomeIcon icon="fa-circle-plus" style={{color: "#ffffff",}}/>
+            Add New Item
+          </button> */}
+            
+            {/* <Editmodal onClose={() => setShow(false)} show={show}>
+              <Form
+              // items={items}
+              departments={departments}
+              onClose={() => setShow(false)}
+              setItem={setItem}
+              />
+            </Editmodal> */}
         </span>
         {/* <Link to="/items/new" className="nav-span">Items</Link> */}
       </div>

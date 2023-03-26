@@ -87,14 +87,22 @@ $spacing: 2rem;
     margin: 5px;
   }
 
-  .main-window-space {
-    padding-top: 100px;
-    margin: 0 5%;
-  }
+.main-window-space {
+  padding-top: 100px;
+  margin: 0 5%;
+}
 
-  .nav-new-item {
-    margin-left: 150px;
-  }
+.nav-new-item {
+  margin-left: 150px;
+}
+
+.nav-new-item:hover {
+  cursor: pointer;
+}
+
+.nav-modal {
+  z-index: 1000;
+}
 
   .nav-links {
     width: 40%;
