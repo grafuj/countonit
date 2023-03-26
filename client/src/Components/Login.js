@@ -14,11 +14,11 @@ function Login(props) {
   };
 
   return (
-    <div class="login-form">
+    <div className="login-form">
       <div>
         <img src={writing} className="login-image" alt="writing-in-planner" />
       </div>
-      <div class="login-form-fields">
+      <div className="login-form-fields">
         <form action="http://localhost:3000/items">
           <h1 className="login-text">Welcome!</h1>
           <br />

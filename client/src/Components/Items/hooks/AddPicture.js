@@ -18,7 +18,7 @@ export default function UploadPicture({
     }
   };
   useEffect(() => {
-    console.log({ picture, preview, originalPicture });
+    // console.log({ picture, preview, originalPicture });
   }, [picture, preview]);
   return (
     <div>

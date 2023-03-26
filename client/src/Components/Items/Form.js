@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import { useLocation, useNavigate, useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 // import { Image } from "cloudinary-react";
 // import DeleteButton from "./hooks/Delete";
 import UploadPicture from "./hooks/AddPicture";
@@ -10,7 +10,7 @@ import "./Form.css";
 
 const ItemForm = (props) => {
   const location = useLocation();
-  let navigate = useNavigate();
+  // let navigate = useNavigate();
   console.log("LOCATION:", location);
 
   // how data is populated from the item edit/view form

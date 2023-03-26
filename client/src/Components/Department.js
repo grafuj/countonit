@@ -14,6 +14,7 @@ const Department = (props) => {
     if (dep.id === depID) {
       depart = dep;
     }
+    return undefined;
   });
   const items = function () {
     return props.items.map((item) => {
@@ -38,6 +39,7 @@ const Department = (props) => {
           </Link>
         );
       }
+      return undefined;
     });
   };
   const departments = function () {
@@ -51,7 +53,7 @@ const Department = (props) => {
           key={dep.id}
           className="single-item"
         >
-          <img className="deppic" src={imgPath}></img>
+          <img className="deppic" src={imgPath} alt="user-chosen that represents department"></img>
           <div>{dep.name}</div>
         </Link>
       );

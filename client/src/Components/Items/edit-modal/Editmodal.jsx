@@ -1,7 +1,7 @@
 import React from "react";
 
 const Editmodal = (props) => {
-  const { item, departments, onClose } = props;
+  const { onClose } = props;
 
   return (
     <div className={`modal ${props.show ? 'show' : ''}`} onClick={onClose}>

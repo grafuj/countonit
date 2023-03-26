@@ -20,7 +20,7 @@ function Items(props) {
   // }
 
   useEffect(() => {
-    console.log("location:", location);
+    // console.log("location:", location);
     if (location.state?.item) {
       setItem(location.state.item);
     }
@@ -30,7 +30,7 @@ function Items(props) {
     <div>
       <h1>Item view</h1>
       <div>
-        <img src={item.image} />
+        <img src={item.image} alt={item.description}/>
         <h3>Department</h3>
         <p>{item.department_id}</p>
         <h3>Item Name</h3>

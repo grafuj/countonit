@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import SearchResults from "./_Search_results";
 import { Link } from "react-router-dom";
-import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
+// import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function Folders(props) {
@@ -29,7 +29,7 @@ function Folders(props) {
           key={dep.id}
           className="single-dep"
         >
-          <img className="depview" src={imgPath}></img>
+          <img className="depview" src={imgPath} alt="user-chosen department representation"></img>
           <div>{dep.name}</div>
         </Link>
       );

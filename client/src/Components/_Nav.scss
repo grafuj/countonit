@@ -43,10 +43,13 @@ nav {
   background-color: $booked-color;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  // justify-content: space-between;
   height: 100px;
   padding-left: 20%;
   padding-right: 20%;
+  top: 0;
+  position: fixed;
+  width: 100%;
 }
 
 

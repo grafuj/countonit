@@ -18,6 +18,7 @@ function Dashboard(props) {
     } else {
       departmentInfo[item.department_id].push(item);
     }
+    return undefined;
   });
 
   return (
@@ -66,6 +67,7 @@ function Dashboard(props) {
               departmentInfo[department.id].map((dep) => {
                 total += dep.quantity;
                 value += dep.price_cents;
+                return undefined;
               });
               const route = `/departments/${department.id}`;
               return (
