@@ -28,11 +28,11 @@ function Dashboard(props) {
         <div className="inventory">
           <table className="inventoryTable">
             <tbody>
-              <tr>
+              <tr className="summary-title">
                 <td>Items:</td>
-                <td>Departments:</td>
+                <td>Folders:</td>
                 <td>Quantity:</td>
-                <td>Total Value</td>
+                <td>Total Value:</td>
               </tr>
               <tr>
                 <td>{itemCount}</td>
@@ -47,13 +47,13 @@ function Dashboard(props) {
           <Link to="/items/new">
             <FontAwesomeIcon className="newlink" icon="fa-circle-plus" style={{color: "#ffffff",}}/>
           </Link>
-          <div>Add New Item</div>
+          <div className="add-btn">Add New Item</div>
         </div>
         <div className="new">
           <Link to="/items/new">
             <FontAwesomeIcon className="newlink" icon="fa-circle-plus" style={{color: "#ffffff",}}/>
           </Link>
-          <div>Add Department</div>
+          <div className="add-btn">Add Folder</div>
         </div>
       </div>
       <div className="boxtwo">
@@ -77,13 +77,13 @@ function Dashboard(props) {
                   to={route}
                   state={{ department: department }}
                 >
-                  <span>{department.name}</span>
+                  <span className="dep-name-dashboard">{department.name}:</span>
                   <table className="dep-details">
                     <tbody>
                       <tr>
                         <td>Items:</td>
                         <td>Total Quantity:</td>
-                        <td>Total Value</td>
+                        <td>Total Value:</td>
                       </tr>
                       <tr>
                         <td>{departmentInfo[department.id].length}</td>
@@ -119,11 +119,11 @@ function Dashboard(props) {
             <table className="mintable">
               <tbody>
                 <tr>
-                  <td className="minitem">Item Name</td>
-                  <td className="itemvalue">Quantity</td>
-                  <td className="itemvalue">Price</td>
-                  <td className="itemvalue">Minimum Level</td>
-                  <td className="itemvalue">Department</td>
+                  <td className="minitem-title">Item Name:</td>
+                  <td className="itemvalue-title">Quantity:</td>
+                  <td className="itemvalue-title">Price:</td>
+                  <td className="itemvalue-title">Minimum Level:</td>
+                  <td className="itemvalue-title">Folder:</td>
                 </tr>
                 {props.items.map((item) => {
                   return (

@@ -170,6 +170,9 @@ strong {
 .inventoryTable td {
   padding: 10px; }
 
+.summary-title {
+  font-weight: bold; }
+
 .new {
   display: flex;
   flex-direction: column;
@@ -184,6 +187,10 @@ strong {
 
 .newlink {
   height: 50px; }
+
+.add-btn {
+  font-weight: bold;
+  letter-spacing: 2px; }
 
 .departments {
   display: grid;
@@ -212,6 +219,9 @@ strong {
 .dep-details td {
   padding: 10px; }
 
+.dep-name-dashboard {
+  font-weight: bold; }
+
 .mintable {
   width: 100%;
   margin: auto; }
@@ -225,11 +235,22 @@ strong {
   background-color: lightblue;
   box-shadow: 10px 10px 5px 1px rgba(0, 0, 0, 0.5); }
 
+.itemvalue-title {
+  text-align: center;
+  display: table-cell;
+  text-decoration: none;
+  color: black;
+  font-weight: bold; }
+
 .itemvalue {
   text-align: center;
   display: table-cell;
   text-decoration: none;
   color: black; }
+
+.minitem-title {
+  padding: 5px 0px 5px 40px;
+  font-weight: bold; }
 
 .minitem {
   padding: 5px 0px 5px 40px; }
