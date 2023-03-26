@@ -20,19 +20,25 @@ function Items(props) {
   //   item = location.state.item;
   // }
 
-
   useEffect(() => {
     if (location.state?.item) {
       setItem(location.state.item);
     }
   }, []);
-
+  let folderName = "";
+  departments.map((i) => {
+    if (i.id === item.department_id) {
+      folderName = i.name;
+    }
+  });
+  console.log("ITEMMMMMM", item);
+  console.log("DEPARTMENTS", departments);
   return (
     <div className="item-view-container">
       <div>
         <h1 className="folderView">Item view</h1>
         <h3 className="item-view-details">Folder</h3>
-        <p className="item-view-values">{item.department_id}</p>
+        <p className="item-view-values">{folderName}</p>
         <h3 className="item-view-details">Item Name:</h3>
         <p className="item-view-values">{item.name}</p>
         <h3 className="item-view-details">Item Quantity:</h3>
