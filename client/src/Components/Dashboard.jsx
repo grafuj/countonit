@@ -23,7 +23,7 @@ function Dashboard(props) {
 
   return (
     <section>
-      <h3>Organization</h3>
+      <h3>Inventory Summary</h3>
       <div className="boxone">
         <div className="inventory">
           <table className="inventoryTable">
@@ -58,7 +58,7 @@ function Dashboard(props) {
       </div>
       <div className="boxtwo">
         <div>
-          <h3>Departments</h3>
+          <h3>Folders</h3>
           <div className="departments">
             {props.departments.map((department) => {
               departmentNames[department.id] = department.name;
