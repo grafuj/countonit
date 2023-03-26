@@ -1,19 +1,20 @@
 .register-form {
   display: flex;
-  margin-left: 10%;
+  margin-left: 25%;
 }
 
 .register-form-fields {
   display: flex;
   flex-direction: column;
-  margin-top: 20%;
+  margin-top: 15%;
   margin-left: 5%;
   align-items: center;
 }
 
 .register-image {
-  object-fit: scale-down;
-  width: 600px; 
+  object-fit: cover;
+  width: 600px;
+  height: 800px; 
 }
 
 strong {

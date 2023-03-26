@@ -45,12 +45,13 @@ function Login(props) {
             Login
           </button>
           <br />
-          <h3 className="login-text">Sign up for an account here:</h3>
+          <h3 className="login-text heading-format">
+            Sign up for an account here:
+          </h3>
           <button
             type="submit"
             className="login-text"
             onClick={handleRegisterClick}
-            
           >
             Register Now
           </button>

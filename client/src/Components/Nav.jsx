@@ -33,7 +33,7 @@ function Nav(props) {
         )}
         {!user && (
           <div>
-            <Link to="/login" className="nav-span">Login</Link>
+            <Link to="/login" className="nav-span login-register">Login</Link>
             <Link to="/register" className="nav-span">Register</Link>
           </div>
         )}

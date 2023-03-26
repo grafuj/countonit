@@ -25,11 +25,11 @@ Department.create(
   folder_id: 1
 )
 Department.create(
-  name: "Construction",
+  name: "Softscape",
   folder_id: 1
 )
 Department.create(
-  name: "Softscape",
+  name: "Construction",
   folder_id: 1
 )
 departments = Department.all()

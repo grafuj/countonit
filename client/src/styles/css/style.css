@@ -35,7 +35,8 @@ nav {
   color: #222f3e;
   transition: 0.5s;
   font-weight: bold;
-  color: white; }
+  color: white;
+  margin-left: 30px; }
 
 .nav-span:link {
   text-decoration: none; }
@@ -54,7 +55,11 @@ nav {
   margin: 5px; }
 
 .main-window-space {
-  padding-top: 100px; }
+  padding-top: 100px;
+  margin: 0 5%; }
+
+.login-register {
+  margin-left: 500px; }
 
 .App {
   text-align: center; }
@@ -90,17 +95,19 @@ code {
 
 .login-form {
   display: flex;
-  margin-left: 10%; }
+  margin-left: 25%; }
 
 .login-form-fields {
   display: flex;
   flex-direction: column;
-  margin-top: 20%;
+  margin-top: 10%;
   margin-left: 5%;
   align-items: center; }
 
 .login-image {
-  width: 600px; }
+  object-fit: cover;
+  width: 600px;
+  height: 800px; }
 
 .login-text {
   color: black; }
@@ -112,18 +119,19 @@ h1.login-text {
 
 .register-form {
   display: flex;
-  margin-left: 10%; }
+  margin-left: 25%; }
 
 .register-form-fields {
   display: flex;
   flex-direction: column;
-  margin-top: 20%;
+  margin-top: 15%;
   margin-left: 5%;
   align-items: center; }
 
 .register-image {
-  object-fit: scale-down;
-  width: 600px; }
+  object-fit: cover;
+  width: 600px;
+  height: 800px; }
 
 strong {
   color: black; }
@@ -131,7 +139,7 @@ strong {
 .boxone, .boxtwo, .boxthree {
   display: flex; }
 
-h3 {
+.heading-format {
   margin-left: 20px; }
 
 .boxtwo div, .boxthree div {
@@ -262,7 +270,11 @@ h3 {
   background-color: lightblue;
   border-radius: 30%;
   font-size: 1.1em;
-  box-shadow: 10px 10px 5px 1px rgba(0, 0, 0, 0.5); }
+  box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease-in-out; }
+
+.single-item:hover {
+  box-shadow: 0px -10px 20px 1px rgba(0, 0, 0, 0.5); }
 
 .depView {
   display: flex; }
@@ -327,7 +339,11 @@ h3 {
   background-color: lightblue;
   border-radius: 30%;
   font-size: 1.1em;
-  box-shadow: 10px 10px 5px 1px rgba(0, 0, 0, 0.5); }
+  box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease-in-out; }
+
+.single-dep:hover {
+  box-shadow: 0px -10px 20px 1px rgba(0, 0, 0, 0.5); }
 
 .departmentlist {
   padding-top: 20px;

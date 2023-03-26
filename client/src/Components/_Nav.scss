@@ -61,6 +61,7 @@ nav {
   transition: 0.5s;
   font-weight: bold;
   color: white;
+  margin-left: 30px
 }
 
 .nav-span:link {
@@ -85,5 +86,10 @@ nav {
 }
 
 .main-window-space {
-  padding-top: 100px
+  padding-top: 100px;
+  margin: 0 5%;
+}
+
+.login-register {
+  margin-left: 500px
 }

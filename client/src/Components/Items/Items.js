@@ -27,32 +27,49 @@ function Items(props) {
   }, []);
 
   return (
-    <div>
-      <h1>Item view</h1>
+    <div className="item-view-container">
       <div>
-        <img src={item.image} alt={item.description}/>
-        <h3>Department</h3>
-        <p>{item.department_id}</p>
-        <h3>Item Name</h3>
-        <p>{item.name}</p>
-        <h3>Item Quantity</h3>
-        <p>{item.quantity}</p>
-        <h3>Item Price</h3>
-        <p>${item.price_cents / 100}</p>
-        <h3>Total Value</h3>
-        <p>${item.price_cents / 100 * item.quantity}</p>
-        <h3>Item Minimum</h3>
-        <p>{item.minimum_level}</p>
-        <h3>Item Notes</h3>
-        <p>{item.description}</p>
+        <h1 className="folderView">Item view</h1>
+        <h3 className="item-view-details">Department</h3>
+        <p className="item-view-values">{item.department_id}</p>
+        <h3 className="item-view-details">Item Name</h3>
+        <p className="item-view-values">{item.name}</p>
+        <h3 className="item-view-details">Item Quantity</h3>
+        <p className="item-view-values">{item.quantity}</p>
+        <h3 className="item-view-details">Item Price</h3>
+        <p className="item-view-values">${item.price_cents / 100}</p>
+        <h3 className="item-view-details">Total Value</h3>
+        <p className="item-view-values">
+          ${(item.price_cents / 100) * item.quantity}
+        </p>
+        <h3 className="item-view-details">Item Minimum</h3>
+        <p className="item-view-values">{item.minimum_level}</p>
+        <h3 className="item-view-details">Item Notes</h3>
+        <p className="item-view-details-notes">{item.description}</p>
+        <div>
+          <button className="item-edit-delete" onClick={() => setShow(true)}>
+            Edit Item (fa_pencil icon?)
+          </button>
+
+          <DeleteButton
+            className="item-edit-delete"
+            itemId={item.id}
+            departmentID={item.department_id}
+          />
+        </div>
       </div>
-      <button onClick={() => setShow(true)}>Edit Item (fa_pencil icon?)</button>
+      <div>
+        <img src={item.image} alt={item.description} />
+      </div>
       <Editmodal onClose={() => setShow(false)} show={show}>
-        <Form items={items} departments={departments} onClose={() => setShow(false)} setItem={setItem} />
+        <Form
+          items={items}
+          departments={departments}
+          onClose={() => setShow(false)}
+          setItem={setItem}
+        />
       </Editmodal>
-      <div className="delete-btn">
-        <DeleteButton itemId={item.id} departmentID={item.department_id} />
-      </div>
+      <div className="delete-btn"></div>
     </div>
   );
 }

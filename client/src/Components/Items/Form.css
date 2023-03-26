@@ -153,4 +153,28 @@
 
 }
 
+.item-view-values {
+  text-align: center;
+  width: 15%;
+  padding-left: 50px
+}
+
+.item-view-details {
+  padding-left: 50px
+}
+
+.item-view-details-notes {
+  padding-left: 3%;
+  padding: 0px 70px
+}
+
+.item-view-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.item-edit-delete {
+  margin-left: 250px
+}
+
 /*# sourceMappingURL=Form.css.map */
