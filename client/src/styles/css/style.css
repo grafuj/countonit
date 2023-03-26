@@ -284,6 +284,8 @@ strong {
   display: flex; }
 
 .itempic {
+  object-fit: cover;
+  height: 150px;
   width: 150px; }
 
 .deppic {
