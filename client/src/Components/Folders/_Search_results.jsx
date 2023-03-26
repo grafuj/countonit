@@ -126,21 +126,21 @@ export default function SearchResults(props) {
       <table className="search-table">
         <tbody>
           <tr className="search-results">
-            <td className="itemvalue">Item Name</td>
-            <td className="itemvalue">Quantity</td>
-            <td className="itemvalue">Price</td>
-            <td className="itemvalue">Minimum Level</td>
-            <td className="itemvalue">Department</td>
+            <td className="itemvaluetitle">Item Name</td>
+            <td className="itemvaluetitle">Quantity</td>
+            <td className="itemvaluetitle">Price</td>
+            <td className="itemvaluetitle">Minimum Level</td>
+            <td className="itemvaluetitle">Department</td>
           </tr>
           {filteredItems.map((item) => {
             const link = `/items/${item.id}`
             return (
               <tr key={item.id} className="search-results">
-                <Link to={link} state={{item: item}} className="itemvalue">{item.name}</Link>
-                <td className="itemvalue">{item.quantity}</td>
-                <td className="itemvalue">${(item.price_cents/100).toFixed(2)}</td>
-                <td className="itemvalue">{item.minimum_level}</td>
-                <td className="itemvalue">{departmentNames[item.department_id]}</td>
+                <Link to={link} state={{item: item}} className="itemvalue-search">{item.name}</Link>
+                <td className="itemvalue-search">{item.quantity}</td>
+                <td className="itemvalue-search">${(item.price_cents/100).toFixed(2)}</td>
+                <td className="itemvalue-search">{item.minimum_level}</td>
+                <td className="itemvalue-search">{departmentNames[item.department_id]}</td>
               </tr>
             );
           })}

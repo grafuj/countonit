@@ -78,7 +78,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: radial-gradient(circle farthest-corner at 92.3% 71.5%, #538ad6 0%, #86e7d6 90%); }
+  background-color: antiquewhite; }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace; }
@@ -97,6 +97,14 @@ code {
 .login-image {
   width: 600px; }
 
+.login-text {
+  color: black; }
+
+h1.login-text {
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  text-shadow: 0px 6px 4px #ffffff; }
+
 .register-form {
   display: flex;
   margin-left: 10%; }
@@ -111,6 +119,9 @@ code {
 .register-image {
   object-fit: scale-down;
   width: 600px; }
+
+strong {
+  color: black; }
 
 .boxone, .boxtwo, .boxthree {
   display: flex; }
@@ -223,7 +234,9 @@ h3 {
 .departmentName {
   display: flex;
   font-size: 3em;
-  justify-content: space-between; }
+  justify-content: space-between;
+  font-weight: bold;
+  padding: 10px; }
 
 .items {
   display: grid;
@@ -261,17 +274,27 @@ h3 {
   width: 200px;
   background-color: #54a0ff;
   padding: 0 30px;
-  height: 600px; }
+  height: 600px;
+  color: white; }
 
 .departmentsList {
   display: flex;
   justify-content: space-evenly;
-  color: black;
+  color: white;
   text-decoration: none; }
 
 .search-table {
   table-layout: fixed;
   width: 100%; }
+
+.itemvalue-search {
+  color: white;
+  padding: 2px;
+  margin-left: 2px; }
+
+.itemvaluetitle {
+  color: white;
+  font-weight: bold; }
 
 .search-results {
   background-color: #079cf9;

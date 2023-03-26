@@ -6,18 +6,20 @@
   display: flex;
   font-size: 3em;
   justify-content: space-between;
+  font-weight: bold;
+  padding: 10px;
 }
 
 .items {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 50px;
-  padding: 30px
+  padding: 30px;
 }
 
 .single-item {
   text-decoration: none;
-  color:black;
+  color:rgb(0, 0, 0);
   display: flex;
   flex-direction: column;
   align-items: center;

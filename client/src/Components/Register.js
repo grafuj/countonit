@@ -5,11 +5,11 @@ import planner from "./Front-End-Photos/pencil-on-daytimer.jpeg";
 function Register(props) {
   // const {items} = props;
   return (
-    <div class="register-form">
+    <div className="register-form">
       <div>
         <img src={planner} className="register-image" alt="writing-in-planner" />
       </div>
-      <div class="register-form-fields">
+      <div className="register-form-fields">
         <form action="http://localhost:3000/items">
           <h2>Register</h2>
           <label><strong>Name</strong></label>

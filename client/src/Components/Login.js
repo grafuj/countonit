@@ -20,16 +20,16 @@ function Login(props) {
       </div>
       <div class="login-form-fields">
         <form action="http://localhost:3000/items">
-          <h1>Welcome!</h1>
+          <h1 className="login-text">Welcome!</h1>
           <br />
-          <h2>Login</h2>
-          <label>
+          <h2 className="login-text">Login</h2>
+          <label className="login-text">
             <strong>Username</strong>
           </label>
           <br />
           <input type="email" name="email" id="email" size="30" />
           <br />
-          <label>
+          <label className="login-text">
             <strong>Password</strong>
           </label>
           <br />
@@ -40,15 +40,17 @@ function Login(props) {
             name="login"
             id="login-button"
             onClick={handleLoginClick}
+            className="login-text"
           >
             Login
           </button>
           <br />
-          <h3>Sign up for an account here:</h3>
+          <h3 className="login-text">Sign up for an account here:</h3>
           <button
             type="submit"
-            className="register"
+            className="login-text"
             onClick={handleRegisterClick}
+            
           >
             Register Now
           </button>
