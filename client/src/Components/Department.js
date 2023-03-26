@@ -1,5 +1,5 @@
 import React from "react";
-import { useLocation, Link, useNavigate } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import Departments from "./Departments";
 import NewItemButton from "./Items/hooks/NewItemButton";
 import { Image } from "cloudinary-react";
