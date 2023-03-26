@@ -106,10 +106,10 @@ function Dashboard(props) {
               <div className="notify-container">
                 <div className="icon-container">
                   <FontAwesomeIcon
+                    className="flag"
                     icon="fa-solid fa-flag"
-                    bounce
                     size="xl"
-                    style={{ color: "#ff0000" }}
+                    style={{ color: "#ff0000"}}
                   />
                 </div>
               </div>

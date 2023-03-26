@@ -91,13 +91,17 @@ nav {
   margin: 0 5%;
 }
 
-
-
 .nav-new-item {
   margin-left: 150px;
 }
 
+.nav-new-item:hover {
+  cursor: pointer;
+}
 
+.nav-modal {
+  z-index: 1000;
+}
 
 .nav-links {
   width: 40%

@@ -62,6 +62,12 @@ nav {
 .nav-new-item {
   margin-left: 150px; }
 
+.nav-new-item:hover {
+  cursor: pointer; }
+
+.nav-modal {
+  z-index: 1000; }
+
 .nav-links {
   width: 40%; }
 
@@ -247,6 +253,9 @@ strong {
 
 .icon-container {
   padding-top: 12px; }
+
+.flag {
+  z-index: 1; }
 
 .departmentName {
   display: flex;

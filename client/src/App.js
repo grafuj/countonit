@@ -65,7 +65,7 @@ export default function App() {
 
   return (
     <BrowserRouter>
-      <Nav />
+      <Nav departments={state.departments} items={state.items} />
       <main className="main-window-space">
         <Routes>
           <Route
