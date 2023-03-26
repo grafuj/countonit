@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import Form from "./Form";
 import Editmodal from "./edit-modal/Editmodal";
 import DeleteButton from "./hooks/Delete";
@@ -13,13 +13,18 @@ function Items(props) {
 
   const { items, departments } = props;
 
+  const navigate = useNavigate();
+
+  const handleBackButton = () => {
+    navigate(`/departments`);
+  };
+
   // let item = "";
   // if (!location.state) {
   //   console.log(item);
   // } else {
   //   item = location.state.item;
   // }
-
 
   useEffect(() => {
     if (location.state?.item) {
@@ -30,6 +35,13 @@ function Items(props) {
   return (
     <div className="item-view-container">
       <div>
+        <button type="submit" className="back-btn" onClick={handleBackButton}>
+          <FontAwesomeIcon
+            icon="fa-solid fa-circle-arrow-left"
+            size="xl"
+            style={{ color: "#ffffff" }}
+          />
+        </button>
         <h1 className="folderView">Item view</h1>
         <h3 className="item-view-details">Folder</h3>
         <p className="item-view-values">{item.department_id}</p>

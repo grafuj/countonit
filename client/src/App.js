@@ -14,6 +14,7 @@ import {
   faEarthAmericas,
   faPenToSquare,
   faPen,
+  faCircleArrowLeft
 } from "@fortawesome/free-solid-svg-icons";
 import Departments from "./Components/Departments";
 import Items from "./Components/Items/Items";
@@ -35,7 +36,8 @@ library.add(
   faFlag,
   faMountainSun,
   faEarthAmericas,
-  faPenToSquare
+  faPenToSquare,
+  faCircleArrowLeft
 );
 
 export default function App() {
