@@ -53,7 +53,11 @@ const Department = (props) => {
           key={dep.id}
           className="single-item"
         >
-          <img className="deppic" src={imgPath} alt="user-chosen that represents department"></img>
+          <img
+            className="deppic"
+            src={imgPath}
+            alt="user-chosen that represents department"
+          ></img>
           <div>{dep.name}</div>
         </Link>
       );
@@ -67,7 +71,7 @@ const Department = (props) => {
         <div className="departmentview">
           <div className="departmentName">
             {depart.name || "Departments"}
-            <NewItemButton />
+            {/* <NewItemButton /> */}
           </div>
 
           <div className="items">{depID ? items() : departments()}</div>

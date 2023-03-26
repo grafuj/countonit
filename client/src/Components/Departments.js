@@ -21,9 +21,9 @@ function Departments(props) {
               <FontAwesomeIcon
                 icon="fa-solid fa-folder"
                 size="2xl"
-                style={{ color: "white" }}
+                style={{ color: "#54a0ff" }}
               />
-              <p>{department.name}</p>
+              <p className="department-name">{department.name}</p>
             </Link>
           );
         })}

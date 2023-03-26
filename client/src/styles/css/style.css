@@ -293,16 +293,18 @@ strong {
   display: flex;
   flex-direction: column;
   width: 200px;
-  background-color: #54a0ff;
   padding: 0 30px;
   height: 600px;
-  color: white; }
+  color: black;
+  align-items: flex-start; }
 
 .departmentsList {
   display: flex;
-  justify-content: space-evenly;
-  color: white;
+  color: black;
   text-decoration: none; }
+
+.department-name {
+  margin-left: 10px; }
 
 .search-table {
   table-layout: fixed;

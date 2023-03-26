@@ -2,15 +2,19 @@
   display: flex;
   flex-direction: column;
   width: 200px;
-  background-color: #54a0ff;
+  // background-color: #54a0ff;
   padding: 0 30px;
   height: 600px;
-  color: white;
+  color: black;
+  align-items: flex-start;
 }
 
 .departmentsList {
   display: flex;
-  justify-content: space-evenly;
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
   text-decoration: none;
+}
+
+.department-name {
+  margin-left: 10px
 }
