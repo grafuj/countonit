@@ -38,7 +38,7 @@ export default function ItemPriceCalculator(props) {
           onChange={handlePriceChange}
         />
       </label>
-      <p>Total cost: ${calculateTotalCost() || 0}</p>
+      <p>Total Value: ${calculateTotalCost() || 0}</p>
     </div>
   );
 }

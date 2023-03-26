@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 // import { Image } from "cloudinary-react";
-import DeleteButton from "./hooks/Delete";
+// import DeleteButton from "./hooks/Delete";
 import UploadPicture from "./hooks/AddPicture";
 import ItemPriceCalculator from "./hooks/ItemPriceCalculator";
 import Dropdown from "./hooks/Dropdown";
@@ -201,9 +201,9 @@ const ItemForm = (props) => {
       <div>
         <button type="submit">Save Item</button>
         <CancelButton onClose={props.onClose} />
-        <div className="delete-btn">
+        {/* <div className="delete-btn">
           <DeleteButton itemId={itemId} departmentID={departmentID} />
-        </div>
+        </div> */}
       </div>
       {/* <Image cloudName="dtvbwudm2" publicId="https://res.cloudinary.com/dtvbwudm2/image/upload/v1679596128/x55kkmv1zphtkqpltlwj.png" /> */}
     </form>

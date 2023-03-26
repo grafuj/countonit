@@ -8,10 +8,9 @@ const Editmodal = (props) => {
       <div className="modal-content" onClick={e => e.stopPropagation()}>
         <div className="modal-header">
           <h3 className="modal-title">Edit Item</h3>
-          {/* add {item.name} */}
         </div>
         <div className="modal-body">
-          This is modal content, item name: chainsaw, quantitiy is 2
+          {/* This is modal content, item name: blah blah */}
           {props.children}
         </div>
         <div className="modal-footer">
