@@ -52,7 +52,7 @@ const Department = (props) => {
           to={path}
           state={{ department: dep }}
           key={dep.id}
-          className="single-item"
+          className="single-item-title"
         >
           <img
             className="deppic"
