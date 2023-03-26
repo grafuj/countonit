@@ -71,7 +71,7 @@ const Department = (props) => {
         <Departments departments={props.departments} />
         <div className="departmentview">
           <div className="departmentName">
-            {depart.name || "Departments"}
+            {depart.name || "Folders"}
           </div>
 
           <div className="items">{depID ? items() : departments()}</div>

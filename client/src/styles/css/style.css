@@ -262,10 +262,10 @@ strong {
 
 .departmentName {
   display: flex;
-  font-size: 3em;
+  font-size: 2em;
   justify-content: space-between;
   font-weight: bold;
-  padding: 10px; }
+  padding: 30px; }
 
 .items {
   display: grid;
