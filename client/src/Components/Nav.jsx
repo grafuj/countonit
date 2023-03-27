@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-// import { useState, useEffect } from 'react';
 import { Link, useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEarthAmericas } from '@fortawesome/free-solid-svg-icons';
@@ -17,7 +16,7 @@ function Nav(props) {
   const location = useLocation();
   const url = location.pathname
   const { departments, items } = props;
-    // setShow, setItem} = props;
+  
   return (
     <nav>
      <span className='earth-icon'> 

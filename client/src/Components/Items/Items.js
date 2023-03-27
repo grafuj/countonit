@@ -16,7 +16,8 @@ function Items(props) {
   const navigate = useNavigate();
 
   const handleBackButton = () => {
-    navigate(`/departments`);
+    navigate(`/departments/${item.department_id}`);
+    navigate(0);
   };
 
   useEffect(() => {

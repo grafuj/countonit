@@ -104,7 +104,7 @@ const ItemForm = (props) => {
         props.setItem(data.item);
         props.onClose();
         // navigate(`/items/${itemId}`, {state: {item: data.item}});
-        // navigate(0);
+        navigate(0);
       } catch (error) {
         console.error("Error saving item", error);
       }
