@@ -43,7 +43,7 @@ function Dashboard(props) {
                 <td>{itemCount}</td>
                 <td>{departmentsCount}</td>
                 <td>{qtyCount}</td>
-                <td>${(totalValueCount / 100).toFixed(2)}</td>
+                <td>{(totalValueCount / 100).toLocaleString('en-US', { style: 'currency', currency: 'USD' })}</td>
               </tr>
             </tbody>
           </table>
@@ -106,7 +106,7 @@ function Dashboard(props) {
                       <tr>
                         <td>{departmentInfo[department.id].length}</td>
                         <td>{total}</td>
-                        <td>${(value / 100).toFixed(2)}</td>
+                        <td>{(value / 100).toLocaleString('en-US', { style: 'currency', currency: 'USD' })}</td>
                       </tr>
                     </tbody>
                   </table>
@@ -149,7 +149,7 @@ function Dashboard(props) {
                       <tr key={item.id}>
                         <td className="minitem">{item.name}</td>
                         <td className="itemvalue">{item.quantity}</td>
-                        <td className="itemvalue">${(item.price_cents / 100).toFixed(2)}</td>
+                        <td className="itemvalue">{(item.price_cents / 100).toLocaleString('en-US', { style: 'currency', currency: 'USD' })}</td>
                         <td className="itemvalue">{item.minimum_level}</td>
                         <td className="itemvalue">
                           {departmentNames[item.department_id]}

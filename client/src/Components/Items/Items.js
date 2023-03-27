@@ -16,7 +16,7 @@ function Items(props) {
   const navigate = useNavigate();
 
   const handleBackButton = () => {
-    navigate(`/departments`);
+    navigate(`/departments/${item.department_id}`);
   };
 
   useEffect(() => {
@@ -53,7 +53,10 @@ function Items(props) {
               <p className="item-view-values">{item.quantity}</p>
               <h3 className="item-view-details">Item Price:</h3>
               <p className="item-view-values">
-                ${(item.price_cents / 100).toFixed(2)}
+                {(item.price_cents / 100).toLocaleString("en-US", {
+                  style: "currency",
+                  currency: "USD",
+                })}
               </p>
               <div className="edit-delete-buttons">
                 <button
@@ -79,13 +82,15 @@ function Items(props) {
             <section>
               <h3 className="item-view-details">Total Value:</h3>
               <p className="item-view-values">
-                ${((item.price_cents / 100) * item.quantity).toFixed(2)}
+                {((item.price_cents / 100) * item.quantity).toLocaleString(
+                  "en-US",
+                  { style: "currency", currency: "USD" }
+                )}
               </p>
               <h3 className="item-view-details">Item Minimum:</h3>
               <p className="item-view-values">{item.minimum_level}</p>
               <h3 className="item-view-details">Item Notes:</h3>
               <p className="item-view-details-notes">{item.description}</p>
-              
             </section>
           </section>
         </div>

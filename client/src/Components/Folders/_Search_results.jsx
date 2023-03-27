@@ -172,7 +172,7 @@ export default function SearchResults(props) {
                 </td>
                 <td className="itemvalue-search">{item.quantity}</td>
                 <td className="itemvalue-search">
-                  ${(item.price_cents / 100).toFixed(2)}
+                  {(item.price_cents / 100).toLocaleString('en-US', { style: 'currency', currency: 'USD' })}
                 </td>
                 <td className="itemvalue-search">{item.minimum_level}</td>
                 <td className="itemvalue-search">
