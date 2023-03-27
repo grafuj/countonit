@@ -164,8 +164,12 @@
 }
 
 .item-view-details-notes {
-  padding-left: 3%;
-  padding: 0px 70px
+  /* padding-left: 3%;
+  padding-right: 3%; */
+  margin-right: 25px;
+  white-space: pre-wrap;
+  word-break: break-word;
+  text-align: center;
 }
 
 .item-view-container {
@@ -189,6 +193,7 @@
 
 .item-view-pic {
   padding: 75px;
+  margin-top: 70px;
   object-fit: cover;
   width: 70%;
   height: 70%;
@@ -197,6 +202,8 @@
 .item-detail-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  border: solid 2px
+  border: 5px ridge rgb(7, 156, 249);
+  background-color: lightblue;
+
 }
 /*# sourceMappingURL=Form.css.map */
