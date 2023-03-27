@@ -160,7 +160,7 @@ strong {
   background-color: lightblue;
   justify-content: space-between;
   border-radius: 10px;
-  box-shadow: 10px 10px 5px 1px rgba(0, 0, 0, 0.5); }
+  box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.3); }
 
 .inventoryTable {
   width: 100%;
@@ -183,9 +183,12 @@ strong {
   background-color: lightblue;
   justify-content: space-around;
   border-radius: 10px;
-  box-shadow: 10px 10px 5px 1px rgba(0, 0, 0, 0.5); }
-  .new :hover {
-    cursor: pointer; }
+  box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease-in-out; }
+
+.new:hover {
+  cursor: pointer;
+  box-shadow: 0px -10px 20px 1px rgba(0, 0, 0, 0.5); }
 
 .newlink {
   height: 50px; }
@@ -211,11 +214,11 @@ strong {
   text-decoration: none;
   color: black;
   padding: 10px 0px;
-  box-shadow: 10px 10px 5px 1px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease-in-out; }
 
 .department:hover {
-  box-shadow: 0px -10px 10px 1px rgba(0, 0, 0, 0.5); }
+  box-shadow: 0px -10px 20px 1px rgba(0, 0, 0, 0.5); }
 
 .dep-details {
   width: 100%;
@@ -239,7 +242,7 @@ strong {
   margin: 20px;
   border-radius: 10px;
   background-color: lightblue;
-  box-shadow: 10px 10px 5px 1px rgba(0, 0, 0, 0.5); }
+  box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.3); }
 
 .itemvalue-title {
   text-align: center;
