@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 
 const DeleteButton = ({ itemId, department_id }) => {
   const navigate = useNavigate();
-  console.log("dept id", department_id)
+  
   const handleDelete = () => {
     axios
       .delete(`/api/items/${itemId}`)

@@ -14,7 +14,7 @@ import {
   faEarthAmericas,
   faPenToSquare,
   faPen,
-  faCircleArrowLeft
+  faCircleArrowLeft,
 } from "@fortawesome/free-solid-svg-icons";
 import Departments from "./Components/Departments";
 import Items from "./Components/Items/Items";
@@ -58,7 +58,6 @@ export default function App() {
         const items = all[2].data;
 
         setState((prev) => ({ ...prev, folders, departments, items }));
-        console.log(state);
       })
       .catch((error) => {
         console.error(error);

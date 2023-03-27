@@ -45,13 +45,21 @@ function Dashboard(props) {
         </div>
         <div className="new">
           <Link to="/items/new">
-            <FontAwesomeIcon className="newlink" icon="fa-circle-plus" style={{color: "#ffffff",}}/>
+            <FontAwesomeIcon
+              className="newlink"
+              icon="fa-circle-plus"
+              style={{ color: "#ffffff" }}
+            />
           </Link>
           <div className="add-btn">Add New Item</div>
         </div>
         <div className="new">
           <Link to="/items/new">
-            <FontAwesomeIcon className="newlink" icon="fa-circle-plus" style={{color: "#ffffff",}}/>
+            <FontAwesomeIcon
+              className="newlink"
+              icon="fa-circle-plus"
+              style={{ color: "#ffffff" }}
+            />
           </Link>
           <div className="add-btn">Add Folder</div>
         </div>
@@ -109,7 +117,7 @@ function Dashboard(props) {
                     className="flag"
                     icon="fa-solid fa-flag"
                     size="xl"
-                    style={{ color: "#ff0000"}}
+                    style={{ color: "#ff0000" }}
                   />
                 </div>
               </div>
