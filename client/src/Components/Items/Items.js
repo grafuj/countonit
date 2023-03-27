@@ -49,25 +49,33 @@ function Items(props) {
             style={{ color: "#ffffff" }}
           />
         </button>
-        <h1 className="folderView">Item view</h1>
-        <h3 className="item-view-details">Folder</h3>
-        <p className="item-view-values">{folderName}</p>
-        <h3 className="item-view-details">Item Name:</h3>
-        <p className="item-view-values">{item.name}</p>
-        <h3 className="item-view-details">Item Quantity:</h3>
-        <p className="item-view-values">{item.quantity}</p>
-        <h3 className="item-view-details">Item Price:</h3>
-        <p className="item-view-values">
-          ${(item.price_cents / 100).toFixed(2)}
-        </p>
-        <h3 className="item-view-details">Total Value:</h3>
-        <p className="item-view-values">
-          ${((item.price_cents / 100) * item.quantity).toFixed(2)}
-        </p>
-        <h3 className="item-view-details">Item Minimum:</h3>
-        <p className="item-view-values">{item.minimum_level}</p>
-        <h3 className="item-view-details">Item Notes:</h3>
-        <p className="item-view-details-notes">{item.description}</p>
+        <div>
+          <h1 className="folderView">Item view</h1>
+          <section className="item-detail-container">
+            <section>
+              <h3 className="item-view-details">Folder</h3>
+              <p className="item-view-values">{folderName}</p>
+              <h3 className="item-view-details">Item Name:</h3>
+              <p className="item-view-values">{item.name}</p>
+              <h3 className="item-view-details">Item Quantity:</h3>
+              <p className="item-view-values">{item.quantity}</p>
+              <h3 className="item-view-details">Item Price:</h3>
+              <p className="item-view-values">
+                ${(item.price_cents / 100).toFixed(2)}
+              </p>
+            </section>
+            <section>
+              <h3 className="item-view-details">Total Value:</h3>
+              <p className="item-view-values">
+                ${((item.price_cents / 100) * item.quantity).toFixed(2)}
+              </p>
+              <h3 className="item-view-details">Item Minimum:</h3>
+              <p className="item-view-values">{item.minimum_level}</p>
+              <h3 className="item-view-details">Item Notes:</h3>
+              <p className="item-view-details-notes">{item.description}</p>
+            </section>
+          </section>
+        </div>
         <div className="edit-delete-buttons">
           <button
             type="button"

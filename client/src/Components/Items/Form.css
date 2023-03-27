@@ -193,4 +193,10 @@
   width: 70%;
   height: 70%;
 }
+
+.item-detail-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: solid 2px
+}
 /*# sourceMappingURL=Form.css.map */
