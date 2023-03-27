@@ -33,7 +33,7 @@ function Nav(props) {
         <span>
           <span onClick={() => setShow(true)} className='nav-span nav-new-item' >
             <FontAwesomeIcon icon="fa-circle-plus" style={{color: "#ffffff",}}/>
-            <span>Add New Item</span>
+            <span> Add New Item</span>
             <Editmodal className="nav-modal" onClose={() => setShow(false)} show={show}>
               <Form
               items={items}
