@@ -37,7 +37,7 @@ departments = Department.all()
 Item.create(
   name: "Crescent Wrench",
   description: "Incredible strength and corrosion resistance from specially formulated and heat-treated chrome alloy steel. Off-corner loading design on box end provides better grip and reduces fastener rounding. Sizes stamped on both sides of each wrench for easy identification.",
-  image: 'https://res.cloudinary.com/dmamz82ok/image/upload/v1679708112/crescent-wrench_ziytlv.webp',
+  image: 'https://res.cloudinary.com/dmamz82ok/image/upload/v1679708112/crescent-wrench_gzd6gj.jpg',
   price_cents: 2499,
   quantity: 5,
   folder_id: 1,
@@ -58,7 +58,7 @@ Item.create(
 Item.create(
   name: "Lawn mower",
   description: "The Toro Recycler series is a patented cutting technology that brings an innovative mulching technique that make your clippings ultra-fine to provide moisture and nutrients that feed back into your lawn. We call these nutrient rich grass clippings, LawnVitamins. Save time, finish faster and make your job easier with Toro's 21 in. Recycler Self-Propel 60-Volt Max Battery Mower. Raise your expectations with this easy-to-start, easy-to-use, and easy-to-maintain mower.",
-  image: 'https://res.cloudinary.com/dmamz82ok/image/upload/v1679708113/lawn-mower_qjqg9y.jpg',
+  image: 'https://res.cloudinary.com/dmamz82ok/image/upload/v1679708113/lawn-mower_lbrf5m.jpg',
   price_cents: 64999,
   quantity: 4,
   folder_id: 1,
@@ -68,7 +68,7 @@ Item.create(
 Item.create(
   name: "Trimmer",
   description: "The 21.2cc Power Boost Vortex Engine provides ample power, and the I-30 starter requires 30% less pulling effort to start. Plus, the GT-225 comes standard with the Rapid Loader fixed line head for easy line change outs.",
-  image: 'https://res.cloudinary.com/dmamz82ok/image/upload/v1679708114/trimmer_zyx3xl.webp',
+  image: 'https://res.cloudinary.com/dmamz82ok/image/upload/v1679708114/trimmer_zdis9y.jpg',
   price_cents: 23899,
   quantity: 4,
   folder_id: 1,
@@ -78,7 +78,7 @@ Item.create(
 Item.create(
   name: "Blower",
   description: "The ECHO PB580T Gas Backpack Blower features a 58.2cc professional-grade, 2-stroke engine with a tube-mounted throttle. It delivers 510 CFM and 215 MPH blowing performance for a powerful impact. A unique vented backpad circulates air around the user for increased comfort in hot weather. Its compact yet durable design offers easy transport around your yard area.",
-  image: 'https://res.cloudinary.com/dmamz82ok/image/upload/v1679708112/blower_xwg4xb.webp',
+  image: 'https://res.cloudinary.com/dmamz82ok/image/upload/v1679708112/blower_exhy8b.jpg',
   price_cents: 57899,
   quantity: 4,
   folder_id: 1,
@@ -88,7 +88,7 @@ Item.create(
 Item.create(
   name: "Hedge Trimmer",
   description: "Keep your garden looking beautiful with ease with this 21 in. Two-Stroke Cycle Hedge Trimmer. It features a 21.2 cc gas engine with double-reciprocating RazorEdge blades, so you can tackle large, tough jobs. It's also comfortable to use with an easy start and vibration reduction.",
-  image: 'https://res.cloudinary.com/dmamz82ok/image/upload/v1679708113/hedge-trimmer_mjjk8a.webp',
+  image: 'https://res.cloudinary.com/dmamz82ok/image/upload/v1679708113/hedge-trimmer_ptsjgx.jpg',
   price_cents: 44899,
   quantity: 3,
   folder_id: 1,
@@ -99,7 +99,7 @@ Item.create(
 Item.create(
   name: "Pole saw",
   description: "The Sun Joe® SWJ807E 2-in-1 convertible electric pole chain saw takes the danger and difficulty out of trimming your overgrown trees. Stand safely on solid ground and simply adjust the telescoping pole. Pole extends to 8.8 ft to gain up to 15 feet of overhead reach. Later, when the limbs are down and theres wood to be cut, the SWJ807E quickly converts to a hand-held chainsaw to make light work of loads of logs. Powered by a robust 8-amp motor, the SWJ807E can handle the most stubborn tree limbs up to 9.5-inches thick.",
-  image: 'https://res.cloudinary.com/dmamz82ok/image/upload/v1679708113/pole-saw_kmocc3.webp',
+  image: 'https://res.cloudinary.com/dmamz82ok/image/upload/v1679708113/pole-saw_uliwlg.jpg',
   price_cents: 8399,
   quantity: 4,
   folder_id: 1,
@@ -109,7 +109,7 @@ Item.create(
 Item.create(
   name: "Power pruner",
   description: "The PPF-225 features a 21.2cc professional-grade, 2-stroke engine. The 93 inch fixed shaft provides outstanding reach for pruning hard-to-get-at limbs. The digital ignition system and reduced-effort starter coupled with a purge bulb make for easy starting. Cushioned rear throttle grip and front handle grip for increased comfort and control.",
-  image: 'https://res.cloudinary.com/dmamz82ok/image/upload/v1679708113/power-pruner_pcffhg.webp',
+  image: 'https://res.cloudinary.com/dmamz82ok/image/upload/v1679708113/power-pruner_wwgfmx.jpg',
   price_cents: 64999,
   quantity: 2,
   folder_id: 1,
@@ -119,7 +119,7 @@ Item.create(
 Item.create(
   name: "Pressure washer",
   description: "The A-iPower 2700 PSI gas powered pressure washer is the perfect solution for the DIY user. Plenty of power with long life engineering at a real value that is suitable for a multitude of uses, the applications are endless. Long life 196cc over-head valve gas engine. Low oil shut down to prevent damage. Low tone muffler. Recoil starting.",
-  image: 'https://res.cloudinary.com/dmamz82ok/image/upload/v1679708113/pressure-washer_npan3p.webp',
+  image: 'https://res.cloudinary.com/dmamz82ok/image/upload/v1679708113/pressure-washer_z5nqwq.jpg',
   price_cents: 27999,
   quantity: 1,
   folder_id: 1,
@@ -130,7 +130,7 @@ puts "seeding shop items"
 Item.create(
   name: "Safety vest",
   description: "The Milwaukee Tool ANSI Type R Class 2 Breakaway High Visibility Mesh Safety Vest is constructed from moisture wicking and anti-microbial treated fabric that helps you stay cool and dry fast while preventing odor and bacteria build up. Lightweight, breathable mesh means you can be cooler and comfortable in hot working conditions. It features 9 pockets including a clear ID holder and internal pocket providing you with added storage. The vest features an external size adjustment providing you with a better fit as well as a durable pass-through slit for fall protection gear.",
-  image: 'https://res.cloudinary.com/dmamz82ok/image/upload/v1679708113/safety-vest_kz2gdv.webp',
+  image: 'https://res.cloudinary.com/dmamz82ok/image/upload/v1679708113/safety-vest_pptqeo.jpg',
   price_cents: 3199,
   quantity: 2,
   folder_id: 1,
@@ -140,7 +140,7 @@ Item.create(
 Item.create(
   name: "Safety vest",
   description: "The Milwaukee Tool ANSI Type R Class 2 Breakaway High Visibility Mesh Safety Vest is constructed from moisture wicking and anti-microbial treated fabric that helps you stay cool and dry fast while preventing odor and bacteria build up. Lightweight, breathable mesh means you can be cooler and comfortable in hot working conditions. It features 9 pockets including a clear ID holder and internal pocket providing you with added storage. The vest features an external size adjustment providing you with a better fit as well as a durable pass-through slit for fall protection gear.",
-  image: 'https://res.cloudinary.com/dmamz82ok/image/upload/v1679708113/safety-vest_kz2gdv.webp',
+  image: 'https://res.cloudinary.com/dmamz82ok/image/upload/v1679708113/safety-vest_pptqeo.jpg',
   price_cents: 3199,
   quantity: 15,
   folder_id: 1,
@@ -151,7 +151,7 @@ Item.create(
 Item.create(
   name: "Safety vest",
   description: "The Milwaukee Tool ANSI Type R Class 2 Breakaway High Visibility Mesh Safety Vest is constructed from moisture wicking and anti-microbial treated fabric that helps you stay cool and dry fast while preventing odor and bacteria build up. Lightweight, breathable mesh means you can be cooler and comfortable in hot working conditions. It features 9 pockets including a clear ID holder and internal pocket providing you with added storage. The vest features an external size adjustment providing you with a better fit as well as a durable pass-through slit for fall protection gear.",
-  image: 'https://res.cloudinary.com/dmamz82ok/image/upload/v1679708113/safety-vest_kz2gdv.webp',
+  image: 'https://res.cloudinary.com/dmamz82ok/image/upload/v1679708113/safety-vest_pptqeo.jpg',
   price_cents: 3199,
   quantity: 19,
   folder_id: 1,
@@ -163,7 +163,7 @@ Item.create(
   name: "First aid kit",
   description: "First Aid Central's Construction First Aid Kit is designed for the construction industry, contractor's and related trades in Canada. Be prepared for automotive emergencies in Canada each and every day. Well stocked to handle common workplace injuries such as cuts and scrapes, wounds and burns
   Exceeds minimum first aid requirements for Federal Type 'A' Kit. CPR Mask with one way valve included Health Canada Approved components",
-  image: 'https://res.cloudinary.com/dmamz82ok/image/upload/v1679708112/first-aid-kit_okx2xh.webp',
+  image: 'https://res.cloudinary.com/dmamz82ok/image/upload/v1679708112/first-aid-kit_i9ortl.jpg',
   price_cents: 6999,
   quantity: 2,
   folder_id: 1,
@@ -175,7 +175,7 @@ Item.create(
   name: "First aid kit",
   description: "First Aid Central's Construction First Aid Kit is designed for the construction industry, contractor's and related trades in Canada. Be prepared for automotive emergencies in Canada each and every day. Well stocked to handle common workplace injuries such as cuts and scrapes, wounds and burns
   Exceeds minimum first aid requirements for Federal Type 'A' Kit. CPR Mask with one way valve included Health Canada Approved components",
-  image: 'https://res.cloudinary.com/dmamz82ok/image/upload/v1679708112/first-aid-kit_okx2xh.webp',
+  image: 'https://res.cloudinary.com/dmamz82ok/image/upload/v1679708112/first-aid-kit_i9ortl.jpg',
   price_cents: 6999,
   quantity: 2,
   folder_id: 1,
@@ -186,7 +186,7 @@ Item.create(
   name: "First aid kit",
   description: "First Aid Central's Construction First Aid Kit is designed for the construction industry, contractor's and related trades in Canada. Be prepared for automotive emergencies in Canada each and every day. Well stocked to handle common workplace injuries such as cuts and scrapes, wounds and burns
   Exceeds minimum first aid requirements for Federal Type 'A' Kit. CPR Mask with one way valve included Health Canada Approved components",
-  image: 'https://res.cloudinary.com/dmamz82ok/image/upload/v1679708112/first-aid-kit_okx2xh.webp',
+  image: 'https://res.cloudinary.com/dmamz82ok/image/upload/v1679708112/first-aid-kit_i9ortl.jpg',
   price_cents: 6999,
   quantity: 3,
   folder_id: 1,
@@ -196,7 +196,7 @@ Item.create(
 Item.create(
   name: "Cone",
   description: "Traffic safety cones provide you with the durability you need to work secure and worry free on the road. Traffic cones are made of a non-porous surface which resists dirt and grease build up",
-  image: 'https://res.cloudinary.com/dmamz82ok/image/upload/v1679708112/cone_nhne6c.webp',
+  image: 'https://res.cloudinary.com/dmamz82ok/image/upload/v1679708112/cone_dlbk7l.jpg',
   price_cents: 1599,
   quantity: 18,
   folder_id: 1,
@@ -206,7 +206,7 @@ Item.create(
 Item.create(
   name: "Tarp",
   description: "Can be used for construction tarps,farm tarps,camping and roof tarps etc.This blue tarp feature heat-sealed seams and are waterproof and tear resistant. The hems are reinforced with poly rope for added tarp strength. The tarps are reusable,washable, recyclable.",
-  image: 'https://res.cloudinary.com/dmamz82ok/image/upload/v1679708114/tarp_tqqrpz.webp',
+  image: 'https://res.cloudinary.com/dmamz82ok/image/upload/v1679708114/tarp_pxkk2y.jpg',
   price_cents: 1099,
   quantity: 4,
   folder_id: 1,
@@ -216,7 +216,7 @@ Item.create(
 Item.create(
   name: "Extension cord",
   description: "This HDX 50ft 16/3 Orange Extension Cord is specifically engineered for applications such as powering tools and portable lights. This extension cord comes with a 3-prong grounded plug and outlet for additional safety during application. It is made with durable vinyl jacket that resists abrasion, moisture and prolonged exposure to sunlight and are sturdy enough for both indoor and outdoor use. This durable cord is designed to withstand temperatures from -40F to +167F. 50 ft. grounded 3-wire extension cord may be used with power tools and appliances for light duty applications inside and outside of your homes. 13 amp, 125 volt, 1625 maximum watts capacity.",
-  image: 'https://res.cloudinary.com/dmamz82ok/image/upload/v1679708112/extension-cord_nljl3d.webp',
+  image: 'https://res.cloudinary.com/dmamz82ok/image/upload/v1679708112/extension-cord_rvwctt.jpg',
   price_cents: 3299,
   quantity: 3,
   folder_id: 1,
