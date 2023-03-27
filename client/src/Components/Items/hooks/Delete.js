@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-const DeleteButton = ({ itemId, department_id }) => {
+const DeleteButton = ({ itemName, itemId, department_id }) => {
   const navigate = useNavigate();
 
   const handleDelete = () => {
@@ -11,7 +11,7 @@ const DeleteButton = ({ itemId, department_id }) => {
       .delete(`/api/items/${itemId}`)
       .then((response) => {
         console.log("Delete was successful!", response);
-        alert(`Item ${itemId} has been deleted!`);
+        alert(`${itemName} has been deleted!`);
         navigate(`/departments/${department_id}`);
         navigate(0);
       })

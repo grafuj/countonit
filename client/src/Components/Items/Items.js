@@ -84,6 +84,7 @@ function Items(props) {
           <DeleteButton
             className="delete-btn"
             itemId={item.id}
+            itemName={item.name}
             departmentID={item.department_id}
           />
         </div>
