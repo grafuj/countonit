@@ -42,11 +42,11 @@ $spacing: 2rem;
   }
 
   nav {
-    background-color: $booked-color;
+    background-color: #00b6f4;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%230064ff' fill-opacity='0.38' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
     display: flex;
     flex-direction: row;
     align-items: center;
-    // justify-content: space-between;
     height: 100px;
     padding-left: 20%;
     padding-right: 20%;
@@ -87,29 +87,28 @@ $spacing: 2rem;
     margin: 5px;
   }
 
-.main-window-space {
-  padding-top: 100px;
-  margin: 0 5%;
-}
+  .main-window-space {
+    padding-top: 100px;
+    margin: 0 5%;
+  }
 
-.nav-new-item {
-  margin-left: 10%;
-}
+  .nav-new-item {
+    margin-left: 10%;
+  }
 
-.nav-new-item:hover {
-  cursor: pointer;
-}
+  .nav-new-item:hover {
+    cursor: pointer;
+  }
 
-.nav-modal {
-  z-index: 1000;
-}
+  .nav-modal {
+    z-index: 1000;
+  }
 
-.nav-links {
-  width: 40%;
-}
+  .nav-links {
+    width: 40%;
+  }
 
-.nav-user-check h3 {
-  width: 120px
-}
-
+  .nav-user-check h3 {
+    width: 120px;
+  }
 }
