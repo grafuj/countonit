@@ -51,7 +51,7 @@ function Dashboard(props) {
         <div className="new" onClick={() => setShow(true)}  >
          
             <FontAwesomeIcon className="newlink" icon="fa-circle-plus" style={{color: "#ffffff"}}/>
-            <div className="add-btn">Add New Item</div>
+            <div className="add-btn">Add Folder</div>
             <Editmodal className="nav-modal" onClose={() => setShow(false)} show={show}>
               <Form
               items={items}
@@ -67,11 +67,11 @@ function Dashboard(props) {
           
             <FontAwesomeIcon
               className="newlink"
-              icon="fa-circle-plus"
+              icon="fa-gear"
               style={{ color: "#ffffff" }}
             />
           
-          <div className="add-btn">Add Folder</div>
+          <div className="add-btn">Settings</div>
         </div>
       </div>
       <div className="boxtwo">
