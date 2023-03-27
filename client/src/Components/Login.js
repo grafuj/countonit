@@ -26,13 +26,13 @@ function Login(props) {
           <label className="login-text">
             <strong>Username</strong>
           </label>
-          <br />
+          
           <input type="email" name="email" id="email" size="30" />
           <br />
           <label className="login-text">
             <strong>Password</strong>
           </label>
-          <br />
+          
           <input type="password" name="password" id="password" size="30" />
           <br />
           <button
@@ -45,9 +45,11 @@ function Login(props) {
             Login
           </button>
           <br />
-          <h3 className="login-text heading-format">
+          <br />
+          <br />
+          <h2 className="login-text">
             Sign up for an account here:
-          </h3>
+          </h2>
           <button
             type="submit"
             className="login-text"
