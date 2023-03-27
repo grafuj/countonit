@@ -57,10 +57,12 @@ function Items(props) {
         <h3 className="item-view-details">Item Quantity:</h3>
         <p className="item-view-values">{item.quantity}</p>
         <h3 className="item-view-details">Item Price:</h3>
-        <p className="item-view-values">${item.price_cents / 100}</p>
+        <p className="item-view-values">
+          ${(item.price_cents / 100).toFixed(2)}
+        </p>
         <h3 className="item-view-details">Total Value:</h3>
         <p className="item-view-values">
-          ${(item.price_cents / 100) * item.quantity}
+          ${((item.price_cents / 100) * item.quantity).toFixed(2)}
         </p>
         <h3 className="item-view-details">Item Minimum:</h3>
         <p className="item-view-values">{item.minimum_level}</p>

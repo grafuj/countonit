@@ -124,16 +124,6 @@ export default function App() {
             element={<Departments departments={state.departments} />}
           />
           <Route
-            path="/items/new"
-            element={
-              <Items
-                items={state.items}
-                departments={state.departments}
-                folders={state.folders}
-              />
-            }
-          />
-          <Route
             path="/items/:id"
             element={
               <Items
