@@ -1,8 +1,13 @@
-import React from "react";
+import React, {useState} from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Editmodal from "./Items/edit-modal/Editmodal";
+import Form from "./Items/Form";
 
 function Dashboard(props) {
+  const [show, setShow] = useState(false);
+  const [item, setItem] = useState({});
+  const { departments, items } = props;
   const itemCount = props.items.length;
   const departmentsCount = props.departments.length;
   let qtyCount = 0;
@@ -43,24 +48,29 @@ function Dashboard(props) {
             </tbody>
           </table>
         </div>
-        <div className="new">
-          <Link to="/items/new">
-            <FontAwesomeIcon
-              className="newlink"
-              icon="fa-circle-plus"
-              style={{ color: "#ffffff" }}
-            />
-          </Link>
-          <div className="add-btn">Add New Item</div>
+        <div className="new" onClick={() => setShow(true)}  >
+         
+            <FontAwesomeIcon className="newlink" icon="fa-circle-plus" style={{color: "#ffffff"}}/>
+            <div className="add-btn">Add New Item</div>
+            <Editmodal className="nav-modal" onClose={() => setShow(false)} show={show}>
+              <Form
+              items={items}
+              departments={departments}
+              onClose={() => setShow(false)}
+              setItem={setItem}
+              item={item}
+              />
+            </Editmodal>
+          
         </div>
         <div className="new">
-          <Link to="/items/new">
+          
             <FontAwesomeIcon
               className="newlink"
               icon="fa-circle-plus"
               style={{ color: "#ffffff" }}
             />
-          </Link>
+          
           <div className="add-btn">Add Folder</div>
         </div>
       </div>
@@ -139,7 +149,7 @@ function Dashboard(props) {
                       <tr key={item.id}>
                         <td className="minitem">{item.name}</td>
                         <td className="itemvalue">{item.quantity}</td>
-                        <td className="itemvalue">${item.price_cents / 100}</td>
+                        <td className="itemvalue">${(item.price_cents / 100).toFixed(2)}</td>
                         <td className="itemvalue">{item.minimum_level}</td>
                         <td className="itemvalue">
                           {departmentNames[item.department_id]}

@@ -35,7 +35,7 @@
     transition: 0.5s;
     font-weight: bold;
     color: white;
-    margin-left: 30px; }
+    margin-left: 2%; }
   .nav-span:link {
     text-decoration: none; }
   .nav-span:hover {
@@ -52,7 +52,7 @@
     padding-top: 100px;
     margin: 0 5%; }
   .nav-new-item {
-    margin-left: 150px; }
+    margin-left: 10%; }
   .nav-new-item:hover {
     cursor: pointer; }
   .nav-modal {
@@ -179,6 +179,8 @@ strong {
   justify-content: space-around;
   border-radius: 10px;
   box-shadow: 10px 10px 5px 1px rgba(0, 0, 0, 0.5); }
+  .new :hover {
+    cursor: pointer; }
 
 .newlink {
   height: 50px; }
