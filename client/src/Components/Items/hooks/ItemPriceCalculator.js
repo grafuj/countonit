@@ -2,7 +2,6 @@ import React from "react";
 
 export default function ItemPriceCalculator(props) {
   const { price, quantity } = props;
-  console.log("PRICE", price);
 
   const handlePriceChange = (event) => {
     props.setPrice(Number(event.target.value));

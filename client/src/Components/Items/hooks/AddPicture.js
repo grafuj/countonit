@@ -17,9 +17,7 @@ export default function UploadPicture({
       setPreview(originalPicture);
     }
   };
-  useEffect(() => {
-    // console.log({ picture, preview, originalPicture });
-  }, [picture, preview]);
+  useEffect(() => {}, [picture, preview]);
   return (
     <div>
       <input

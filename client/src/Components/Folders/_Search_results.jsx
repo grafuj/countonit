@@ -10,65 +10,84 @@ export default function SearchResults(props) {
     minimumLevels: "",
     totalCost: "",
     description: "",
-    // need to make dynamic
     folder_id: 1,
     department_id: "",
   });
-  const departmentNames = {}
+  const departmentNames = {};
   const [filteredItems, setFilteredItems] = useState(items);
 
   const handleInputChange = (event) => {
-    console.log("event.target.val", event.target.value, "event.target.name", event.target.name);
+    console.log(
+      "event.target.val",
+      event.target.value,
+      "event.target.name",
+      event.target.name
+    );
     setFormData({
       ...formData,
       [event.target.name]: event.target.value,
     });
   };
 
-  // console.log("filteredItems:", filteredItems);
-  console.log("items:", items);
-
   useEffect(() => {
     if (items.length > 0) setFilteredItems(items);
     if (formData.name) {
-      setFilteredItems(prev => prev.filter(
-        item => {
+      setFilteredItems((prev) =>
+        prev.filter((item) => {
           return item.name.toLowerCase().includes(formData.name.toLowerCase());
         })
       );
-    };
+    }
     if (formData.quantity) {
-      setFilteredItems(prev => prev.filter(
-        item => {
-          console.log("item.quantity", item.quantity, "formData.quant", formData.quantity);
+      setFilteredItems((prev) =>
+        prev.filter((item) => {
+          console.log(
+            "item.quantity",
+            item.quantity,
+            "formData.quant",
+            formData.quantity
+          );
           return item.quantity === Number(formData.quantity);
-        }
-      ));
-    };
+        })
+      );
+    }
     if (formData.price) {
-      setFilteredItems(prev => prev.filter(
-        item => {
-          // console.log("item.price", item.price, "formData.quant", formData.price);
-          return item.price_cents.toString().includes(formData.price.toString());
-        }
-      ));
-    };
+      setFilteredItems((prev) =>
+        prev.filter((item) => {
+          return item.price_cents
+            .toString()
+            .includes(formData.price.toString());
+        })
+      );
+    }
     if (formData.minimumLevels) {
-      setFilteredItems(prev => prev.filter(
-        item => {
+      setFilteredItems((prev) =>
+        prev.filter((item) => {
           return item.minimum_level === Number(formData.minimumLevels);
-        }
-      ));
-    };
+        })
+      );
+    }
     if (formData.department_id) {
-      setFilteredItems(prev => prev.filter(
-        item => {
-          console.log("item.deptid", item.department_id, "formdata.dept", formData.department_id);
+      setFilteredItems((prev) =>
+        prev.filter((item) => {
+          console.log(
+            "item.deptid",
+            item.department_id,
+            "formdata.dept",
+            formData.department_id
+          );
           return item.department_id === Number(formData.department_id);
-        }
-      ));
-    };
-  }, [items, formData.name, formData.quantity, formData.price, formData.minimumLevels, formData.department_id]);
+        })
+      );
+    }
+  }, [
+    items,
+    formData.name,
+    formData.quantity,
+    formData.price,
+    formData.minimumLevels,
+    formData.department_id,
+  ]);
 
   return (
     <>
@@ -112,12 +131,18 @@ export default function SearchResults(props) {
         </label>
         <label className="item-input">
           Folder:
-          <select value={formData.department_id} onChange={handleInputChange} name={"department_id"}>
+          <select
+            value={formData.department_id}
+            onChange={handleInputChange}
+            name={"department_id"}
+          >
             <option value="">--Select a folder--</option>
             {departments.map((department) => {
-              departmentNames[department.id] = department.name
+              departmentNames[department.id] = department.name;
               return (
-                <option key={department.id} value={department.id}>{department.name}</option>
+                <option key={department.id} value={department.id}>
+                  {department.name}
+                </option>
               );
             })}
           </select>
@@ -133,14 +158,26 @@ export default function SearchResults(props) {
             <td className="itemvaluetitle">Folder:</td>
           </tr>
           {filteredItems.map((item) => {
-            const link = `/items/${item.id}`
+            const link = `/items/${item.id}`;
             return (
               <tr key={item.id} className="search-results">
-                <td><Link to={link} state={{item: item}} className="itemvalue-search">{item.name}</Link></td>
+                <td>
+                  <Link
+                    to={link}
+                    state={{ item: item }}
+                    className="itemvalue-search"
+                  >
+                    {item.name}
+                  </Link>
+                </td>
                 <td className="itemvalue-search">{item.quantity}</td>
-                <td className="itemvalue-search">${(item.price_cents/100).toFixed(2)}</td>
+                <td className="itemvalue-search">
+                  ${(item.price_cents / 100).toFixed(2)}
+                </td>
                 <td className="itemvalue-search">{item.minimum_level}</td>
-                <td className="itemvalue-search">{departmentNames[item.department_id]}</td>
+                <td className="itemvalue-search">
+                  {departmentNames[item.department_id]}
+                </td>
               </tr>
             );
           })}

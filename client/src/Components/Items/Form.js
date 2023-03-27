@@ -11,7 +11,6 @@ import "./Form.css";
 const ItemForm = (props) => {
   const location = useLocation();
   // let navigate = useNavigate();
-  console.log("LOCATION:", location);
 
   // how data is populated from the item edit/view form
   let item = "";
@@ -38,7 +37,6 @@ const ItemForm = (props) => {
     folder_id: 1,
     department_id: item?.department_id || departmentID,
   });
-  console.log("ITEM", item?.minimum_level);
 
   const formRef = useRef();
 
