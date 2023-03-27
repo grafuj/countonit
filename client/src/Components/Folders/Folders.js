@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import SearchResults from "./_Search_results";
 import { Link } from "react-router-dom";
-// import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import SearchResults from "./_Search_results";
+
 
 function Folders(props) {
   const { folders, departments, items } = props;
@@ -13,7 +12,6 @@ function Folders(props) {
     minimumLevels: "",
     totalCost: "",
     description: "",
-    // need to make dynamic
     folder_id: 1,
     department_id: null,
   });

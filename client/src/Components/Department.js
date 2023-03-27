@@ -1,8 +1,7 @@
 import React from "react";
 import { useLocation, Link } from "react-router-dom";
-import Departments from "./Departments";
-import NewItemButton from "./Items/hooks/NewItemButton";
 import { Image } from "cloudinary-react";
+import Departments from "./Departments";
 
 const Department = (props) => {
   const location = useLocation();

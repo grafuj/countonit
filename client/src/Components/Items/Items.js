@@ -19,13 +19,6 @@ function Items(props) {
     navigate(`/departments`);
   };
 
-  // let item = "";
-  // if (!location.state) {
-  //   console.log(item);
-  // } else {
-  //   item = location.state.item;
-  // }
-
   useEffect(() => {
     if (location.state?.item) {
       setItem(location.state.item);
@@ -37,8 +30,7 @@ function Items(props) {
       folderName = i.name;
     }
   });
-  console.log("ITEMMMMMM", item);
-  console.log("DEPARTMENTS", departments);
+
   return (
     <div className="item-view-container">
       <div>
