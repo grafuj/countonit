@@ -31,9 +31,9 @@ function Nav(props) {
         <Link to="/folders" className="nav-span">All Items</Link>
         <Link to="/departments" className="nav-span">Folders</Link>
         <span>
-          <span onClick={() => setShow(true)} className='nav-span nav-new-item' >
+        {(url !== "/login" && url !== "/register") && (<span onClick={() => setShow(true)} className='nav-span nav-new-item' >
             <FontAwesomeIcon icon="fa-circle-plus" style={{color: "#ffffff",}}/>
-            <span>Add New Item</span>
+            <span> Add New Item</span>
             <Editmodal className="nav-modal" onClose={() => setShow(false)} show={show}>
               <Form
               items={items}
@@ -42,7 +42,7 @@ function Nav(props) {
               setItem={setItem}
               />
             </Editmodal>
-          </span>
+          </span>)}
           {/* <button
             type="button"
             className="delete-icon"

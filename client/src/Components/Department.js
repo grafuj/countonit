@@ -8,7 +8,7 @@ const Department = (props) => {
 
   let depart = {};
   const depID = Number(location.pathname.replace("/departments/", ""));
-  
+
   props.departments.map((dep) => {
     if (dep.id === depID) {
       depart = dep;
@@ -35,7 +35,13 @@ const Department = (props) => {
             ></Image>
             <div>{item.name}</div>
             <div>QTY: {item.quantity}</div>
-            <div>Price per unit ${(item.price_cents / 100).toFixed(2)}</div>
+            <div>
+              Price per unit{" "}
+              {(item.price_cents / 100).toLocaleString("en-US", {
+                style: "currency",
+                currency: "USD",
+              })}
+            </div>
           </Link>
         );
       }
@@ -69,9 +75,7 @@ const Department = (props) => {
       <section className="depView">
         <Departments departments={props.departments} />
         <div className="departmentview">
-          <div className="departmentName">
-            {depart.name || "Folders"}
-          </div>
+          <div className="departmentName">{depart.name || "Folders"}</div>
 
           <div className="items">{depID ? items() : departments()}</div>
         </div>
