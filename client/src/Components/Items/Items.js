@@ -16,7 +16,7 @@ function Items(props) {
   const navigate = useNavigate();
 
   const handleBackButton = () => {
-    navigate(`/departments/${item.department_id}`);
+    navigate(`/departments`);
   };
 
   useEffect(() => {
@@ -24,6 +24,7 @@ function Items(props) {
       setItem(location.state.item);
     }
   }, []);
+  
   let folderName = "";
   departments.map((i) => {
     if (i.id === item.department_id) {
@@ -53,10 +54,7 @@ function Items(props) {
               <p className="item-view-values">{item.quantity}</p>
               <h3 className="item-view-details">Item Price:</h3>
               <p className="item-view-values">
-                {(item.price_cents / 100).toLocaleString("en-US", {
-                  style: "currency",
-                  currency: "USD",
-                })}
+                ${(item.price_cents / 100).toFixed(2)}
               </p>
               <div className="edit-delete-buttons">
                 <button
@@ -82,10 +80,7 @@ function Items(props) {
             <section>
               <h3 className="item-view-details">Total Value:</h3>
               <p className="item-view-values">
-                {((item.price_cents / 100) * item.quantity).toLocaleString(
-                  "en-US",
-                  { style: "currency", currency: "USD" }
-                )}
+                ${((item.price_cents / 100) * item.quantity).toFixed(2)}
               </p>
               <h3 className="item-view-details">Item Minimum:</h3>
               <p className="item-view-values">{item.minimum_level}</p>
