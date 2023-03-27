@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 // import { useState, useEffect } from 'react';
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEarthAmericas } from '@fortawesome/free-solid-svg-icons';
 import Editmodal from './Items/edit-modal/Editmodal';
@@ -14,7 +14,8 @@ const user = null;  //test without user
 function Nav(props) {
   const [show, setShow] = useState(false);
   const [item, setItem] = useState({});
-
+  const location = useLocation();
+  const url = location.pathname
   const { departments, items } = props;
     // setShow, setItem} = props;
   return (
@@ -64,13 +65,13 @@ function Nav(props) {
       </div>
       <div>
         <>
-        {user && (
+        {(url !== "/login" && url !== "/register") && (
           <div className="nav-user-check">
-            <h4 className="nav-welcome">Hello {user.name}!</h4>
-            <Link to="/logout" className="nav-span">Logout</Link>
+            <h3 className="nav-span">Hello Bob!</h3>
+            <Link to="/login" className="nav-span">Logout</Link>
           </div>
         )}
-        {!user && (
+        {(url === "/login" || url === "/register") && (
           <div>
             <Link to="/login" className="nav-span login-register">Login</Link>
             <Link to="/register" className="nav-span">Register</Link>

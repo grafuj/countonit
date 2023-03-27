@@ -58,7 +58,9 @@
   .nav-modal {
     z-index: 1000; }
   .nav-links {
-    width: 40%; } }
+    width: 40%; }
+  .nav-user-check h3 {
+    width: 120px; } }
 
 .App {
   text-align: center; }
