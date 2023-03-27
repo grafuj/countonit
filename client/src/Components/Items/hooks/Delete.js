@@ -2,13 +2,10 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-// import Form from "../Form"
-// import Button from "react-bootstrap/Button";
-// import Modal from "react-bootstrap/Modal";
 
 const DeleteButton = ({ itemId, department_id }) => {
   const navigate = useNavigate();
-  
+
   const handleDelete = () => {
     axios
       .delete(`/api/items/${itemId}`)
@@ -16,6 +13,7 @@ const DeleteButton = ({ itemId, department_id }) => {
         console.log("Delete was successful!", response);
         alert(`Item ${itemId} has been deleted!`);
         navigate(`/departments/${department_id}`);
+        navigate(0);
       })
       .catch((error) => {
         console.log("Item did not delete", error);
