@@ -13,7 +13,6 @@ import {
   faMountainSun,
   faEarthAmericas,
   faPenToSquare,
-  faPen,
   faCircleArrowLeft,
 } from "@fortawesome/free-solid-svg-icons";
 import Departments from "./Components/Departments";
