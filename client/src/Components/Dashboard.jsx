@@ -145,7 +145,7 @@ function Dashboard(props) {
                 </tr>
                 {props.items.map((item) => {
                   return (
-                    item.minimum_level > item.quantity && (
+                    item.minimum_level >= item.quantity && (
                       <tr key={item.id}>
                         <td className="minitem">{item.name}</td>
                         <td className="itemvalue">{item.quantity}</td>
