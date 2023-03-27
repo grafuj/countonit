@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import { useLocation, useParams } from "react-router-dom";
+import { useLocation, useParams, useNavigate } from "react-router-dom";
 // import { Image } from "cloudinary-react";
 // import DeleteButton from "./hooks/Delete";
 import UploadPicture from "./hooks/AddPicture";
@@ -10,7 +10,7 @@ import "./Form.css";
 
 const ItemForm = (props) => {
   const location = useLocation();
-  // let navigate = useNavigate();
+  let navigate = useNavigate();
 
   // how data is populated from the item edit/view form
   let item = "";
@@ -104,7 +104,7 @@ const ItemForm = (props) => {
         props.setItem(data.item);
         props.onClose();
         // navigate(`/items/${itemId}`, {state: {item: data.item}});
-        // navigate(0);
+        navigate(0);
       } catch (error) {
         console.error("Error saving item", error);
       }
@@ -123,7 +123,7 @@ const ItemForm = (props) => {
         props.setItem(data.item);
         props.onClose();
         // navigate(`/items/${itemId}`, {state: {item: data.item}});
-        // navigate(0);
+        navigate(0);
       } catch (error) {
         console.error("Error saving item", error);
       }
@@ -203,7 +203,6 @@ const ItemForm = (props) => {
           <DeleteButton itemId={itemId} departmentID={departmentID} />
         </div> */}
       </div>
-      {/* <Image cloudName="dtvbwudm2" publicId="https://res.cloudinary.com/dtvbwudm2/image/upload/v1679596128/x55kkmv1zphtkqpltlwj.png" /> */}
     </form>
   );
 };
