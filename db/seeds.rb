@@ -132,7 +132,7 @@ Item.create(
   description: "The Milwaukee Tool ANSI Type R Class 2 Breakaway High Visibility Mesh Safety Vest is constructed from moisture wicking and anti-microbial treated fabric that helps you stay cool and dry fast while preventing odor and bacteria build up. Lightweight, breathable mesh means you can be cooler and comfortable in hot working conditions. It features 9 pockets including a clear ID holder and internal pocket providing you with added storage. The vest features an external size adjustment providing you with a better fit as well as a durable pass-through slit for fall protection gear.",
   image: 'https://res.cloudinary.com/dmamz82ok/image/upload/v1679708113/safety-vest_pptqeo.jpg',
   price_cents: 3199,
-  quantity: 2,
+  quantity: 0,
   folder_id: 1,
   department_id: 1,
   minimum_level: 3
