@@ -119,7 +119,7 @@ function Dashboard(props) {
       <div className="boxthree">
         <div>
           <div className="stock-level-container">
-            <h3>Stock Levels At or Below Min Level</h3>
+            <h3>Low Stock</h3>
             {props.items.some((item) => item.minimum_level > item.quantity) && (
               <div className="notify-container">
                 <div className="icon-container">
