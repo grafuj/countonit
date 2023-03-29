@@ -24,13 +24,13 @@ function Login(props) {
           <br />
           <h2 className="login-text">Login</h2>
           <label className="login-text">
-            <strong>Username</strong>
+            <a>Email</a>
           </label>
           
           <input type="email" name="email" id="email" size="30" />
           <br />
           <label className="login-text">
-            <strong>Password</strong>
+            <a>Password</a>
           </label>
           
           <input type="password" name="password" id="password" size="30" />

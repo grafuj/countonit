@@ -102,20 +102,22 @@ code {
   display: flex;
   flex-direction: column;
   margin-top: 10%;
-  margin-left: 5%;
-  align-items: center; }
+  align-items: center;
+  transform: translateX(-700px); }
 
 .login-image {
-  width: 1000px;
-  height: 800px; }
+  width: 2120px;
+  height: 1500px;
+  transform: translateX(-200px);
+  z-index: -5; }
 
 .login-text {
-  color: black; }
+  color: white; }
 
 h1.login-text {
   text-transform: uppercase;
   letter-spacing: 5px;
-  text-shadow: 0px 6px 4px #ffffff; }
+  text-shadow: 0px 6px 4px #5582ff; }
 
 .register-form {
   display: flex;
