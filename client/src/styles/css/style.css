@@ -105,12 +105,11 @@ code {
   flex-direction: column;
   margin-top: 10%;
   align-items: center;
-  transform: translateX(-700px); }
+  transform: translateX(-600px); }
 
 .login-image {
   width: 2120px;
   height: 1500px;
-  transform: translateX(-200px);
   z-index: -5; }
 
 .login-text {

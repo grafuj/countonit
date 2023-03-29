@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import welcome2 from "./Front-End-Photos/welcome2.jpeg"
+import welcome3 from "./Front-End-Photos/welcome3.jpeg";
 
 function Login(props) {
   const navigate = useNavigate();
@@ -16,7 +16,7 @@ function Login(props) {
   return (
     <div className="login-form">
       <div className="login-image-box">
-        <img src={welcome2} className="login-image" alt="welcome2" />
+        <img src={welcome3} className="login-image" alt="welcome3" />
       </div>
       <div className="login-form-fields">
         <form action="http://localhost:3000/items">
@@ -26,13 +26,13 @@ function Login(props) {
           <label className="login-text">
             <a>Email</a>
           </label>
-          
+
           <input type="email" name="email" id="email" size="30" />
           <br />
           <label className="login-text">
             <a>Password</a>
           </label>
-          
+
           <input type="password" name="password" id="password" size="30" />
           <br />
           <button
@@ -47,9 +47,7 @@ function Login(props) {
           <br />
           <br />
           <br />
-          <h2 className="login-text">
-            Sign up for an account here:
-          </h2>
+          <h2 className="login-text">Sign up for an account here:</h2>
           <button
             type="submit"
             className="login-text"
