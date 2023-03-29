@@ -30,4 +30,8 @@
   text-transform: uppercase;
   letter-spacing: 5px;
   text-shadow: 0px 6px 4px #5582ff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -450%);
 }

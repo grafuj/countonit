@@ -18,9 +18,9 @@ function Login(props) {
       <div className="login-image-box">
         <img src={welcome2} className="login-image" alt="welcome2" />
       </div>
+        <h1 className="login-text">Welcome!</h1>
       <div className="login-form-fields">
         <form action="http://localhost:3000/items">
-          <h1 className="login-text">Welcome!</h1>
           <br />
           <h2 className="login-text">Login</h2>
           <label className="login-text">
