@@ -50,8 +50,7 @@
     font-size: 16px;
     margin: 5px; }
   .main-window-space {
-    padding-top: 100px;
-    margin: 0 5%; }
+    padding-top: 100px; }
   .nav-new-item {
     margin-left: 10%; }
   .nav-new-item:hover {
@@ -97,8 +96,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace; }
 
 .login-form {
-  display: flex;
-  margin-left: 25%; }
+  display: flex; }
 
 .login-form-fields {
   display: flex;
@@ -108,8 +106,7 @@ code {
   align-items: center; }
 
 .login-image {
-  object-fit: cover;
-  width: 600px;
+  width: 1000px;
   height: 800px; }
 
 .login-text {
