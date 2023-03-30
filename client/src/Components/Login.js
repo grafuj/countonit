@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import welcome3 from "./Front-End-Photos/welcome3.jpeg";
+import welcome2 from "./Front-End-Photos/welcome2.jpeg";
 
 function Login(props) {
   const navigate = useNavigate();
@@ -16,7 +16,7 @@ function Login(props) {
   return (
     <div className="login-form">
       <span className="login-image-box">
-        <img src={welcome3} className="login-image" alt="welcome3" />
+        <img src={welcome2} className="login-image" alt="welcome2" />
       </span>
       <h1 className="login-text">Welcome!</h1>
       <div className="login-form-fields">

@@ -115,16 +115,17 @@ code {
   padding-bottom: 10px;
   padding-left: 10px;
   padding-right: 10px;
-  width: 120%;
+  width: 160%;
   align-items: center;
-  margin-left: -30px;
-  margin-top: -400px;
+  margin-left: -100px;
+  margin-top: -300px;
   text-align-last: center; }
 
 .login-image {
-  width: 2120px;
-  height: 1500px;
-  z-index: -5; }
+  width: 1900px;
+  height: 1300px;
+  z-index: -5;
+  object-fit: cover; }
 
 .login-text {
   color: black; }
@@ -137,7 +138,7 @@ h1.login-text {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -450%); }
+  transform: translate(-50%, -600%); }
 
 .register-form {
   display: flex;
