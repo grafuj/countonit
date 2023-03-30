@@ -47,7 +47,7 @@ function Login(props) {
           <br />
           <br />
           <br />
-          <h2 className="login-text">Sign up for an account here:</h2>
+          <h2 className="login-text">Sign up for an account:</h2>
           <button
             type="submit"
             className="login-text"

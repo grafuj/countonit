@@ -128,7 +128,10 @@ code {
   object-fit: cover; }
 
 .login-text {
-  color: black; }
+  color: black;
+  margin: auto;
+  padding-top: 15px;
+  align-items: center; }
 
 h1.login-text {
   color: white;
@@ -138,7 +141,7 @@ h1.login-text {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -600%); }
+  transform: translate(-50%, -450%); }
 
 .register-form {
   display: flex;
