@@ -15,10 +15,10 @@ function Login(props) {
 
   return (
     <div className="login-form">
-      <div className="login-image-box">
+      <span className="login-image-box">
         <img src={welcome3} className="login-image" alt="welcome3" />
-      </div>
-        <h1 className="login-text">Welcome!</h1>
+      </span>
+      <h1 className="login-text">Welcome!</h1>
       <div className="login-form-fields">
         <form className="login-form-box" action="http://localhost:3000/items">
           <br />
