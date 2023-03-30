@@ -20,7 +20,7 @@ function Login(props) {
       </div>
         <h1 className="login-text">Welcome!</h1>
       <div className="login-form-fields">
-        <form action="http://localhost:3000/items">
+        <form className="login-form-box" action="http://localhost:3000/items">
           <br />
           <h2 className="login-text">Login</h2>
           <label className="login-text">
