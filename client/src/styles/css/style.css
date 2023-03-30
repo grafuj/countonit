@@ -24,7 +24,7 @@
     flex-direction: row;
     align-items: center;
     height: 100px;
-    padding-left: 10%;
+    padding-left: 20%;
     padding-right: 20%;
     top: 0;
     position: fixed;
@@ -51,7 +51,8 @@
     font-size: 16px;
     margin: 5px; }
   .main-window-space {
-    padding-top: 100px; }
+    padding-top: 100px;
+    margin: 0 5%; }
   .nav-new-item {
     margin-left: 10%; }
   .nav-new-item:hover {
@@ -117,7 +118,7 @@ code {
   padding-right: 10px;
   width: 160%;
   align-items: center;
-  margin-left: -100px;
+  margin-left: -80px;
   margin-top: -300px;
   text-align-last: center; }
 
@@ -125,7 +126,8 @@ code {
   width: 1900px;
   height: 1300px;
   z-index: -5;
-  object-fit: cover; }
+  object-fit: cover;
+  transform: translate(-99px, 0); }
 
 .login-text {
   color: black;
