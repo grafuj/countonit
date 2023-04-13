@@ -1,42 +1,40 @@
+.form-input-style {
+  display: flex;
+  flex-direction: column;
+  margin: 0.5rem 0;
+  width: 100%;
 
-
-  .form-input-style {
-    display: flex;
-    flex-direction: column;
-    margin: 0.5rem 0;
-    width: 100%;
-
-    input[type="text"],
-    input[type="number"],
-    textarea {
-      padding: 0.5rem;
-      border-radius: 0.25rem;
-      border: 1px solid gray;
-      font-size: 1rem;
-      width: 100%;
-      margin-top: 0.25rem;
-
-      &:focus {
-        outline: none;
-        border-color: blue;
-      }
-    }
-
-    input[type="file"] {
-      margin-top: 0.5rem;
-    }
-  }
-
-  button[type="submit"] {
-    margin-top: 1rem;
+  input[type="text"],
+  input[type="number"],
+  textarea {
     padding: 0.5rem;
     border-radius: 0.25rem;
-    background-color: blue;
-    color: white;
+    border: 1px solid gray;
     font-size: 1rem;
-    cursor: pointer;
+    width: 100%;
+    margin-top: 0.25rem;
 
-    &:hover {
-      background-color: darkblue;
+    &:focus {
+      outline: none;
+      border-color: blue;
     }
   }
+
+  input[type="file"] {
+    margin-top: 0.5rem;
+  }
+}
+
+button[type="submit"] {
+  margin-top: 1rem;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  background-color: blue;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+
+  &:hover {
+    background-color: darkblue;
+  }
+}

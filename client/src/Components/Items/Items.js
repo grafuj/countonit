@@ -25,7 +25,7 @@ function Items(props) {
       setItem(location.state.item);
     }
   }, []);
-  
+
   let folderName = "";
   departments.map((i) => {
     if (i.id === item.department_id) {

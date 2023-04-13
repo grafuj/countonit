@@ -1,13 +1,16 @@
-.boxone, .boxtwo, .boxthree{
+.boxone,
+.boxtwo,
+.boxthree {
   display: flex;
-  
+
 }
 
 .heading-format {
   margin-left: 20px
 }
 
-.boxtwo div, .boxthree div {
+.boxtwo div,
+.boxthree div {
   width: 99%;
 }
 
@@ -54,8 +57,8 @@
   transition: all 0.3s ease-in-out;
 }
 
-.new:hover{
-  cursor: pointer;      
+.new:hover {
+  cursor: pointer;
   box-shadow: 0px -10px 20px 1px rgba(0, 0, 0, 0.5);
 }
 
@@ -66,12 +69,12 @@
 .add-btn {
   font-weight: bold;
   letter-spacing: 2px;
-  
+
 }
 
 
 
-.departments{
+.departments {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 1.5em;

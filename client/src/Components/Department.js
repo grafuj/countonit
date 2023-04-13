@@ -16,7 +16,7 @@ const Department = (props) => {
     return undefined;
   });
 
-  const items = function () {
+  const items = function() {
     return props.items.map((item) => {
       if (item.department_id === depart.id) {
         const imgPath = `${item.image}`;
@@ -48,7 +48,7 @@ const Department = (props) => {
       return undefined;
     });
   };
-  const departments = function () {
+  const departments = function() {
     return props.departments.map((dep) => {
       const path = `/departments/${dep.id}`;
       const imgPath = `/images/truck.jpg`;
